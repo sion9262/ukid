@@ -16,15 +16,40 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class MainActivity extends AppCompatActivity {
+public class AuthCheckPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if(checkLogin()) {
+            Intent LoginPage = new Intent(this, LoginActivity.class);
+            startActivity(LoginPage);
+            finish();
+        }else {
+            Intent LoginPage = new Intent(this, MainActivity.class);
+            startActivity(LoginPage);
+            finish();
+        }
+
+
     }
 
+    private boolean checkLogin(){
+        SharedPreferences pref = getSharedPreferences("Auth", Activity.MODE_PRIVATE);
 
+        String email = pref.getString("email", "");
+        String jwt = pref.getString("jwt", "");
+
+        Log.d("email", email + " " + jwt);
+
+        if (email == "" || jwt == "") {
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     private void login(){
 
