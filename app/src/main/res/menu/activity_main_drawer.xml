@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_study_language"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu_study_language" />
+        <item
+            android:id="@+id/nav_study_math"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_study_math" />
+        <item
+            android:id="@+id/nav_study_science"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_study_science" />
+        <item
+            android:id="@+id/nav_check_interest"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_check_interest" />
+        <item
+            android:id="@+id/nav_observe_kid"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_observe_kid" />
+        <item
+            android:id="@+id/nav_study_image"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_study_image" />
+    </group>
+</menu>
