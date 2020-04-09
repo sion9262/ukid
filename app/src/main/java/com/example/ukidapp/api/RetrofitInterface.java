@@ -17,8 +17,13 @@ import retrofit2.http.POST;
 
 public interface RetrofitInterface {
 
-
     @POST("login")
     @Headers({"Content-Type: application/json;charset=UTF-8"})
     Call<JsonObject> login(@Body JsonObject data);
+
+    @POST("register")
+    @Headers({"Content-Type: application/json;charset=UTF-8"})
+    Call<JSONObject> register(@Body JsonObject data);
+
+
 }
