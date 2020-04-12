@@ -1,5 +1,6 @@
 package com.example.ukidapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,7 +17,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void loginBtn(View view){
-        EditText email_ET = (EditText)findViewById(R.id.email);
+        /*EditText email_ET = (EditText)findViewById(R.id.email);
         EditText password_ET = (EditText)findViewById(R.id.password);
 
         String email = email_ET.getText().toString();
@@ -39,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         editor.putString("jwt", password);
 
         editor.commit();
-
+        */
         Intent LoginPage = new Intent(this, MainActivity.class);
         startActivity(LoginPage);
         finish();
