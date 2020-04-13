@@ -4,34 +4,46 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.ukidapp.api.RetrofitSender;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.gson.JsonObject;
+
+
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LoginActivity extends Activity {
+public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        TextView textView = (TextView)findViewById(R.id.registerText);
+        textView.setText(Html.fromHtml("<font color=\"#eeac99\" ><u>회원가입</u></font>"));
     }
 
-    public void loginBtn(View view){
-        /*EditText email_ET = (EditText)findViewById(R.id.email);
-        EditText password_ET = (EditText)findViewById(R.id.password);
+    public void login_button(View view){
 
-        String email = email_ET.getText().toString();
-        String password = password_ET.getText().toString();
+        TextInputLayout emailLayout = findViewById(R.id.email);
+        TextInputLayout passwordLayout = findViewById(R.id.password);
+        String email = emailLayout.getEditText().getText().toString();
+        String password = passwordLayout.getEditText().getText().toString();
+
+        Log.d("email", email);
+        Log.d("password",password);
+
+        /*
+
 
         login(email, password);
         SharedPreferences prefs = getSharedPreferences("Auth", MODE_PRIVATE);
