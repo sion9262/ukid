@@ -26,7 +26,8 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
-
+    private TextInputLayout errEmail;
+    private TextInputLayout errPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +50,6 @@ public class LoginActivity extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        
-
-
     }
 
     private void login(Auth user){
@@ -62,13 +59,20 @@ public class LoginActivity extends AppCompatActivity {
             패스워드 검증
 
          */
+        errEmail = (TextInputLayout) findViewById(R.id.email);
+        errPassword = (TextInputLayout) findViewById(R.id.password);
+
         if ( !user.CheckEmail()){
-            System.out.println("email 틀림");
+            errEmail.setErrorEnabled(true);
+            errEmail.setError("올바른 이메일을 입력해주세요.");
+        }else{
+            errEmail.setErrorEnabled(false);
         }
 
         if ( !user.CheckPassword()) {
-            System.out.println("password 틀림");
-        }
+            errPassword.setErrorEnabled(true);
+            errPassword.setError("비밀번호가 너무 짧습니다.");
+        }else {errPassword.setErrorEnabled(false);}
 
         RetrofitSender.getServer().login(user).enqueue(new Callback<AuthModel>() {
             @Override

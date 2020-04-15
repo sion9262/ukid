@@ -18,7 +18,7 @@
         android:id="@+id/email"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:layout_height="80dp"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
         android:hint="EMAIL"
@@ -28,6 +28,8 @@
         app:boxStrokeColor="#79baec"
         app:startIconTint="#79baec"
         app:startIconDrawable="@drawable/email_icon"
+        app:errorEnabled="true"
+        app:errorTextColor="#CD0000"
         >
 
         <com.google.android.material.textfield.TextInputEditText
@@ -41,7 +43,7 @@
         android:id="@+id/password"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="250dp"
-        android:layout_height="60dp"
+        android:layout_height="80dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:hint="PASSWORD"
@@ -53,6 +55,8 @@
         app:startIconDrawable="@drawable/password_icon"
         app:endIconMode="password_toggle"
         app:endIconTint="#79baec"
+        app:errorEnabled="true"
+        app:errorTextColor="#CD0000"
 
         >
 
