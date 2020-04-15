@@ -81,16 +81,11 @@ public class LoginActivity extends AppCompatActivity {
                     AuthModel result = response.body();
                     System.out.println(result.getResultCode());
                     if (result.getResultCode() == 200) {
-                        /*
-                            로그인 성공 로직
-                         */
-
-                        SharedPreferences prefs = getSharedPreferences("Auth", MODE_PRIVATE);
-                        SharedPreferences.Editor editor = prefs.edit();
 
                         try {
-                            System.out.println("성공?");
-                            System.out.println(result.getResultCode());
+
+                            SharedPreferences prefs = getSharedPreferences("Auth", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = prefs.edit();
                             editor.putString("email", result.getEmail());
                             editor.putString("jwt", result.getJwt());
                             editor.putString("username", result.getUsername());

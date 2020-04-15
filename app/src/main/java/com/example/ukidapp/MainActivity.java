@@ -67,23 +67,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void logout(){
+        SharedPreferences prefs = getSharedPreferences("Auth", MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.clear();
+        editor.commit();
+
         Intent LoginPage = new Intent(this, LoginActivity.class);
         startActivity(LoginPage);
         finish();
     }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.logout:
-                Log.e("errr", "ERewreqrqerq");
-                System.out.println("로그아웃");
-                return true;
 
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
