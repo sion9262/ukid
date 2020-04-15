@@ -67,6 +67,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void logout(){
+        /*
+        * 로그아웃시 prefs 에 저장한 Auth를 지우고 로그인페이지로 이동
+        *
+        * */
         SharedPreferences prefs = getSharedPreferences("Auth", MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.clear();
