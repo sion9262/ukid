@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<AuthModel> call, Response<AuthModel> response) {
                 if (response.isSuccessful()){
                     AuthModel result = response.body();
-                    System.out.println(result);
+                    System.out.println(result.getResultCode());
                     if (result.getResultCode() == 200) {
                         /*
                             로그인 성공 로직
@@ -85,6 +85,8 @@ public class LoginActivity extends AppCompatActivity {
                         SharedPreferences.Editor editor = prefs.edit();
 
                         try {
+                            System.out.println("성공?");
+                            System.out.println(result.getResultCode());
                             editor.putString("email", result.getEmail());
                             editor.putString("jwt", result.getJwt());
                             editor.putString("username", result.getUsername());
@@ -103,6 +105,8 @@ public class LoginActivity extends AppCompatActivity {
                     }else {
                         System.out.println("알맞지 않은 정보입니다.");
                     }
+                }else{
+                    System.out.println("실패");
                 }
 
 

@@ -3,6 +3,7 @@ package com.example.ukidapp;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
@@ -37,12 +38,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
 
-
+        navigationView.getMenu().findItem(R.id.logout).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                logout();
+                return false;
+            }
+        });
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -51,20 +59,32 @@ public class MainActivity extends AppCompatActivity {
                 .setDrawerLayout(drawer)
                 .build();
 
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
 
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
+
+    private void logout(){
+        Intent LoginPage = new Intent(this, LoginActivity.class);
+        startActivity(LoginPage);
+        finish();
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.logout) {
-            System.out.println("로그아웃");
-            return true;
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.logout:
+                Log.e("errr", "ERewreqrqerq");
+                System.out.println("로그아웃");
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

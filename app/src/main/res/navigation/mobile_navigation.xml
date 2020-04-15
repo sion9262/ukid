@@ -64,6 +64,11 @@
         android:name="com.example.ukidapp.ui.StudyImage.StudyImageFragment"
         android:label="@string/menu_study_image"
         tools:layout="@layout/fragment_study_image"/>
+    <fragment
+        android:id="@+id/logout"
+        android:name="com.example.ukidapp.ui.StudyImage.StudyImageFragment"
+        android:label="@string/menu_study_image"
+        tools:layout="@layout/fragment_study_image"/>
 
 
 
