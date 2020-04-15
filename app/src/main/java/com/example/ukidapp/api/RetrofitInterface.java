@@ -1,6 +1,7 @@
 package com.example.ukidapp.api;
 
 import com.example.ukidapp.api.Model.AuthModel;
+import com.example.ukidapp.src.Auth;
 import com.google.gson.JsonObject;
 
 import org.json.JSONObject;
@@ -19,11 +20,11 @@ public interface RetrofitInterface {
 
     @POST("login")
     @Headers({"Content-Type: application/json;charset=UTF-8"})
-    Call<JsonObject> login(@Body JsonObject data);
+    Call<AuthModel> login(@Body Auth user);
 
     @POST("register")
     @Headers({"Content-Type: application/json;charset=UTF-8"})
-    Call<JSONObject> register(@Body JsonObject data);
+    Call<JsonObject> register(@Body JsonObject data);
 
 
 }

@@ -32,5 +32,9 @@
             android:id="@+id/nav_study_image"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_study_image" />
+        <item
+            android:id="@+id/logout"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="로그아웃" />
     </group>
 </menu>
