@@ -25,7 +25,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LoginActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
     private TextInputLayout errEmail;
     private TextInputLayout errPassword;
@@ -33,22 +33,13 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        TextView registerForm = (TextView)findViewById(R.id.registerText);
-        registerForm.setText(Html.fromHtml("<font color=\"#eeac99\" ><u>회원가입</u></font>"));
-        registerForm.setOnClickListener(new View.OnClickListener(){
+        setContentView(R.layout.activity_register);
 
-            @Override
-            public void onClick(View v) {
-                Intent registerPage = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(registerPage);
-            }
-        });
     }
     /*
         로그인 버튼 클릭하면 Auth 클래스 생성하여 로그인
      */
-    public void login_button(View view){
+    public void register_button(View view){
 
         TextInputLayout emailLayout = findViewById(R.id.email);
         TextInputLayout passwordLayout = findViewById(R.id.password);
@@ -57,14 +48,14 @@ public class LoginActivity extends AppCompatActivity {
 
         Auth user = new Auth(email, password);
         try{
-            login(user);
+            register(user);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
 
-    private void login(Auth user){
+    private void register(Auth user){
         /*
             로그인 로직
             이메일 검증
@@ -108,8 +99,7 @@ public class LoginActivity extends AppCompatActivity {
 
                             editor.commit();
 
-                            Intent MainPage = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(MainPage);
+
                             finish();
 
 
