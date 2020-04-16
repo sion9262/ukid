@@ -19,6 +19,18 @@ public class AuthModel {
     @Expose
     private String email;
 
+    @SerializedName("setUserInfo")
+    @Expose
+    private boolean setUserInfo;
+
+    public boolean isSetUserInfo() {
+        return setUserInfo;
+    }
+
+    public void setSetUserInfo(boolean setUserInfo) {
+        this.setUserInfo = setUserInfo;
+    }
+
     public Integer getResultCode() {
         return resultCode;
     }

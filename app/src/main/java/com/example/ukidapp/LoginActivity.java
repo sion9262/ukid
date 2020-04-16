@@ -107,10 +107,18 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString("username", result.getUsername());
 
                             editor.commit();
+                            System.out.println(result.isSetUserInfo());
+                            if( result.isSetUserInfo()) {
+                                Intent MainPage = new Intent(LoginActivity.this, MainActivity.class);
+                                startActivity(MainPage);
+                                finish();
 
-                            Intent MainPage = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(MainPage);
-                            finish();
+                            } else {
+                                Intent SetUserPage = new Intent(LoginActivity.this, SetUserInfoActivity.class);
+                                startActivity(SetUserPage);
+                                finish();
+                            }
+
 
 
                         } catch (Exception e) {
@@ -126,8 +134,6 @@ public class LoginActivity extends AppCompatActivity {
                 }else{
                     System.out.println("실패");
                 }
-
-
 
             }
             @Override
