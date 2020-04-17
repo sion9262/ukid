@@ -15,18 +15,18 @@ import retrofit2.Call;
 public class Auth {
     private String email;
     private String password;
-    private String phoneNumber;
-    private String useraname;
+    private String password2;
+    private String phone;
 
     public Auth(String email, String password){
         this.email = email;
         this.password = password;
     }
-    public Auth(String email, String password, String phoneNumber, String username){
+    public Auth(String email, String password, String password2, String phone){
         this.email = email;
         this.password = password;
-        this.phoneNumber = phoneNumber;
-        this.useraname = username;
+        this.password2 = password2;
+        this.phone = phone;
     }
 
     public boolean CheckEmail(){
@@ -52,9 +52,10 @@ public class Auth {
         }
         return false;
     }
-    public boolean CheckPhoneNumber(){
+
+    public boolean CheckPassword2(){
         try {
-            if (this.phoneNumber.length() >= 11) {
+            if (this.password.equals(this.password2)) {
                 return true;
             }
         } catch (Exception e) {
@@ -62,9 +63,10 @@ public class Auth {
         }
         return false;
     }
-    public boolean CheckUserName(){
+
+    public boolean CheckPhone(){
         try {
-            if (this.useraname.length() >= 2) {
+            if (this.phone.length() >= 11) {
                 return true;
             }
         } catch (Exception e) {

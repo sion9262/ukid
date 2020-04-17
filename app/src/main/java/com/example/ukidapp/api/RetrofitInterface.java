@@ -24,7 +24,7 @@ public interface RetrofitInterface {
 
     @POST("register")
     @Headers({"Content-Type: application/json;charset=UTF-8"})
-    Call<JsonObject> register(@Body JsonObject data);
+    Call<AuthModel> register(@Body Auth user);
 
 
 }

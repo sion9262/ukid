@@ -70,8 +70,6 @@ public class LoginActivity extends AppCompatActivity {
             이메일 검증
             패스워드 검증
 
-
-
          */
         errEmail = (TextInputLayout) findViewById(R.id.email);
         errPassword = (TextInputLayout) findViewById(R.id.password);
