@@ -61,7 +61,7 @@ public class SecondFragment extends Fragment {
             radioButton = (RadioButton)view.findViewById(IDs.get(i));
             score += Integer.parseInt(radioButton.getText().toString());
         }
-        
+
         return score;
     }
 }

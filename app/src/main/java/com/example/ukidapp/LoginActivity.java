@@ -103,6 +103,7 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString("email", result.getEmail());
                             editor.putString("jwt", result.getJwt());
                             editor.putString("username", result.getUsername());
+                            editor.putString("id", result.getId());
 
                             editor.commit();
                             System.out.println(result.isSetUserInfo());
