@@ -1,20 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/setup_first"
-    android:background="@drawable/loginbackground"
+    android:background="@color/cardview_light_background"
     >
-
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="안녕하세요 UKID입니다."
-        android:textColor="#000000"
-        />
+        android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/test"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="안녕하세요 UKID입니다."
+            android:textColor="#000000"
+            android:textSize="24dp"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
 
+        <TextView
+            android:id="@+id/test2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="24dp"
+            android:text="지금부터 간단한 설문을 통해아이의 특성을\n파악해보세요"
+            android:textColor="#000000"
+            android:textSize="18dp"
+            app:layout_constraintTop_toBottomOf="@+id/test"
+            tools:layout_editor_absoluteX="0dp" />
 
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="24dp"
+            android:hint="이름을 입력하세요."
+            android:textColorHint="#000"
+            app:layout_constraintTop_toBottomOf="@+id/test2"
+            tools:layout_editor_absoluteX="0dp"/>
+
+        <EditText
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="24dp"
+            android:hint="나이를 입력하세요."
+            android:textColorHint="#000"
+            app:layout_constraintTop_toBottomOf="@+id/name"
+            tools:layout_editor_absoluteX="0dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

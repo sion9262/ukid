@@ -1,7 +1,11 @@
 package com.example.ukidapp;
 
+
+
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -12,43 +16,84 @@ import com.example.ukidapp.ui.UserSetUp.SecondFragment;
 import com.example.ukidapp.ui.UserSetUp.ThreeFragment;
 
 /*
-    Fragment 이용 설문 통해 받기
- */
+* 로그인 후 첫 유저가 등록했을 시
+* 설문 조사 및 정보 입력받는 곳
+* */
+public class SetUserInfoActivity extends AppCompatActivity implements View.OnClickListener {
 
-public class SetUserInfoActivity extends AppCompatActivity {
+    private int mPage = 3;
+    private int pageIndex = 1;
 
-    private FragmentManager fragmentManager;
-    private FirstFragment firstFragment;
-    private SecondFragment secondFragment;
-    private ThreeFragment threeFragment;
-
-    private FragmentTransaction transaction;
+    Button next;
+    Button prev;
+    FragmentManager fm;
+    FragmentTransaction tran;
+    FirstFragment firstFragment;
+    SecondFragment secondFragment;
+    ThreeFragment threeFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setup);
 
-        fragmentManager = getSupportFragmentManager();
+        next = (Button)findViewById(R.id.nextButton);
+        prev = (Button)findViewById(R.id.prevButton);
+        next.setOnClickListener(this);
+        prev.setOnClickListener(this);
         firstFragment = new FirstFragment();
         secondFragment = new SecondFragment();
         threeFragment = new ThreeFragment();
+        fm = getSupportFragmentManager();
 
-        transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.SetupUserLayout, firstFragment).commitAllowingStateLoss();
+        setFrag(1);
     }
 
-    public void clickHandler(View view){
-        transaction = fragmentManager.beginTransaction();
+    @Override
+    public void onClick(View v) {
 
-        switch (view.getId()){
-            case R.id.btn_fragmentA:
-                transaction.replace(R.id.SetupUserLayout, firstFragment).commitAllowingStateLoss();
+        switch (v.getId()){
+            case R.id.nextButton:
+                if (mPage > pageIndex) {
+                    pageIndex++;
+                    setFrag(pageIndex);
+                }
                 break;
-            case R.id.btn_fragmentB:
-                transaction.replace(R.id.SetupUserLayout, secondFragment).commitAllowingStateLoss();
+            case R.id.prevButton:
+                if (pageIndex > 0){
+                    pageIndex--;
+                    setFrag(pageIndex);
+                }
+        }
+    }
+
+    public void setFrag(int n){
+
+        tran = fm.beginTransaction();
+
+        switch (n) {
+            case 1 :
+                prev.setVisibility(View.INVISIBLE);
+                next.setVisibility(View.VISIBLE);
+                tran.replace(R.id.SetUser, this.firstFragment);
+                tran.commit();
+                break;
+            case 2 :
+                System.out.println(firstFragment.getName());
+                prev.setVisibility(View.VISIBLE);
+                tran.replace(R.id.SetUser, this.secondFragment);
+                tran.commit();
+                break;
+            case 3 :
+                System.out.println(firstFragment.getName());
+                next.setVisibility(View.INVISIBLE);
+                tran.replace(R.id.SetUser, this.threeFragment);
+                tran.commit();
                 break;
         }
     }
 
+
+
 }
+    
