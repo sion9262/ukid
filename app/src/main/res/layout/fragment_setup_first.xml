@@ -40,6 +40,7 @@
             android:layout_marginTop="24dp"
             android:hint="이름을 입력하세요."
             android:textColorHint="#000"
+            android:text=""
             app:layout_constraintTop_toBottomOf="@+id/test2"
             tools:layout_editor_absoluteX="0dp"/>
 
@@ -50,6 +51,7 @@
             android:layout_marginTop="24dp"
             android:hint="나이를 입력하세요."
             android:textColorHint="#000"
+            android:text=""
             app:layout_constraintTop_toBottomOf="@+id/name"
             tools:layout_editor_absoluteX="0dp"/>
 

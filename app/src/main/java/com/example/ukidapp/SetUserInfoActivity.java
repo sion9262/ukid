@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
@@ -14,6 +15,9 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.ukidapp.ui.UserSetUp.FirstFragment;
 import com.example.ukidapp.ui.UserSetUp.SecondFragment;
 import com.example.ukidapp.ui.UserSetUp.ThreeFragment;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 /*
 * 로그인 후 첫 유저가 등록했을 시
@@ -79,19 +83,33 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                 tran.commit();
                 break;
             case 2 :
-                System.out.println(firstFragment.getName());
-                prev.setVisibility(View.VISIBLE);
-                tran.replace(R.id.SetUser, this.secondFragment);
-                tran.commit();
+                if (firstFragment.getData()) {
+                    prev.setVisibility(View.VISIBLE);
+                    tran.replace(R.id.SetUser, this.secondFragment);
+                    tran.commit();
+                }else {
+                    pageIndex--;
+                    Toast toast = Toast.makeText(getApplicationContext(), "정보를 입력해주세요.", Toast.LENGTH_LONG);
+                    toast.show();
+                }
+
                 break;
             case 3 :
-                System.out.println(firstFragment.getName());
-                next.setVisibility(View.INVISIBLE);
-                tran.replace(R.id.SetUser, this.threeFragment);
-                tran.commit();
+                if(secondFragment.checkData()) {
+                    next.setVisibility(View.INVISIBLE);
+                    tran.replace(R.id.SetUser, this.threeFragment);
+                    tran.commit();
+                }else{
+                    pageIndex--;
+                    Toast toast = Toast.makeText(getApplicationContext(), "정보를 입력해주세요.", Toast.LENGTH_LONG);
+                    toast.show();
+                }
+
                 break;
         }
     }
+
+
 
 
 

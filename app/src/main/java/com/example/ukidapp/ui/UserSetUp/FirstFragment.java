@@ -13,6 +13,9 @@ import androidx.fragment.app.Fragment;
 
 import com.example.ukidapp.R;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class FirstFragment extends Fragment {
     View view;
     EditText name;
@@ -39,7 +42,15 @@ public class FirstFragment extends Fragment {
         return view;
     }
 
-    public String getName(){
-        return name.getText().toString();
+    public boolean getData(){
+        String checkname = name.getText().toString();
+        String checkage = age.getText().toString();
+
+        checkname = checkname.trim();
+        checkage = checkage.trim();
+        if (checkname.getBytes().length > 0 && checkage.getBytes().length > 0){
+            return true;
+        }
+        return false;
     }
 }
