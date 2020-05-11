@@ -5,13 +5,13 @@ package com.example.ukidapp;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.ukidapp.ui.UserSetUp.SetUpDataManager;
 import com.example.ukidapp.ui.UserSetUp.FirstFragment;
 import com.example.ukidapp.ui.UserSetUp.SecondFragment;
 import com.example.ukidapp.ui.UserSetUp.ThreeFragment;
@@ -36,6 +36,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
     SecondFragment secondFragment;
     ThreeFragment threeFragment;
 
+    SetUpDataManager User;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +51,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
         threeFragment = new ThreeFragment();
         fm = getSupportFragmentManager();
 
+        User = new SetUpDataManager();
         setFrag(1);
     }
 
@@ -58,6 +60,15 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
 
         switch (v.getId()){
             case R.id.nextButton:
+                if (next.getText() == "완료"){
+
+                    if (checkAllData()) {
+                        System.out.println("ok");
+                        // 모든 데이터가 있을 시 데이터를 서버에 전송후 mainactivity 전환.
+                    }else {
+                        errToast();
+                    }
+                }
                 if (mPage > pageIndex) {
                     pageIndex++;
                     setFrag(pageIndex);
@@ -83,32 +94,52 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                 tran.commit();
                 break;
             case 2 :
-                if (firstFragment.getData()) {
+                if (next.getText() == "완료") { next.setText("다음 >");}
+                if (firstFragment.checkData()) {
                     prev.setVisibility(View.VISIBLE);
                     tran.replace(R.id.SetUser, this.secondFragment);
                     tran.commit();
                 }else {
                     pageIndex--;
-                    Toast toast = Toast.makeText(getApplicationContext(), "정보를 입력해주세요.", Toast.LENGTH_LONG);
-                    toast.show();
+                    errToast();
                 }
 
                 break;
             case 3 :
                 if(secondFragment.checkData()) {
-                    next.setVisibility(View.INVISIBLE);
+                    next.setText("완료");
                     tran.replace(R.id.SetUser, this.threeFragment);
                     tran.commit();
                 }else{
                     pageIndex--;
-                    Toast toast = Toast.makeText(getApplicationContext(), "정보를 입력해주세요.", Toast.LENGTH_LONG);
-                    toast.show();
+                    errToast();
                 }
 
                 break;
         }
     }
 
+    private void errToast(){
+        Toast toast = Toast.makeText(getApplicationContext(), "정보를 입력해주세요.", Toast.LENGTH_LONG);
+        toast.show();
+    }
+    private boolean checkAllData(){
+        // 모든 fragment의 데이터 가져오는 부분.
+        JSONObject initUserData = new JSONObject();
+
+        initUserData = firstFragment.getData();
+
+        try {
+            User.setName(initUserData.getString("name"));
+            User.setAge(Integer.parseInt(initUserData.getString("age")));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        User.setLanguage(secondFragment.getData());
+
+        return true;
+    }
 
 
 

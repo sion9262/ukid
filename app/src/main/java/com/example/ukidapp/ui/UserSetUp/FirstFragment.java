@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.ukidapp.R;
+import com.google.gson.JsonParser;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -42,7 +43,7 @@ public class FirstFragment extends Fragment {
         return view;
     }
 
-    public boolean getData(){
+    public boolean checkData(){
         String checkname = name.getText().toString();
         String checkage = age.getText().toString();
 
@@ -52,5 +53,20 @@ public class FirstFragment extends Fragment {
             return true;
         }
         return false;
+    }
+
+    public JSONObject getData(){
+
+        JSONObject data = new JSONObject();
+
+
+        try {
+            data.put("name", name.getText().toString());
+            data.put("age", Integer.parseInt(age.getText().toString()));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return data;
     }
 }

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 
@@ -12,12 +13,15 @@ import androidx.fragment.app.Fragment;
 
 import com.example.ukidapp.R;
 
+import java.util.ArrayList;
+
 public class SecondFragment extends Fragment {
     View view;
 
     RadioGroup R1;
     RadioGroup R2;
     RadioGroup R3;
+    RadioButton radioButton;
 
     @Nullable
     @Override
@@ -38,12 +42,27 @@ public class SecondFragment extends Fragment {
         int r2 = R2.getCheckedRadioButtonId();
         int r3 = R3.getCheckedRadioButtonId();
 
-        System.out.println(r1 + r2 + r3);
-
         if (r1 != -1 && r2 != -1 && r3 != -1) {
             return true;
         }
         return false;
+    }
+    public int getData(){
+
+        int score = 0;
+
+        ArrayList<Integer> IDs= new ArrayList<Integer>();
+
+        IDs.add(R1.getCheckedRadioButtonId());
+        IDs.add(R2.getCheckedRadioButtonId());
+        IDs.add(R3.getCheckedRadioButtonId());
+
+        for(int i=0; i<IDs.size(); i++){
+            radioButton = (RadioButton)view.findViewById(IDs.get(i));
+            score += Integer.parseInt(radioButton.getText().toString());
+        }
+        
+        return score;
     }
 }
 
