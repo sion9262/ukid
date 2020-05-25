@@ -58,7 +58,7 @@ public class AuthCheckPage extends AppCompatActivity {
         if (email == "" || jwt == "") {
             return 1;
         } else{
-            if ( checkSetUp == ""){
+            if ( checkSetUp == "false"){
                 return 2;
             }
             return 0;

@@ -105,8 +105,10 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString("username", result.getUsername());
                             editor.putString("id", result.getId());
 
+                            if (result.isSetUserInfo()) { editor.putString("checkSetUp", "true");}
+                            else {editor.putString("checkSetUp", "false");}
                             editor.commit();
-                            System.out.println(result.isSetUserInfo());
+
                             if( result.isSetUserInfo()) {
                                 Intent MainPage = new Intent(LoginActivity.this, MainActivity.class);
                                 startActivity(MainPage);
