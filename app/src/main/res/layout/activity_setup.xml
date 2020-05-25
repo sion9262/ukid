@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/cardview_light_background"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/cardview_light_background">
+
+        <Button
+            android:id="@+id/prevButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="&lt; 뒤로"
+            android:layout_gravity="center"
+            android:textSize="17dp"
+            app:backgroundTint="@color/ic_logo_background"
+            android:textColor="@color/maincolor"/>
+        <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:id="@+id/nextButton"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="200dp"
+            android:text="다음 &gt;"
+            android:textSize="17dp"
+            android:layout_gravity="center"
+            android:textColor="@color/maincolor"
+            app:backgroundTint="@color/cardview_light_background"/>
+
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/SetUser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

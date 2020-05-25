@@ -1,16 +1,71 @@
 package com.example.ukidapp.api.Model;
 
-import com.google.gson.JsonObject;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
-import java.util.HashMap;
+import org.json.JSONObject;
 
 public class AuthModel {
 
-    private String message;
-    private boolean result;
+    @Expose
+    private Integer resultCode;
+    @SerializedName("jwt")
+    @Expose
+    private String jwt;
+    @SerializedName("username")
+    @Expose
+    private String username;
+    @SerializedName("email")
+    @Expose
     private String email;
-    private String password;
 
+    @SerializedName("setUserInfo")
+    @Expose
+    private boolean setUserInfo;
+
+    @SerializedName("id")
+    @Expose
+    private String id;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public boolean isSetUserInfo() {
+        return setUserInfo;
+    }
+
+    public void setSetUserInfo(boolean setUserInfo) {
+        this.setUserInfo = setUserInfo;
+    }
+
+    public Integer getResultCode() {
+        return resultCode;
+    }
+
+    public void setResultCode(Integer resultCode) {
+        this.resultCode = resultCode;
+    }
+
+    public String getJwt() {
+        return jwt;
+    }
+
+    public void setJwt(String jwt) {
+        this.jwt = jwt;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public String getEmail() {
         return email;
@@ -20,32 +75,5 @@ public class AuthModel {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public AuthModel(HashMap<String, Object> user){
-        this.email = (String) user.get("email");
-        this.password = (String) user.get("password");
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public boolean isResult() {
-        return result;
-    }
-
-    public void setResult(boolean result) {
-        this.result = result;
-    }
 }
