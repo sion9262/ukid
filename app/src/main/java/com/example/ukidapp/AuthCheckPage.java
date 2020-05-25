@@ -21,6 +21,7 @@ public class AuthCheckPage extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         int check = checkLogin();
+        System.out.println(check);
         if(check == 1) {
             Intent LoginPage = new Intent(this, LoginActivity.class);
             startActivity(LoginPage);
@@ -47,9 +48,7 @@ public class AuthCheckPage extends AppCompatActivity {
         String email = pref.getString("email", "");
         String jwt = pref.getString("jwt", "");
         String checkSetUp = pref.getString("checkSetUp", "");
-
-        Log.d("email", email + " " + jwt);
-
+        System.out.println(checkSetUp);
         /*
         * 로그인이 안되있다면 1
         * 로그인이 됬다면 초기 셋팅 안했다면 2
@@ -58,7 +57,7 @@ public class AuthCheckPage extends AppCompatActivity {
         if (email == "" || jwt == "") {
             return 1;
         } else{
-            if ( checkSetUp == "false"){
+            if ( checkSetUp.equals("false") || checkSetUp.equals("")){
                 return 2;
             }
             return 0;
