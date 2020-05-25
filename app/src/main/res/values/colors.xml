@@ -5,4 +5,5 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="mtrl_textinput_default_box_stroke_color">#79baec</color>
     <color name="action_bar">#FF79baec</color>
+    <color name="maincolor">#79baec</color>
 </resources>
