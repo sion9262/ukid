@@ -12,17 +12,19 @@
         android:layout_height="50dp"
         android:textSize="30dp"
         android:gravity="center"
-        android:text="언어지능 영역"
+        android:text="신체운동지능영역"
         android:layout_marginBottom="10dp"/>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="좋음, 싫음, 슬픔 등 감정을 언어로 표현한다." />
+        android:layout_height="40dp"
+        android:text="@string/Physical_1"
+        />
     <RadioGroup
-        android:id="@+id/setupSecondR1"
+        android:id="@+id/Physical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
 
         <RadioButton
             android:layout_weight="1"
@@ -58,13 +60,14 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="질문1" />
+        android:layout_height="40dp"
+        android:text="@string/Physical_2" />
     <RadioGroup
-        android:id="@+id/setupSecondR2"
+        android:id="@+id/Physical2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
 
         <RadioButton
             android:layout_weight="1"
@@ -99,13 +102,15 @@
     </RadioGroup>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="질문1" />
+        android:layout_height="40dp"
+        android:text="@string/Physical_3"
+        />
     <RadioGroup
-        android:id="@+id/setupSecondR3"
+        android:id="@+id/Physical3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp">
 
         <RadioButton
             android:layout_weight="1"
@@ -138,48 +143,4 @@
             android:textColor="#000"
             android:text="5"/>
     </RadioGroup>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="질문1" />
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:layout_weight="1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:textColor="#000"
-            android:text="1"/>
-        <RadioButton
-            android:layout_weight="1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:textColor="#000"
-            android:text="2"/>
-        <RadioButton
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="20dp"
-            android:textColor="#000"
-            android:text="3"/>
-        <RadioButton
-            android:layout_weight="1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:textColor="#000"
-            android:text="4"/>
-        <RadioButton
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="20dp"
-            android:textColor="#000"
-            android:text="5"/>
-    </RadioGroup>
-
-
-
-
 </LinearLayout>

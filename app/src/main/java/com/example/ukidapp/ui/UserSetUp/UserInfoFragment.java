@@ -12,12 +12,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.ukidapp.R;
-import com.google.gson.JsonParser;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class FirstFragment extends Fragment {
+public class UserInfoFragment extends Fragment {
     View view;
     EditText name;
     EditText age;
@@ -25,7 +24,7 @@ public class FirstFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_setup_first, container, false);
+        view = inflater.inflate(R.layout.fragment_setup_userinfo, container, false);
 
         TextView textView = (TextView)view.findViewById(R.id.test);
         //textView.animate().translationY(400).setDuration(1000);
@@ -34,11 +33,7 @@ public class FirstFragment extends Fragment {
         age = (EditText)view.findViewById(R.id.age);
 
 
-        Fragment seconde = new SecondFragment();
-        Bundle bundle = new Bundle();
-        bundle.putString("name", name.getText().toString());
-        bundle.putString("age", age.getText().toString());
-        seconde.setArguments(bundle);
+
 
         return view;
     }

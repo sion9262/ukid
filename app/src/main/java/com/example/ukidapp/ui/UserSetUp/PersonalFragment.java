@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
@@ -15,7 +14,7 @@ import com.example.ukidapp.R;
 
 import java.util.ArrayList;
 
-public class SecondFragment extends Fragment {
+public class PersonalFragment extends Fragment {
     View view;
 
     RadioGroup R1;
@@ -27,10 +26,10 @@ public class SecondFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
 
-        view = inflater.inflate(R.layout.fragment_setup_second, container, false);
-        R1 = (RadioGroup)view.findViewById(R.id.setupSecondR1);
-        R2 = (RadioGroup)view.findViewById(R.id.setupSecondR2);
-        R3 = (RadioGroup)view.findViewById(R.id.setupSecondR3);
+        view = inflater.inflate(R.layout.fragment_setup_personal, container, false);
+        R1 = (RadioGroup)view.findViewById(R.id.Personal);
+        R2 = (RadioGroup)view.findViewById(R.id.Personal2);
+        R3 = (RadioGroup)view.findViewById(R.id.Personal3);
         return view;
     }
 
