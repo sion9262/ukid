@@ -14,7 +14,7 @@ public class RetrofitSender {
     public static RetrofitInterface getServer(){
         if (server == null){
             retrofit = new Retrofit.Builder()
-                    .baseUrl("http://10.0.2.2:8000/")
+                    .baseUrl("http://13.124.158.186:3000/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
             server = retrofit.create(RetrofitInterface.class);

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/register_layout"
+    android:background="@drawable/loginbackground"
+    >
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="130dp"
+        android:src="@drawable/ukid"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email"
+        style="@style/formStyle"
+        android:layout_marginTop="40dp"
+        android:hint="EMAIL"
+        app:hintTextColor="#79baec"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="#79baec"
+        app:startIconTint="#79baec"
+        app:startIconDrawable="@drawable/email_icon"
+        app:errorEnabled="true"
+        app:errorTextColor="#CD0000"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#86888A"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password"
+        style="@style/formStyle"
+        android:layout_marginTop="10dp"
+        android:hint="PASSWORD"
+        app:hintTextColor="#79baec"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="#79baec"
+        app:startIconTint="#79baec"
+        app:startIconDrawable="@drawable/password_icon"
+        app:endIconMode="password_toggle"
+        app:endIconTint="#79baec"
+        app:errorEnabled="true"
+        app:errorTextColor="#CD0000"
+        app:helperTextEnabled="true"
+        app:helperText="패스워드는 6자리 이상입니다."
+        app:helperTextTextColor="#79baec"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#86888A"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password2"
+        style="@style/formStyle"
+        android:layout_marginTop="10dp"
+        android:hint="PASSWORD"
+        app:hintTextColor="#79baec"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="#79baec"
+        app:startIconTint="#79baec"
+        app:startIconDrawable="@drawable/password_icon"
+        app:endIconMode="password_toggle"
+        app:endIconTint="#79baec"
+        app:errorEnabled="true"
+        app:errorTextColor="#CD0000"
+        app:helperTextEnabled="true"
+        app:helperText="패스워드는 6자리 이상입니다."
+        app:helperTextTextColor="#79baec"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#86888A"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phoneNumber"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="250dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:hint="전화번호를 입력해주세요."
+        android:textColorHint="#79baec"
+        app:hintTextColor="#79baec"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="#79baec"
+        app:startIconTint="#79baec"
+        app:startIconDrawable="@drawable/phone_icon"
+        app:errorEnabled="true"
+        app:errorTextColor="#CD0000"
+        app:helperTextEnabled="true"
+        app:helperText="-를 제외한 숫자만 입력해주세요."
+        app:helperTextTextColor="#79baec"
+        >
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#86888A"
+        />
+    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:id="@+id/register_button"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:text="회원가입"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:backgroundTint="#79baec"
+        android:onClick="register_button"/>
+
+
+</LinearLayout>

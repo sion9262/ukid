@@ -7,23 +7,25 @@
     <application
         android:usesCleartextTraffic="true"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_logo_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".AuthCheckPage"/>
         <activity android:name=".MainActivity"/>
+
         <activity android:name=".LoadingActivity"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-
             </intent-filter>
 
         </activity>
         <activity android:name=".LoginActivity"/>
+        <activity android:name=".RegisterActivity"/>
+        <activity android:name=".SetUserInfoActivity"/>
 
     </application>
 

@@ -1,4 +1,28 @@
 <resources>
-    <string name="app_name">ukidapp</string>
+
+    <string name="app_name">UKID</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Nick Name</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_study_language">언어 학습하기</string>
+    <string name="menu_study_math">수리 학습하기</string>
+    <string name="menu_study_science">과학 탐구하기</string>
+    <string name="menu_check_interest">관심사 확인하기</string>
+    <string name="menu_observe_kid">아이 관찰하기</string>
+    <string name="menu_study_image">이미지 학습하기</string>
+
+    <string name="home_second">Home Second</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="loading">LoadingPage</string>
+
 </resources>

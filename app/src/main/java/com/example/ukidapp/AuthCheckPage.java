@@ -1,19 +1,12 @@
 package com.example.ukidapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.example.ukidapp.api.RetrofitSender;
-import com.google.gson.JsonObject;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class AuthCheckPage extends AppCompatActivity {
@@ -23,15 +16,18 @@ public class AuthCheckPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if(checkLogin()) {
+        if(!checkLogin()) {
             Intent LoginPage = new Intent(this, LoginActivity.class);
             startActivity(LoginPage);
             finish();
         }else {
-            Intent LoginPage = new Intent(this, MainActivity.class);
-            startActivity(LoginPage);
+            Intent MainActivity = new Intent(this, MainActivity.class);
+            startActivity(MainActivity);
             finish();
         }
+
+
+
 
 
     }
@@ -44,38 +40,13 @@ public class AuthCheckPage extends AppCompatActivity {
 
         Log.d("email", email + " " + jwt);
 
+        // Login이 안되있을 시 True
         if (email == "" || jwt == "") {
-            return true;
-        }else{
             return false;
+        }else{
+            return true;
         }
     }
 
-    private void login(){
 
-        JsonObject user = new JsonObject();
-        user.addProperty("email", "test@test.com");
-        user.addProperty("password", "test12345");
-
-
-
-        RetrofitSender.getServer().login(user).enqueue(new Callback<JsonObject>() {
-            @Override
-            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-                Log.e("result", response.toString());
-
-                if (response.body() != null) {
-                    Log.d("result : ", response.body().toString());
-                }else {
-                    Log.d("reulst : ", "비어있다.");
-                }
-
-            }
-
-            @Override
-            public void onFailure(Call<JsonObject> call, Throwable t) {
-                Log.e("model", t.getMessage());
-            }
-        });
-    }
 }
