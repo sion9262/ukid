@@ -58,7 +58,7 @@ public class PlaceFragment extends Fragment {
 
         for(int i=0; i<IDs.size(); i++){
             radioButton = (RadioButton)view.findViewById(IDs.get(i));
-            score += Integer.parseInt(radioButton.getText().toString());
+            score += Integer.parseInt(radioButton.getText().toString()) * 6;
         }
 
         return score;

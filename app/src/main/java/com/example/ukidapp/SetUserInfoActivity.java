@@ -90,7 +90,6 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
             case R.id.nextButton:
                 if (next.getText() == "완료"){
                     if (checkAllData()) {
-                        System.out.println("ok");
                         postUserInfo();
 
                     }else {
@@ -219,6 +218,13 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
         }
 
         User.setLanguage(languageFragment.getData());
+        User.setMath(mathFragment.getData());
+        User.setMusic(musicFragment.getData());
+        User.setNature(natureFragment.getData());
+        User.setPersonal(personalFragment.getData());
+        User.setPhysical(physicalFragment.getData());
+        User.setPlace(placeFragment.getData());
+        User.setRelationship(relationshipFragment.getData());
 
         return true;
     }
