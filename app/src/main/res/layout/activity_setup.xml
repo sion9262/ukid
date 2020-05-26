@@ -16,22 +16,23 @@
             style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:text="&lt; 뒤로"
             android:layout_gravity="center"
+            android:text="&lt; 뒤로"
+            android:textColor="@color/maincolor"
             android:textSize="17dp"
-            app:backgroundTint="@color/ic_logo_background"
-            android:textColor="@color/maincolor"/>
+            app:backgroundTint="@color/ic_logo_background" />
+
         <Button
-            style="@style/Widget.AppCompat.Button.Borderless"
             android:id="@+id/nextButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
             android:layout_width="100dp"
             android:layout_height="50dp"
+            android:layout_gravity="center"
             android:layout_marginLeft="200dp"
             android:text="다음 &gt;"
-            android:textSize="17dp"
-            android:layout_gravity="center"
             android:textColor="@color/maincolor"
-            app:backgroundTint="@color/cardview_light_background"/>
+            android:textSize="17dp"
+            app:backgroundTint="@color/cardview_light_background" />
 
     </LinearLayout>
     <FrameLayout

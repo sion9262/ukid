@@ -33,8 +33,9 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         app:backgroundTint="@color/ic_logo_background"
+        app:tint="@null"
         app:fabSize="auto"
         app:maxImageSize="40dp"
-        app:srcCompat="@drawable/categori_logo" />
+        app:srcCompat="@drawable/honeybee" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

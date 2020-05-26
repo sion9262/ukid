@@ -39,10 +39,11 @@
             android:layout_height="50dp"
             android:layout_marginTop="24dp"
             android:hint="이름을 입력하세요."
-            android:textColorHint="#000"
             android:text=""
+            android:textColor="#000000"
+            android:textColorHint="#000"
             app:layout_constraintTop_toBottomOf="@+id/test2"
-            tools:layout_editor_absoluteX="0dp"/>
+            tools:layout_editor_absoluteX="0dp" />
 
         <EditText
             android:id="@+id/age"
