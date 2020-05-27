@@ -23,7 +23,6 @@
         android:background="#fff"
         app:itemIconTint="@color/gray"
         app:itemTextColor="@color/gray"
-        app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer"/>
 
 </androidx.drawerlayout.widget.DrawerLayout>

@@ -33,6 +33,10 @@ public class SetUpDataManager {
         id = "";
     }
 
+    public String getName(){
+        return this.name;
+    }
+
     public void setToken(String token) {
         this.token = token;
     }

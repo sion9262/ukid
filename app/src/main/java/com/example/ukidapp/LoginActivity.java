@@ -102,7 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                             SharedPreferences.Editor editor = prefs.edit();
                             editor.putString("email", result.getEmail());
                             editor.putString("jwt", result.getJwt());
-                            editor.putString("username", result.getUsername());
+                            editor.putString("nickname", result.getUsername());
                             editor.putString("id", result.getId());
 
                             if (result.isSetUserInfo()) { editor.putString("checkSetUp", "true");}

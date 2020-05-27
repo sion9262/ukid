@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.TextView;
 
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -26,7 +27,8 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity{
 
     private AppBarConfiguration mAppBarConfiguration;
-
+    SharedPreferences prefs;
+    NavigationView navigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +38,10 @@ public class MainActivity extends AppCompatActivity{
 
 
 
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
+        init();
 
         navigationView.getMenu().findItem(R.id.logout).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
@@ -61,13 +65,24 @@ public class MainActivity extends AppCompatActivity{
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
+    private void init(){
+        prefs = getSharedPreferences("Auth", MODE_PRIVATE);
+        try{
+            String nickname = prefs.getString("nickname", "");
+            View navHeaer = navigationView.inflateHeaderView(R.layout.nav_header_main);
+            TextView tv = (TextView)navHeaer.findViewById(R.id.nickName);
+            tv.setText(nickname + "님 환영합니다.");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
+    }
     private void logout(){
         /*
         * 로그아웃시 prefs 에 저장한 Auth를 지우고 로그인페이지로 이동
         *
         * */
-        SharedPreferences prefs = getSharedPreferences("Auth", MODE_PRIVATE);
+
         SharedPreferences.Editor editor = prefs.edit();
         editor.clear();
         editor.commit();

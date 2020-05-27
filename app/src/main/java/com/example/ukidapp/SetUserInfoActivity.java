@@ -245,6 +245,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                         SharedPreferences pref = getSharedPreferences("Auth", Activity.MODE_PRIVATE);
                         SharedPreferences.Editor editor = pref.edit();
                         editor.putString("checkSetUp", "true");
+                        editor.putString("nickname", User.getName());
                         editor.commit();
 
                         Intent MainPage = new Intent(SetUserInfoActivity.this, MainActivity.class);

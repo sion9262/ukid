@@ -10,7 +10,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
+    <string name="menu_home">학습하기</string>
     <string name="menu_study_language">언어 학습하기</string>
     <string name="menu_study_math">수리 학습하기</string>
     <string name="menu_study_science">과학 탐구하기</string>
