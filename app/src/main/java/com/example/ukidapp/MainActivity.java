@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.TextView;
 
 
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity{
     private AppBarConfiguration mAppBarConfiguration;
     SharedPreferences prefs;
     NavigationView navigationView;
+    Button settingBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +50,15 @@ public class MainActivity extends AppCompatActivity{
             public boolean onMenuItemClick(MenuItem item) {
                 logout();
                 return false;
+            }
+        });
+
+        settingBtn.setOnClickListener(new Button.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent MainPage = new Intent(MainActivity.this, MyPageActivity.class);
+                startActivity(MainPage);
             }
         });
         // Passing each menu ID as a set of Ids because each
@@ -71,6 +82,7 @@ public class MainActivity extends AppCompatActivity{
             String nickname = prefs.getString("nickname", "");
             View navHeaer = navigationView.inflateHeaderView(R.layout.nav_header_main);
             TextView tv = (TextView)navHeaer.findViewById(R.id.nickName);
+            settingBtn = (Button)navHeaer.findViewById(R.id.settingBtn);
             tv.setText(nickname + "님 환영합니다.");
         } catch (Exception e) {
             e.printStackTrace();
