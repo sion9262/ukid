@@ -51,6 +51,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="24dp"
             android:hint="나이를 입력하세요."
+            android:textColor="#000000"
             android:textColorHint="#000"
             android:text=""
             app:layout_constraintTop_toBottomOf="@+id/name"

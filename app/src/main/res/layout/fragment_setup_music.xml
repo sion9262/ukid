@@ -12,7 +12,7 @@
         android:layout_height="50dp"
         android:textSize="30dp"
         android:gravity="center"
-        android:text="언어지능 영역"
+        android:text="음악지능 영역"
         android:layout_marginBottom="10dp"/>
     <TextView
         android:layout_width="match_parent"
