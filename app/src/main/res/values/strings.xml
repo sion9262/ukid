@@ -25,4 +25,9 @@
 
     <string name="loading">LoadingPage</string>
 
+    <!-- Youtube!! -->
+    <string name="thumbnail_image_view_desc">Youtube Video thumbnail image view</string>
+
+
+
 </resources>
