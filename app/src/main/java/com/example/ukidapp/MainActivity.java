@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity{
 
             @Override
             public void onClick(View v) {
-                Intent MainPage = new Intent(MainActivity.this, MyPageActivity.class);
+                Intent MainPage = new Intent(MainActivity.this, DetectorActivity.class);
                 startActivity(MainPage);
             }
         });
