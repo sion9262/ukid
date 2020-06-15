@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/listview_detection"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/bottom_sheet_bg"
+    android:gravity="center_horizontal"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+
+        <TextView
+            android:id="@+id/detectionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#000"/>
+
+</LinearLayout>

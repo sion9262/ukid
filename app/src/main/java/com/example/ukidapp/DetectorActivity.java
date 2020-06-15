@@ -29,8 +29,10 @@ import android.media.ImageReader.OnImageAvailableListener;
 import android.os.SystemClock;
 import android.util.Size;
 import android.util.TypedValue;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import com.example.ukidapp.customview.OverlayView;
@@ -179,6 +181,7 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
             LOGGER.i("Running detection on image " + currTimestamp);
             final long startTime = SystemClock.uptimeMillis();
             final List<Classifier.Recognition> results = detector.recognizeImage(croppedBitmap);
+
             lastProcessingTimeMs = SystemClock.uptimeMillis() - startTime;
 
             cropCopyBitmap = Bitmap.createBitmap(croppedBitmap);
@@ -198,16 +201,24 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
             final List<Classifier.Recognition> mappedRecognitions =
                 new LinkedList<Classifier.Recognition>();
 
+            ArrayList<String> resultList = new ArrayList<String>();
             for (final Classifier.Recognition result : results) {
-              final RectF location = result.getLocation();
-              if (location != null && result.getConfidence() >= minimumConfidence) {
-                canvas.drawRect(location, paint);
 
-                cropToFrameTransform.mapRect(location);
+              // 정확도가 60%이상만 가져옴. 또한 예측 아이템 저장
+              if (result.getConfidence() > 0.6){
+                final RectF location = result.getLocation();
+                if (location != null && result.getConfidence() >= minimumConfidence) {
+                  canvas.drawRect(location, paint);
+                  System.out.println("제목" +result.getTitle());
+                  System.out.println("정확도" +result.getConfidence());
 
-                result.setLocation(location);
-                mappedRecognitions.add(result);
+                  cropToFrameTransform.mapRect(location);
+                  resultList.add(result.getTitle());
+                  result.setLocation(location);
+                  mappedRecognitions.add(result);
+                }
               }
+
             }
 
             tracker.trackResults(mappedRecognitions, currTimestamp);
@@ -219,9 +230,21 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                 new Runnable() {
                   @Override
                   public void run() {
+                    /*
                     showFrameInfo(previewWidth + "x" + previewHeight);
                     showCropInfo(cropCopyBitmap.getWidth() + "x" + cropCopyBitmap.getHeight());
                     showInference(lastProcessingTimeMs + "ms");
+
+                     */
+                    try{
+                      //System.out.println(resultList.);
+                      // 다른 액티비티 UI 수정을 위함.
+                      showDetectionResult(resultList);
+                    } catch (Exception e) {
+                      e.printStackTrace();
+                    }
+
+
                   }
                 });
           }
@@ -236,6 +259,11 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
   @Override
   protected Size getDesiredPreviewFrameSize() {
     return DESIRED_PREVIEW_SIZE;
+  }
+
+  @Override
+  public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
   }
 
   // Which detection model to use: by default uses Tensorflow Object Detection API frozen
