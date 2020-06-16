@@ -10,7 +10,7 @@ public class StudyLanguageViewModel extends ViewModel {
 
     public StudyLanguageViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("언어 학습하기");
+        mText.setValue("물체 학습하기");
     }
 
     public LiveData<String> getText() {

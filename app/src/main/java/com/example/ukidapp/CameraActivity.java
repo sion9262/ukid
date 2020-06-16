@@ -48,6 +48,15 @@ import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 
@@ -80,10 +89,14 @@ public abstract class CameraActivity extends AppCompatActivity
   ArrayList<String> listItems = new ArrayList<String>();
   ArrayAdapter<String> adapter;
   ListView list;
+  String[] labelKR;
+  String[] labelSubText;
   @Override
   protected void onCreate(final Bundle savedInstanceState) {
     LOGGER.d("onCreate " + this);
     super.onCreate(null);
+
+    fileReadInit();
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
     setContentView(R.layout.tfe_od_activity_camera);
@@ -114,7 +127,34 @@ public abstract class CameraActivity extends AppCompatActivity
 
 
   }
+  private  void fileReadInit(){
+    String KRData = null;
+    String SubTextData = null;
+    InputStream inputStreamKR = getResources().openRawResource(R.raw.new_kor);
+    InputStream inputStreamSubText = getResources().openRawResource(R.raw.new_subtext);
+    ByteArrayOutputStream byteArrayOutputStreamKR = new ByteArrayOutputStream();
+    ByteArrayOutputStream byteArrayOutputStreamSubText = new ByteArrayOutputStream();
+    int i, j;
+    try{
+      i = inputStreamKR.read();
+      j = inputStreamSubText.read();
+      while( i!= -1){
+        byteArrayOutputStreamKR.write(i);
+        i = inputStreamKR.read();
+        byteArrayOutputStreamSubText.write(j);
+        j = inputStreamSubText.read();
+      }
+      KRData = new String(byteArrayOutputStreamKR.toByteArray(), "UTF-8");
+      SubTextData = new String(byteArrayOutputStreamSubText.toByteArray(), "UTF-8");
+      inputStreamKR.close();
+      inputStreamSubText.close();
 
+      labelKR = KRData.split("\n");
+      labelSubText = SubTextData.split("\n");
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
   protected int[] getRgbBytes() {
     imageConverter.run();
     return rgbBytes;
@@ -453,6 +493,12 @@ public abstract class CameraActivity extends AppCompatActivity
   public void showDetectionResult(ArrayList<String> datas){
 
     for (String data : datas){
+      for (String label : labelKR){
+        if (label.contains(data)){
+          data = label;
+          break;
+        }
+      }
       if(listItems.contains(data)){
         System.out.println("존재하는 데이터");
       }else {
