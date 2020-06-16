@@ -42,6 +42,8 @@ public class AuthCheckPage extends AppCompatActivity {
 
     }
 
+
+
     private int checkLogin(){
         SharedPreferences pref = getSharedPreferences("Auth", Activity.MODE_PRIVATE);
 

@@ -104,6 +104,15 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString("jwt", result.getJwt());
                             editor.putString("nickname", result.getUsername());
                             editor.putString("id", result.getId());
+                            editor.putString("age", result.getAge());
+                            editor.putString("language", result.getLanguage());
+                            editor.putString("math", result.getMath());
+                            editor.putString("place", result.getPlace());
+                            editor.putString("physical", result.getPhysical());
+                            editor.putString("music", result.getMusic());
+                            editor.putString("relationship", result.getRelationship());
+                            editor.putString("personal", result.getPersonal());
+                            editor.putString("nature", result.getNature());
 
                             if (result.isSetUserInfo()) { editor.putString("checkSetUp", "true");}
                             else {editor.putString("checkSetUp", "false");}

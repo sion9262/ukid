@@ -53,18 +53,27 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+        navigationView.getMenu().findItem(R.id.nav_study_object).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Intent DetectorAtcitivy = new Intent(MainActivity.this, DetectorActivity.class);
+                startActivity(DetectorAtcitivy);
+                return false;
+            }
+        });
+
         settingBtn.setOnClickListener(new Button.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Intent MainPage = new Intent(MainActivity.this, DetectorActivity.class);
+                Intent MainPage = new Intent(MainActivity.this, MyPageActivity.class);
                 startActivity(MainPage);
             }
         });
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_study_language, R.id.nav_study_math, R.id.nav_study_science, R.id.nav_check_interest,
+                R.id.nav_home, R.id.nav_study_object, R.id.nav_study_math, R.id.nav_study_science, R.id.nav_check_interest,
                 R.id.nav_observe_kid, R.id.nav_study_image, R.id.logout)
                 .setDrawerLayout(drawer)
                 .build();

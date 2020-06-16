@@ -242,7 +242,6 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                     SetUser result = response.body();
                     System.out.println(result.getResultCode());
                     if (result.getResultCode() == 200) {
-                        SharedPreferences pref = getSharedPreferences("Auth", Activity.MODE_PRIVATE);
                         SharedPreferences.Editor editor = pref.edit();
                         editor.putString("checkSetUp", "true");
                         editor.putString("nickname", User.getName());

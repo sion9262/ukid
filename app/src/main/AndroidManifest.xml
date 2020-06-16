@@ -34,7 +34,8 @@
         <activity android:name=".RegisterActivity"/>
         <activity android:name=".SetUserInfoActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity android:name=".MyPageActivity"/>
+        <activity android:name=".MyPageActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity
             android:name=".DetectorActivity"
             >
