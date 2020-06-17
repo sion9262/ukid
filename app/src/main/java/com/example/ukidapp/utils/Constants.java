@@ -1,5 +1,7 @@
 package com.example.ukidapp.utils;
 
+import com.example.ukidapp.BuildConfig;
+
 /**
  * Created by sonu on 10/11/17.
  */
@@ -7,5 +9,5 @@ package com.example.ukidapp.utils;
 public class Constants {
 
     //youtube developer API Key
-    public static String DEVELOPER_KEY = "AIzaSyAC23f1McLmEmfC8En7P1UxX-S2i-8kEhk";
+    public static String DEVELOPER_KEY = BuildConfig.ApiKey;
 }

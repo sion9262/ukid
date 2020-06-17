@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'de.undercouch.download'
+
+def API_KEY = '"' + ApiKey + '"' ?: '"Not Found"'
+def STRING = 'String'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -12,6 +15,9 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        each { type ->
+            type.buildConfigField STRING, 'ApiKey', API_KEY
+        }
     }
 
     buildTypes {
