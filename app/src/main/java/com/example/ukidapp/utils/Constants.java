@@ -7,5 +7,5 @@ package com.example.ukidapp.utils;
 public class Constants {
 
     //youtube developer API Key
-    public static String DEVELOPER_KEY = "AIzaSyDbGN7JDvqjABxdECFAdrgqG2xegDNCfU0";
+    public static String DEVELOPER_KEY = "AIzaSyAC23f1McLmEmfC8En7P1UxX-S2i-8kEhk";
 }
