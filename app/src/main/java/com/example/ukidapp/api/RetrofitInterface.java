@@ -2,6 +2,7 @@ package com.example.ukidapp.api;
 
 import com.example.ukidapp.api.Model.AuthModel;
 import com.example.ukidapp.api.Model.SetUser;
+import com.example.ukidapp.api.Model.YoutubeModel;
 import com.example.ukidapp.src.Auth;
 import com.example.ukidapp.api.Model.Movies;
 import com.example.ukidapp.src.SetUpDataManager;
@@ -28,7 +29,7 @@ public interface RetrofitInterface {
 
     @GET("movies")
     @Headers({"Content-Type: application/json;charset=UTF-8"})
-    Call<Movies> getMovies();
+    Call<YoutubeModel> movies();
 
 
 }
