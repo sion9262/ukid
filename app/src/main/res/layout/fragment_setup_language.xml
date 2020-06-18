@@ -13,6 +13,7 @@
         android:textSize="30dp"
         android:gravity="center"
         android:text="언어지능 영역"
+        android:textColor="#000"
         android:layout_marginBottom="10dp"/>
     <TextView
         android:layout_width="match_parent"
@@ -62,7 +63,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="@string/Language_2" />
+        android:text="@string/Language_2"
+        android:textColor="#000"/>
     <RadioGroup
         android:id="@+id/Language2"
         android:layout_width="match_parent"
@@ -105,6 +107,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="@string/Language_3"
+        android:textColor="#000"
         />
     <RadioGroup
         android:id="@+id/Language3"

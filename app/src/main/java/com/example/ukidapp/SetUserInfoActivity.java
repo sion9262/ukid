@@ -118,7 +118,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                 prev.setVisibility(View.INVISIBLE);
                 next.setVisibility(View.VISIBLE);
                 next.setText("아이 등록");
-                tran.replace(R.id.SetUser, this.firstFragment);
+                tran.replace(R.id.SetUser, this.userInfoFragment);
                 tran.commit();
                 break;
             case 2:

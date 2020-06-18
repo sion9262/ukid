@@ -48,6 +48,7 @@
             android:gravity="center"
             android:text="사랑스러운 우리 아이를 UKID에 등록해 보아요! "
             android:textSize="30dp"
+            android:textColor="#000"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -100,6 +101,7 @@
             android:backgroundTint="#79baec"
             android:hint="이름을 입력하세요."
             android:text=""
+            android:textColor="#000"
             android:textColorHint="#000"
             app:layout_constraintBottom_toTopOf="@+id/age"
             app:layout_constraintStart_toStartOf="parent"
@@ -113,13 +115,9 @@
             android:layout_marginStart="80dp"
             android:backgroundTint="#79baec"
             android:hint="나이를 입력하세요."
-<<<<<<< HEAD:app/src/main/res/layout/fragment_setup_userinfo.xml
             android:textColor="#000000"
             android:textColorHint="#000"
-=======
->>>>>>> design:app/src/main/res/layout/fragment_setup_first.xml
             android:text=""
-            android:textColorHint="#000"
             app:layout_constraintBottom_toTopOf="@+id/guideline4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
