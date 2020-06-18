@@ -18,11 +18,22 @@
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
+            android:text="&lt; 이전"
             android:textColor="@color/maincolor"
             android:textSize="17dp"
             app:backgroundTint="@color/ic_logo_background"
-            app:icon="@drawable/left_arrow" />
-
+            />
+        <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:id="@+id/nextButton"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="200dp"
+            android:text="다음 &gt;"
+            android:textSize="17dp"
+            android:layout_gravity="center"
+            android:textColor="@color/maincolor"
+            app:backgroundTint="@color/cardview_light_background"/>
     </LinearLayout>
 
     <FrameLayout
@@ -36,15 +47,7 @@
         android:layout_height="match_parent"
         android:layout_weight="0.8">
 
-        <Button
-            android:id="@+id/nextButton"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            app:backgroundTint="@color/action_bar"
-            android:text="다음"
-            android:textColor="#000000"
-            android:textSize="25dp" />
+
         <!--style="@style/Widget.AppCompat.Button.Borderless"-->
     </RelativeLayout>
 

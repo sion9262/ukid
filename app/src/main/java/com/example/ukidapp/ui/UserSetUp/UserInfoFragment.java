@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -12,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.ukidapp.R;
+import com.example.ukidapp.SetUserInfoActivity;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -21,6 +23,7 @@ public class UserInfoFragment extends Fragment {
     EditText name;
     EditText age;
     String test;
+    Button Firstnext;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -33,7 +36,13 @@ public class UserInfoFragment extends Fragment {
         age = (EditText)view.findViewById(R.id.age);
 
 
-
+        Firstnext = (Button)view.findViewById(R.id.FirstnextButton);
+        Firstnext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((SetUserInfoActivity)getActivity()).setFrag(2);
+            }
+        });
 
         return view;
     }
@@ -64,4 +73,5 @@ public class UserInfoFragment extends Fragment {
 
         return data;
     }
+
 }

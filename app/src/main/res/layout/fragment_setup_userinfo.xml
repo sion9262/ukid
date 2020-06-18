@@ -82,13 +82,16 @@
                 android:layout_marginStart="125dp"
                 android:layout_weight="0.5"
                 android:text="여아"
-                android:textColor="#000" />
+                android:buttonTint="#000"
+                android:textColor="#000"
+                />
 
             <RadioButton
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_weight="1"
                 android:text="남아"
+                android:buttonTint="#000"
                 android:textColor="#000" />
 
         </RadioGroup>
@@ -115,9 +118,9 @@
             android:layout_marginStart="80dp"
             android:backgroundTint="#79baec"
             android:hint="나이를 입력하세요."
+            android:text=""
             android:textColor="#000000"
             android:textColorHint="#000"
-            android:text=""
             app:layout_constraintBottom_toTopOf="@+id/guideline4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -125,5 +128,20 @@
             app:layout_constraintTop_toTopOf="@+id/guideline3"
             app:layout_constraintVertical_bias="0.741" />
 
+        <Button
+            android:id="@+id/FirstnextButton"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="다음"
+            android:textColor="#000000"
+            android:textSize="25dp"
+            app:backgroundTint="@color/action_bar"
+            app:layout_constraintBottom_toTopOf="@+id/name"
+            app:layout_constraintEnd_toEndOf="@+id/age"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/age"
+            app:layout_constraintVertical_bias="0.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

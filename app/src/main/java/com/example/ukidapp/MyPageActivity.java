@@ -76,7 +76,7 @@ public class MyPageActivity extends AppCompatActivity {
         String music = pref.getString("music", "0");
         String physical = pref.getString("physical", "0");
         String nature = pref.getString("nature", "0");
-
+        System.out.println(music);
         dataVals.add(new PieEntry(Float.parseFloat(language), "언어지능"));
         dataVals.add(new PieEntry(Float.parseFloat(math), "수학지능"));
         dataVals.add(new PieEntry(Float.parseFloat(relationship), "인간관계지능"));

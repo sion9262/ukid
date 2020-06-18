@@ -106,6 +106,8 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                     pageIndex--;
                     setFrag(pageIndex);
                 }
+                break;
+
         }
     }
 
@@ -116,14 +118,14 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
         switch (n) {
             case 1 :
                 prev.setVisibility(View.INVISIBLE);
-                next.setVisibility(View.VISIBLE);
-                next.setText("아이 등록");
+                next.setVisibility(View.INVISIBLE);
                 tran.replace(R.id.SetUser, this.userInfoFragment);
                 tran.commit();
                 break;
             case 2:
                 if (userInfoFragment.checkData()){
                     prev.setVisibility(View.VISIBLE);
+                    next.setVisibility(View.VISIBLE);
                     tran.replace(R.id.SetUser, this.languageFragment);
                     tran.commit();
                 }else {
