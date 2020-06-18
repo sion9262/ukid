@@ -1,6 +1,7 @@
 package com.example.ukidapp;
 
 
+
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -79,7 +80,6 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
 
         User = new SetUpDataManager();
         setFrag(1);
-
     }
 
 

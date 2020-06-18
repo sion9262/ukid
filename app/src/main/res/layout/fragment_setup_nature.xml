@@ -13,13 +13,19 @@
         android:textSize="30dp"
         android:gravity="center"
         android:text="자연탐구지능영역"
+<<<<<<< HEAD
         android:textColor="#000"
+=======
+>>>>>>> design
         android:layout_marginBottom="10dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="@string/Nature_1"
+<<<<<<< HEAD
         android:textColor="#000"
+=======
+>>>>>>> design
         />
     <RadioGroup
         android:id="@+id/Nature"
@@ -63,8 +69,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="40dp"
+<<<<<<< HEAD
         android:text="@string/Nature_2"
         android:textColor="#000"/>
+=======
+        android:text="@string/Nature_2" />
+>>>>>>> design
     <RadioGroup
         android:id="@+id/Nature2"
         android:layout_width="match_parent"
@@ -107,7 +117,10 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="@string/Nature_3"
+<<<<<<< HEAD
         android:textColor="#000"
+=======
+>>>>>>> design
         />
     <RadioGroup
         android:id="@+id/Nature3"

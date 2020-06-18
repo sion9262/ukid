@@ -12,23 +12,16 @@
         android:layout_height="50dp"
         android:textSize="30dp"
         android:gravity="center"
-        android:text="음악지능 영역"
-<<<<<<< HEAD
-        android:textColor="#000"
-=======
->>>>>>> design
+        android:text="언어지능 영역"
         android:layout_marginBottom="10dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="@string/Music_1"
-<<<<<<< HEAD
+        android:text="@string/Language_1"
         android:textColor="#000"
-=======
->>>>>>> design
         />
     <RadioGroup
-        android:id="@+id/Music"
+        android:id="@+id/Language1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -69,14 +62,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="40dp"
-<<<<<<< HEAD
-        android:text="@string/Music_2"
-        android:textColor="#000"/>
-=======
-        android:text="@string/Music_2" />
->>>>>>> design
+        android:text="@string/Language_2" />
     <RadioGroup
-        android:id="@+id/Music2"
+        android:id="@+id/Language2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -116,14 +104,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="@string/Music_3"
-<<<<<<< HEAD
-        android:textColor="#000"
-=======
->>>>>>> design
+        android:text="@string/Language_3"
         />
     <RadioGroup
-        android:id="@+id/Music3"
+        android:id="@+id/Language3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
