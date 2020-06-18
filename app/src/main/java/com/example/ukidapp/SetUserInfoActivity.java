@@ -248,8 +248,17 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                         SharedPreferences.Editor editor = pref.edit();
                         editor.putString("checkSetUp", "true");
                         editor.putString("nickname", User.getName());
+                        int age = User.getAge();
+                        editor.putString("age", String.valueOf(age));
+                        editor.putString("language", String.valueOf(User.getLanguage()));
+                        editor.putString("math", String.valueOf(User.getMath()));
+                        editor.putString("place", String.valueOf(User.getPlace()));
+                        editor.putString("physical", String.valueOf(User.getPhysical()));
+                        editor.putString("music", String.valueOf(User.getMusic()));
+                        editor.putString("relationship", String.valueOf(User.getRelationship()));
+                        editor.putString("personal", String.valueOf(User.getPersonal()));
+                        editor.putString("nature", String.valueOf(User.getNature()));
                         editor.commit();
-
                         Intent MainPage = new Intent(SetUserInfoActivity.this, MainActivity.class);
                         startActivity(MainPage);
                         finish();

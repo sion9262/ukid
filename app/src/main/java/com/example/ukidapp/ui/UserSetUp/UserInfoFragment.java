@@ -54,7 +54,12 @@ public class UserInfoFragment extends Fragment {
         checkname = checkname.trim();
         checkage = checkage.trim();
         if (checkname.getBytes().length > 0 && checkage.getBytes().length > 0){
-            return true;
+            try{
+                Double.parseDouble(checkage);
+                return true;
+            } catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
         }
         return false;
     }
