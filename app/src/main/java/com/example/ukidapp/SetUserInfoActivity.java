@@ -1,7 +1,6 @@
 package com.example.ukidapp;
 
 
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -80,6 +79,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
 
         User = new SetUpDataManager();
         setFrag(1);
+
     }
 
 
@@ -117,7 +117,8 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
             case 1 :
                 prev.setVisibility(View.INVISIBLE);
                 next.setVisibility(View.VISIBLE);
-                tran.replace(R.id.SetUser, this.userInfoFragment);
+                next.setText("아이 등록");
+                tran.replace(R.id.SetUser, this.firstFragment);
                 tran.commit();
                 break;
             case 2:
