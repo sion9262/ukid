@@ -13,19 +13,13 @@
         android:textSize="30dp"
         android:gravity="center"
         android:text="음악지능 영역"
-<<<<<<< HEAD
         android:textColor="#000"
-=======
->>>>>>> design
         android:layout_marginBottom="10dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="@string/Music_1"
-<<<<<<< HEAD
         android:textColor="#000"
-=======
->>>>>>> design
         />
     <RadioGroup
         android:id="@+id/Music"
@@ -69,12 +63,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="40dp"
-<<<<<<< HEAD
         android:text="@string/Music_2"
         android:textColor="#000"/>
-=======
-        android:text="@string/Music_2" />
->>>>>>> design
     <RadioGroup
         android:id="@+id/Music2"
         android:layout_width="match_parent"
@@ -117,10 +107,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="@string/Music_3"
-<<<<<<< HEAD
         android:textColor="#000"
-=======
->>>>>>> design
         />
     <RadioGroup
         android:id="@+id/Music3"
