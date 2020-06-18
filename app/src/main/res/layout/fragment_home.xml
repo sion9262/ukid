@@ -6,116 +6,256 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp" />
+
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:backgroundTint="@color/ic_logo_background"
-        app:fabSize="auto"
-        app:maxImageSize="40dp"
-        app:srcCompat="@drawable/honeybee"
-        app:tint="@null" />
+        android:layout_marginBottom="16dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab2"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="언어지능"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            app:backgroundTint="@color/ic_logo_background"
+            app:fabSize="auto"
+            app:maxImageSize="40dp"
+            app:srcCompat="@drawable/honeybee"
+            app:tint="@null"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="80dp"
-        android:layout_marginRight="16dp"
-        app:backgroundTint="@color/ic_logo_background"
-        app:fabSize="auto"
-        app:maxImageSize="40dp"
-        app:srcCompat="@drawable/honeybee"
-        android:visibility="invisible"
-        app:tint="@null" />
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="논리수학"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            app:backgroundTint="@color/ic_logo_background"
+            app:fabSize="auto"
+            app:maxImageSize="40dp"
+            app:srcCompat="@drawable/honeybee"
+            app:tint="@null" />
+
+    </LinearLayout>
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab3"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="144dp"
-        android:layout_marginRight="16dp"
-        app:backgroundTint="@color/ic_logo_background"
-        app:fabSize="auto"
-        app:maxImageSize="40dp"
-        app:srcCompat="@drawable/honeybee"
-        android:visibility="invisible"
-        app:tint="@null" />
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab4"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="공간지능"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            app:backgroundTint="@color/ic_logo_background"
+            app:fabSize="auto"
+            app:maxImageSize="40dp"
+            app:srcCompat="@drawable/honeybee"
+            app:tint="@null" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="208dp"
-        android:layout_marginRight="16dp"
-        app:backgroundTint="@color/ic_logo_background"
-        app:fabSize="auto"
-        app:maxImageSize="40dp"
-        app:srcCompat="@drawable/honeybee"
-        android:visibility="invisible"
-        app:tint="@null" />
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab5"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="인체운동지능"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            app:backgroundTint="@color/ic_logo_background"
+            app:fabSize="auto"
+            app:maxImageSize="40dp"
+            app:srcCompat="@drawable/honeybee"
+            app:tint="@null"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="272dp"
-        android:layout_marginRight="16dp"
-        app:backgroundTint="@color/ic_logo_background"
-        app:fabSize="auto"
-        app:maxImageSize="40dp"
-        app:srcCompat="@drawable/honeybee"
-        android:visibility="invisible"
-        app:tint="@null" />
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab6"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="음악지능"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            app:backgroundTint="@color/ic_logo_background"
+            app:fabSize="auto"
+            app:maxImageSize="40dp"
+            app:srcCompat="@drawable/honeybee"
+            app:tint="@null"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="336dp"
-        android:layout_marginRight="16dp"
-        app:backgroundTint="@color/ic_logo_background"
-        app:fabSize="auto"
-        app:maxImageSize="40dp"
-        app:srcCompat="@drawable/honeybee"
-        android:visibility="invisible"
-        app:tint="@null" />
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab7"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="대인관계지능"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            app:backgroundTint="@color/ic_logo_background"
+            app:fabSize="auto"
+            app:maxImageSize="40dp"
+            app:srcCompat="@drawable/honeybee"
+            app:tint="@null"/>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="400dp"
-        android:layout_marginRight="16dp"
-        app:backgroundTint="@color/ic_logo_background"
-        app:fabSize="auto"
-        app:maxImageSize="40dp"
-        app:srcCompat="@drawable/honeybee"
-        android:visibility="invisible"
-        app:tint="@null" />
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab8"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="개인이해지능"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            app:backgroundTint="@color/ic_logo_background"
+            app:fabSize="auto"
+            app:maxImageSize="40dp"
+            app:srcCompat="@drawable/honeybee"
+            app:tint="@null"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginBottom="464dp"
-        android:layout_marginRight="16dp"
-        app:backgroundTint="@color/ic_logo_background"
-        app:fabSize="auto"
-        app:maxImageSize="40dp"
-        app:srcCompat="@drawable/honeybee"
-        android:visibility="invisible"
-        app:tint="@null" />
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="자연탐구지능"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:background="@android:color/white"
+            android:textColor="@android:color/black"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            app:backgroundTint="@color/ic_logo_background"
+            app:fabSize="auto"
+            app:maxImageSize="40dp"
+            app:srcCompat="@drawable/honeybee"
+            app:tint="@null"/>
+
+    </LinearLayout>
 
 
 

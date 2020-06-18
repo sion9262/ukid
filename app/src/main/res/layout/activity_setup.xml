@@ -3,13 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/ic_logo_background"
     android:orientation="vertical"
-    android:background="@color/cardview_light_background"
-    >
+    android:weightSum="1">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/cardview_light_background">
+        android:weightSum="0">
 
         <Button
             android:id="@+id/prevButton"
@@ -17,27 +18,37 @@
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text="&lt; 뒤로"
+            android:text="&lt; 이전"
             android:textColor="@color/maincolor"
             android:textSize="17dp"
-            app:backgroundTint="@color/ic_logo_background" />
-
+            app:backgroundTint="@color/ic_logo_background"
+            />
         <Button
-            android:id="@+id/nextButton"
             style="@style/Widget.AppCompat.Button.Borderless"
+            android:id="@+id/nextButton"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:layout_gravity="center"
             android:layout_marginLeft="200dp"
             android:text="다음 &gt;"
-            android:textColor="@color/maincolor"
             android:textSize="17dp"
-            app:backgroundTint="@color/cardview_light_background" />
-
+            android:layout_gravity="center"
+            android:textColor="@color/maincolor"
+            app:backgroundTint="@color/cardview_light_background"/>
     </LinearLayout>
+
     <FrameLayout
         android:id="@+id/SetUser"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp"/>
+        android:layout_weight="0.2" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.8">
+
+
+        <!--style="@style/Widget.AppCompat.Button.Borderless"-->
+    </RelativeLayout>
+
 </LinearLayout>

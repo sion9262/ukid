@@ -3,7 +3,12 @@
     package="com.example.ukidapp">
     <!-- 인터넷 사용 권한 추가 -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-sdk />
 
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
     <application
         android:usesCleartextTraffic="true"
         android:allowBackup="true"
@@ -18,18 +23,23 @@
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
 
         <activity android:name=".LoadingActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".LoginActivity"/>
         <activity android:name=".RegisterActivity"/>
         <activity android:name=".SetUserInfoActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity android:name=".MyPageActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".DetectorActivity">
+        </activity>
+        <activity android:name=".YoutubePlayerActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity android:name=".MyPageActivity"/>
     </application>
 
 </manifest>

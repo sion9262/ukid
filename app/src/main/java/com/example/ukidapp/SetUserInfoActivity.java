@@ -1,7 +1,6 @@
 package com.example.ukidapp;
 
 
-
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -80,6 +79,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
 
         User = new SetUpDataManager();
         setFrag(1);
+
     }
 
 
@@ -106,6 +106,8 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                     pageIndex--;
                     setFrag(pageIndex);
                 }
+                break;
+
         }
     }
 
@@ -116,13 +118,14 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
         switch (n) {
             case 1 :
                 prev.setVisibility(View.INVISIBLE);
-                next.setVisibility(View.VISIBLE);
+                next.setVisibility(View.INVISIBLE);
                 tran.replace(R.id.SetUser, this.userInfoFragment);
                 tran.commit();
                 break;
             case 2:
                 if (userInfoFragment.checkData()){
                     prev.setVisibility(View.VISIBLE);
+                    next.setVisibility(View.VISIBLE);
                     tran.replace(R.id.SetUser, this.languageFragment);
                     tran.commit();
                 }else {
@@ -242,12 +245,20 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                     SetUser result = response.body();
                     System.out.println(result.getResultCode());
                     if (result.getResultCode() == 200) {
-                        SharedPreferences pref = getSharedPreferences("Auth", Activity.MODE_PRIVATE);
                         SharedPreferences.Editor editor = pref.edit();
                         editor.putString("checkSetUp", "true");
                         editor.putString("nickname", User.getName());
+                        int age = User.getAge();
+                        editor.putString("age", String.valueOf(age));
+                        editor.putString("language", String.valueOf(User.getLanguage()));
+                        editor.putString("math", String.valueOf(User.getMath()));
+                        editor.putString("place", String.valueOf(User.getPlace()));
+                        editor.putString("physical", String.valueOf(User.getPhysical()));
+                        editor.putString("music", String.valueOf(User.getMusic()));
+                        editor.putString("relationship", String.valueOf(User.getRelationship()));
+                        editor.putString("personal", String.valueOf(User.getPersonal()));
+                        editor.putString("nature", String.valueOf(User.getNature()));
                         editor.commit();
-
                         Intent MainPage = new Intent(SetUserInfoActivity.this, MainActivity.class);
                         startActivity(MainPage);
                         finish();

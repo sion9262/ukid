@@ -1,4 +1,4 @@
-package com.example.ukidapp.ui.StudyLanguage;
+package com.example.ukidapp.ui.StudyObject;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.ukidapp.R;
 
-public class StudyLanguageFragment extends Fragment {
+public class StudyObjectFragment extends Fragment {
 
-    private StudyLanguageViewModel studyLanguageViewModel;
+    private StudyObjectModel studyObjectModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        studyLanguageViewModel =
-                ViewModelProviders.of(this).get(StudyLanguageViewModel.class);
+        studyObjectModel =
+                ViewModelProviders.of(this).get(StudyObjectModel.class);
         View root = inflater.inflate(R.layout.fragment_study_language, container, false);
         final TextView textView = root.findViewById(R.id.text_study_language);
-        studyLanguageViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        studyObjectModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

@@ -13,11 +13,13 @@
         android:textSize="30dp"
         android:gravity="center"
         android:text="공간지능영역"
+        android:textColor="#000"
         android:layout_marginBottom="10dp"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="@string/Place_1"
+        android:textColor="#000"
         />
     <RadioGroup
         android:id="@+id/Place"
@@ -61,7 +63,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:text="@string/Place_2" />
+        android:text="@string/Place_2"
+        android:textColor="#000"/>
     <RadioGroup
         android:id="@+id/Place2"
         android:layout_width="match_parent"
@@ -104,6 +107,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:text="@string/Place_3"
+        android:textColor="#000"
         />
     <RadioGroup
         android:id="@+id/Place3"

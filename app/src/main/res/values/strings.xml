@@ -17,6 +17,9 @@
     <string name="menu_check_interest">관심사 확인하기</string>
     <string name="menu_observe_kid">아이 관찰하기</string>
     <string name="menu_study_image">이미지 학습하기</string>
+    <!-- Youtube!! -->
+    <string name="thumbnail_image_view_desc">Youtube Video thumbnail image view</string>
+    <string name="close_player_activity">Close Player activity</string>
 
     <string name="home_second">Home Second</string>
 
@@ -58,4 +61,7 @@
     <string name="Nature_1">개, 고양이 등 애완동물에 관심이나 호감을 보인다.</string>
     <string name="Nature_2">길가다 꽃과 나무를 보면 관찰하며 이야기한다.</string>
     <string name="Nature_3">육지동물과 바다동물을 구분할 수 있다.</string>
+
+    <string name="tfe_od_app_name" translation_description="Object Detection demo app [CHAR_LIMIT=40]">TFL Detect</string>
+    <string name="tfe_od_camera_error" translation_description="Error regarding camera support[CHAR_LIMIT=40]">This device doesn\'t support Camera2 API.</string>
 </resources>

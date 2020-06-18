@@ -48,7 +48,6 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="bottom"
-                    android:text="이세돌"
                     android:textColor="#000000"
                     android:textSize="26sp" />
 
@@ -77,8 +76,8 @@
         android:layout_weight="0"
         app:cardBackgroundColor="#FFFFFF">
 
-        <com.github.mikephil.charting.charts.RadarChart
-            android:id="@+id/mapsearchdetail_radar_chart"
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/piechart"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </androidx.cardview.widget.CardView>
