@@ -3,14 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/ic_logo_background"
     android:orientation="vertical"
-    android:weightSum="1">
-
+    android:background="@color/cardview_light_background"
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:weightSum="0">
+        android:background="@color/cardview_light_background">
 
         <Button
             android:id="@+id/prevButton"
@@ -18,34 +17,27 @@
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
+            android:text="&lt; 뒤로"
             android:textColor="@color/maincolor"
             android:textSize="17dp"
-            app:backgroundTint="@color/ic_logo_background"
-            app:icon="@drawable/left_arrow" />
+            app:backgroundTint="@color/ic_logo_background" />
+
+        <Button
+            android:id="@+id/nextButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="200dp"
+            android:text="다음 &gt;"
+            android:textColor="@color/maincolor"
+            android:textSize="17dp"
+            app:backgroundTint="@color/cardview_light_background" />
 
     </LinearLayout>
-
     <FrameLayout
         android:id="@+id/SetUser"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0.2" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="0.8">
-
-        <Button
-            android:id="@+id/nextButton"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            app:backgroundTint="@color/action_bar"
-            android:text="다음"
-            android:textColor="#000000"
-            android:textSize="25dp" />
-        <!--style="@style/Widget.AppCompat.Button.Borderless"-->
-    </RelativeLayout>
-
+        android:layout_margin="20dp"/>
 </LinearLayout>

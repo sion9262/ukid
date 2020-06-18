@@ -21,6 +21,7 @@ public class AuthCheckPage extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         int check = checkLogin();
+        System.out.println(check);
         if(check == 1) {
             Intent LoginPage = new Intent(this, LoginActivity.class);
             startActivity(LoginPage);
@@ -41,14 +42,14 @@ public class AuthCheckPage extends AppCompatActivity {
 
     }
 
+
+
     private int checkLogin(){
         SharedPreferences pref = getSharedPreferences("Auth", Activity.MODE_PRIVATE);
 
         String email = pref.getString("email", "");
         String jwt = pref.getString("jwt", "");
         String checkSetUp = pref.getString("checkSetUp", "");
-
-        Log.d("email", email + " " + jwt);
 
         /*
         * 로그인이 안되있다면 1
@@ -58,7 +59,7 @@ public class AuthCheckPage extends AppCompatActivity {
         if (email == "" || jwt == "") {
             return 1;
         } else{
-            if ( checkSetUp == ""){
+            if ( checkSetUp.equals("false") || checkSetUp.equals("")){
                 return 2;
             }
             return 0;

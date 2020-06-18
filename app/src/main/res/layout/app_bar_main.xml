@@ -26,16 +26,7 @@
 
     <include layout="@layout/content_main" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:backgroundTint="@color/ic_logo_background"
-        app:tint="@null"
-        app:fabSize="auto"
-        app:maxImageSize="40dp"
-        app:srcCompat="@drawable/honeybee" />
+
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

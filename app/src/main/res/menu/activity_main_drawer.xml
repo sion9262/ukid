@@ -9,9 +9,9 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_study_language"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_study_language" />
+            android:id="@+id/nav_study_object"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="물체 학습하기" />
         <item
             android:id="@+id/nav_study_math"
             android:icon="@drawable/ic_menu_slideshow"
