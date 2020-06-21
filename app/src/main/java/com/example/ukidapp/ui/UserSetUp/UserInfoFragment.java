@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 
@@ -19,6 +22,13 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class UserInfoFragment extends Fragment {
+
+    RadioGroup rg;
+    RadioButton m;
+    RadioButton f;
+    ImageView img;
+    ImageView a;
+
     View view;
     EditText name;
     EditText age;
@@ -28,13 +38,27 @@ public class UserInfoFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_setup_userinfo, container, false);
-
         TextView textView = (TextView)view.findViewById(R.id.test);
-        //textView.animate().translationY(400).setDuration(1000);
+        rg = (RadioGroup)view.findViewById(R.id.setupSecondR1);
+        m = (RadioButton) view.findViewById(R.id.female);
+        f = (RadioButton) view.findViewById(R.id.male);
+        img = (ImageView)view.findViewById(R.id.profile_image);
 
         name = (EditText)view.findViewById(R.id.name);
         age = (EditText)view.findViewById(R.id.age);
 
+        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton rd = (RadioButton)view.findViewById(rg.getCheckedRadioButtonId());
+                String gender = rd.getText().toString();
+                if(checkedId == R.id.male){
+                    img.setImageResource(R.drawable.boy_profile2);
+                }else if(checkedId == R.id.female) {
+                    img.setImageResource(R.drawable.girl_profile);
+                }
+            }
+        });
 
         Firstnext = (Button)view.findViewById(R.id.FirstnextButton);
         Firstnext.setOnClickListener(new View.OnClickListener() {
@@ -50,10 +74,11 @@ public class UserInfoFragment extends Fragment {
     public boolean checkData(){
         String checkname = name.getText().toString();
         String checkage = age.getText().toString();
+        int r1 = rg.getCheckedRadioButtonId();
 
         checkname = checkname.trim();
         checkage = checkage.trim();
-        if (checkname.getBytes().length > 0 && checkage.getBytes().length > 0){
+        if (checkname.getBytes().length > 0 && checkage.getBytes().length > 0 && r1 != -1){
             try{
                 Double.parseDouble(checkage);
                 return true;
@@ -67,11 +92,13 @@ public class UserInfoFragment extends Fragment {
     public JSONObject getData(){
 
         JSONObject data = new JSONObject();
+        RadioButton rd = (RadioButton)view.findViewById(rg.getCheckedRadioButtonId());
 
 
         try {
             data.put("name", name.getText().toString());
             data.put("age", Integer.parseInt(age.getText().toString()));
+            data.put("gender", rd.getText().toString());
         } catch (JSONException e) {
             e.printStackTrace();
         }

@@ -216,6 +216,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
         try {
             User.setName(initUserData.getString("name"));
             User.setAge(Integer.parseInt(initUserData.getString("age")));
+            User.setGender(initUserData.getString("gender"));
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -248,6 +249,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                         SharedPreferences.Editor editor = pref.edit();
                         editor.putString("checkSetUp", "true");
                         editor.putString("nickname", User.getName());
+                        editor.putString("gender", User.getGender());
                         int age = User.getAge();
                         editor.putString("age", String.valueOf(age));
                         editor.putString("language", String.valueOf(User.getLanguage()));

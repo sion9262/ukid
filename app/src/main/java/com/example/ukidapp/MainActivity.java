@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity{
     SharedPreferences prefs;
     NavigationView navigationView;
     Button settingBtn;
+    ImageView img;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,9 +91,16 @@ public class MainActivity extends AppCompatActivity{
         prefs = getSharedPreferences("Auth", MODE_PRIVATE);
         try{
             String nickname = prefs.getString("nickname", "");
-            View navHeaer = navigationView.inflateHeaderView(R.layout.nav_header_main);
-            TextView tv = (TextView)navHeaer.findViewById(R.id.nickName);
-            settingBtn = (Button)navHeaer.findViewById(R.id.settingBtn);
+            String gender = prefs.getString("gender", "여아");
+            View navHeader = navigationView.inflateHeaderView(R.layout.nav_header_main);
+            img = (ImageView)navHeader.findViewById(R.id.nav_image);
+            if(gender.equals("남아")){
+                img.setImageResource(R.drawable.boy_profile2);
+            }else if(gender.equals("여아")) {
+                img.setImageResource(R.drawable.girl_profile);
+            }
+            TextView tv = (TextView)navHeader.findViewById(R.id.nickName);
+            settingBtn = (Button)navHeader.findViewById(R.id.settingBtn);
             tv.setText(nickname + "님 환영합니다.");
         } catch (Exception e) {
             e.printStackTrace();

@@ -12,6 +12,11 @@ public class AuthModel {
     @SerializedName("jwt")
     @Expose
     private String jwt;
+    @SerializedName("gender")
+    @Expose
+    private String gender;
+
+
     @SerializedName("username")
     @Expose
     private String username;
@@ -43,6 +48,8 @@ public class AuthModel {
     @Expose
     private String place;
 
+
+
     @SerializedName("physical")
     @Expose
     private String physical;
@@ -50,7 +57,13 @@ public class AuthModel {
     @SerializedName("music")
     @Expose
     private String music;
+    public String getGender() {
+        return gender;
+    }
 
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
     public String getAge() {
         return age;
     }
