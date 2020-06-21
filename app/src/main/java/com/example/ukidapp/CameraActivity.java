@@ -17,6 +17,7 @@
 package com.example.ukidapp;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -114,6 +115,14 @@ public abstract class CameraActivity extends AppCompatActivity
       @Override
       public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         System.out.println(listItems.get(position));
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(CameraActivity.this);
+        String msg = labelSubTextResult(listItems.get(position));
+        builder.setTitle("객체탐지성공!").setMessage(msg);
+
+        AlertDialog alertDialog = builder.create();
+
+        alertDialog.show();
       }
 
 
@@ -141,6 +150,9 @@ public abstract class CameraActivity extends AppCompatActivity
       while( i!= -1){
         byteArrayOutputStreamKR.write(i);
         i = inputStreamKR.read();
+
+      }
+      while( j!= -1){
         byteArrayOutputStreamSubText.write(j);
         j = inputStreamSubText.read();
       }
@@ -493,6 +505,7 @@ public abstract class CameraActivity extends AppCompatActivity
   public void showDetectionResult(ArrayList<String> datas){
 
     for (String data : datas){
+      if (data.contains("???")) { continue;}
       for (String label : labelKR){
         if (label.contains(data)){
           data = label;
@@ -506,6 +519,16 @@ public abstract class CameraActivity extends AppCompatActivity
         adapter.notifyDataSetChanged();
       }
     }
+  }
+  public String labelSubTextResult(String item){
+    System.out.println(labelSubText[0]);
+    for (String label : labelSubText){
+
+      if (label.contains(item)){
+        return label;
+      }
+    }
+    return "";
   }
 
 
