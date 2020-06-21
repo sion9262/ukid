@@ -82,7 +82,9 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
 
     }
 
-
+    public void firstNextClick(){
+        onClick(next);
+    }
     @Override
     public void onClick(View v) {
 
@@ -97,6 +99,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                     }
                 }
                 if (mPage > pageIndex) {
+                    System.out.println(v.getId());
                     pageIndex++;
                     setFrag(pageIndex);
                 }

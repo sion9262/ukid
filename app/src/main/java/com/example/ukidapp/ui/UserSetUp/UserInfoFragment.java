@@ -64,7 +64,7 @@ public class UserInfoFragment extends Fragment {
         Firstnext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((SetUserInfoActivity)getActivity()).setFrag(2);
+                ((SetUserInfoActivity)getActivity()).firstNextClick();
             }
         });
 
