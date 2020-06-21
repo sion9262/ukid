@@ -36,9 +36,7 @@
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity android:name=".MyPageActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity
-            android:name=".DetectorActivity"
-            >
+        <activity android:name=".DetectorActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
