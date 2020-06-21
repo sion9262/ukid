@@ -23,9 +23,11 @@ import com.example.ukidapp.YoutubeActivity;
 import com.example.ukidapp.YoutubePlayerActivity;
 import com.example.ukidapp.adapter.YoutubeVideoAdapter;
 import com.example.ukidapp.api.Model.MoviesObject;
+import com.example.ukidapp.api.Model.ResultCode;
 import com.example.ukidapp.api.Model.YoutubeModel;
 import com.example.ukidapp.api.RetrofitSender;
 import com.example.ukidapp.model.YoutubeVideoModel;
+import com.example.ukidapp.src.PlayMovies;
 import com.example.ukidapp.utils.RecyclerViewOnClickListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -47,9 +49,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         root = inflater.inflate(R.layout.fragment_home, container, false);
         init();
-
         setUpRecyclerView();
         getYoutube();
+
         return root;
     }
 
@@ -75,11 +77,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
                 //start youtube player activity by passing selected video id via intent
                 startActivity(new Intent(mContext, YoutubePlayerActivity.class)
-                        .putExtra("video_id", youtubeVideoModelArrayList.get(position).getVideoId()));
+                        .putExtra("video_id", youtubeVideoModelArrayList.get(position).getVideoId())
+                        .putExtra("video_title", youtubeVideoModelArrayList.get(position).getTitle())
+                        .putExtra("video_category", youtubeVideoModelArrayList.get(position).getCategory()));
 
             }
         }));
     }
+
     private void getYoutube(){
         // http 통신 시작
         RetrofitSender.getServer().movies().enqueue(new Callback<YoutubeModel>() {
@@ -107,8 +112,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                         //System.out.println(MovieIDs);
                         String[] Titles = MovieTitle.toArray(new String[MovieTitle.size()]);
                         System.out.println(Titles);
+                        String[] Category = MovieCategory.toArray(new String[MovieCategory.size()]);
                         //System.out.println(MovieTitle);
-                        ArrayList<YoutubeVideoModel> YoutubeModel = generateDummyVideoList(IDs, Titles);
+                        ArrayList<YoutubeVideoModel> YoutubeModel = generateDummyVideoList(IDs, Titles, Category);
                         populateRecyclerView(YoutubeModel);
 
 
@@ -128,7 +134,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         });
 
     }
-    private ArrayList<YoutubeVideoModel> generateDummyVideoList(String[] IDs, String[] Titles) {
+    private ArrayList<YoutubeVideoModel> generateDummyVideoList(String[] IDs, String[] Titles, String[] Category) {
         ArrayList<YoutubeVideoModel> youtubeVideoModelArrayList = new ArrayList<>();
         //get the video id array, title array and duration array from strings.xml
         //String[] videoIDArray = MovieIDs.toArray(new String[MovieIDs.size()]);
@@ -141,6 +147,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             YoutubeVideoModel youtubeVideoModel = new YoutubeVideoModel();
             youtubeVideoModel.setVideoId(IDs[i]);
             youtubeVideoModel.setTitle(Titles[i]);
+            youtubeVideoModel.setCategory(Category[i]);
             //youtubeVideoModel.setDuration(videoDurationArray[i]);
             youtubeVideoModelArrayList.add(youtubeVideoModel);
 

@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.ukidapp.api.Model.SetUser;
+import com.example.ukidapp.api.Model.ResultCode;
 import com.example.ukidapp.api.RetrofitSender;
 import com.example.ukidapp.src.SetUpDataManager;
 import com.example.ukidapp.ui.UserSetUp.MathFragment;
@@ -238,11 +238,11 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
 
         User.setId(pref.getString("id", ""));
         // http 통신 시작
-        RetrofitSender.getServer().setupuser(User).enqueue(new Callback<SetUser>() {
+        RetrofitSender.getServer().setupuser(User).enqueue(new Callback<ResultCode>() {
             @Override
-            public void onResponse(Call<SetUser> call, Response<SetUser> response) {
+            public void onResponse(Call<ResultCode> call, Response<ResultCode> response) {
                 if (response.isSuccessful()){
-                    SetUser result = response.body();
+                    ResultCode result = response.body();
                     System.out.println(result.getResultCode());
                     if (result.getResultCode() == 200) {
                         SharedPreferences.Editor editor = pref.edit();
@@ -269,7 +269,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
 
             }
             @Override
-            public void onFailure(Call<SetUser> call, Throwable t) {
+            public void onFailure(Call<ResultCode> call, Throwable t) {
                 System.out.println("서버 꺼짐");
             }
         });
