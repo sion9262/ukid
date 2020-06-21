@@ -1,12 +1,15 @@
 package com.example.ukidapp.api;
 
 import com.example.ukidapp.api.Model.AuthModel;
-import com.example.ukidapp.api.Model.SetUser;
+import com.example.ukidapp.api.Model.ResultCode;
+import com.example.ukidapp.api.Model.YoutubeModel;
 import com.example.ukidapp.src.Auth;
 import com.example.ukidapp.src.SetUpDataManager;
+import com.example.ukidapp.src.PlayMovies;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
@@ -22,6 +25,15 @@ public interface RetrofitInterface {
 
     @POST("setupuser")
     @Headers({"Content-Type: application/json;charset=UTF-8"})
-    Call<SetUser> setupuser(@Body SetUpDataManager user);
+    Call<ResultCode> setupuser(@Body SetUpDataManager user);
+
+    @GET("movies")
+    @Headers({"Content-Type: application/json;charset=UTF-8"})
+    Call<YoutubeModel> movies();
+
+    @POST("userplaymovie")
+    @Headers({"Content-Type: application/json;charset=UTF-8"})
+    Call<ResultCode> userplaymovie(@Body PlayMovies movies);
+
 
 }

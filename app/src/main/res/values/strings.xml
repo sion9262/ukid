@@ -10,13 +10,16 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
+    <string name="menu_home">학습하기</string>
     <string name="menu_study_language">언어 학습하기</string>
     <string name="menu_study_math">수리 학습하기</string>
     <string name="menu_study_science">과학 탐구하기</string>
     <string name="menu_check_interest">관심사 확인하기</string>
     <string name="menu_observe_kid">아이 관찰하기</string>
     <string name="menu_study_image">이미지 학습하기</string>
+    <!-- Youtube!! -->
+    <string name="thumbnail_image_view_desc">Youtube Video thumbnail image view</string>
+    <string name="close_player_activity">Close Player activity</string>
 
     <string name="home_second">Home Second</string>
 
@@ -25,4 +28,40 @@
 
     <string name="loading">LoadingPage</string>
 
+
+    <!-- 다중지능 별 학습내용 -->
+    <string name="Language_1">이름이나 나이를 물으면 아이가 말할 수 있다.</string>
+    <string name="Language_2">긍정 또는 부정의 질문에 예/아니요 라고 대답한다.</string>
+    <string name="Language_3">좋음, 싫음, 슬픔 등의 감정을 언어로 표현한다.</string>
+
+    <string name="Math_1">숫자를 이용한 놀이를 좋아한다.</string>
+    <string name="Math_2">유사한 사물을 서로 연결할 수 있다.</string>
+    <string name="Math_3">집안의 여러 가지 물건에 관심을 가지고 어떻게 작동하는가 궁금해한다.</string>
+
+    <string name="Place_1">블록 쌓기와 같은 만들기를 즐겨한다.</string>
+    <string name="Place_2">장난감을 분리하고 끼워 맞추기를 좋아한다.</string>
+    <string name="Place_3">집안의 물건을 정리하거나 배치하는 것을 좋아한다.</string>
+
+    <string name="Physical_1">몸을 많이 움직이는 놀이를 좋아한다.</string>
+    <string name="Physical_2">행동이 둔하지 않고 민첩하며 활동적이다.</string>
+    <string name="Physical_3">야외에 나가서 노는것을 좋아한다.</string>
+
+    <string name="Music_1">음악이 나오면 몸을 흔들고 좋아한다.</string>
+    <string name="Music_2">동요를 쉽게 배우고 멜로디에 맞게 노래를 부른다.</string>
+    <string name="Music_3">장난감이나 기구로 연주하는 것을 좋아한다.</string>
+
+    <string name="Relationship_1">소꿉놀이에 관심을 가지며 참여한다.</string>
+    <string name="Relationship_2">또래와 만나면 먼저 다가간다.</string>
+    <string name="Relationship_3">낯선 사람이나 공간에도 쉽게 적응한다.</string>
+
+    <string name="Personal_1">혼자서 해야 할 일을 스스로 하려고한다. (옷입기, 양치하기 등)</string>
+    <string name="Personal_2">자신의 감정을 표현 잘 한다.</string>
+    <string name="Personal_3">음식맛이 이상하면 알아채서 표현한다.</string>
+
+    <string name="Nature_1">개, 고양이 등 애완동물에 관심이나 호감을 보인다.</string>
+    <string name="Nature_2">길가다 꽃과 나무를 보면 관찰하며 이야기한다.</string>
+    <string name="Nature_3">육지동물과 바다동물을 구분할 수 있다.</string>
+
+    <string name="tfe_od_app_name" translation_description="Object Detection demo app [CHAR_LIMIT=40]">TFL Detect</string>
+    <string name="tfe_od_camera_error" translation_description="Error regarding camera support[CHAR_LIMIT=40]">This device doesn\'t support Camera2 API.</string>
 </resources>

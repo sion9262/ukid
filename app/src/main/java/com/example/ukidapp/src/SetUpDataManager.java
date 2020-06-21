@@ -18,6 +18,50 @@ public class SetUpDataManager {
         this.id = id;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public int getLanguage() {
+        return language;
+    }
+
+    public int getMath() {
+        return math;
+    }
+
+    public int getPlace() {
+        return place;
+    }
+
+    public int getPhysical() {
+        return physical;
+    }
+
+    public int getMusic() {
+        return music;
+    }
+
+    public int getRelationship() {
+        return relationship;
+    }
+
+    public int getPersonal() {
+        return personal;
+    }
+
+    public int getNature() {
+        return nature;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public String getId() {
+        return id;
+    }
+
     public SetUpDataManager(){
         name = "";
         age = 0;
@@ -32,6 +76,11 @@ public class SetUpDataManager {
         token = "";
         id = "";
     }
+
+    public String getName(){
+        return this.name;
+    }
+
 
     public void setToken(String token) {
         this.token = token;
