@@ -214,26 +214,31 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
 
     private boolean checkAllData(){
         // 모든 fragment의 데이터 가져오는 부분.
-        JSONObject initUserData = userInfoFragment.getData();
+        if (natureFragment.checkData()){
+            JSONObject initUserData = userInfoFragment.getData();
 
-        try {
-            User.setName(initUserData.getString("name"));
-            User.setAge(Integer.parseInt(initUserData.getString("age")));
-            User.setGender(initUserData.getString("gender"));
-        } catch (JSONException e) {
-            e.printStackTrace();
+            try {
+                User.setName(initUserData.getString("name"));
+                User.setAge(Integer.parseInt(initUserData.getString("age")));
+                User.setGender(initUserData.getString("gender"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            User.setLanguage(languageFragment.getData());
+            User.setMath(mathFragment.getData());
+            User.setMusic(musicFragment.getData());
+            User.setNature(natureFragment.getData());
+            User.setPersonal(personalFragment.getData());
+            User.setPhysical(physicalFragment.getData());
+            User.setPlace(placeFragment.getData());
+            User.setRelationship(relationshipFragment.getData());
+
+            return true;
+        }else{
+            return false;
         }
 
-        User.setLanguage(languageFragment.getData());
-        User.setMath(mathFragment.getData());
-        User.setMusic(musicFragment.getData());
-        User.setNature(natureFragment.getData());
-        User.setPersonal(personalFragment.getData());
-        User.setPhysical(physicalFragment.getData());
-        User.setPlace(placeFragment.getData());
-        User.setRelationship(relationshipFragment.getData());
-
-        return true;
     }
 
 
