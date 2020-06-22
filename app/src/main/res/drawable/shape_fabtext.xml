@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#79baec" /> //배경색
+    <solid android:color="#398aff" /> //배경색
 
 
     <corners
