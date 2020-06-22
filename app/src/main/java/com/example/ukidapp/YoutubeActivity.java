@@ -18,6 +18,11 @@ import java.util.ArrayList;
 
 import com.example.ukidapp.api.Model.YoutubeModel;
 import com.example.ukidapp.api.RetrofitSender;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 
 
 import retrofit2.Call;
@@ -28,12 +33,12 @@ public class YoutubeActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     YoutubeModel movies;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_youtube);
         setUpRecyclerView();
+
         //populateRecyclerView();
         getYoutube();
 
@@ -61,14 +66,16 @@ public class YoutubeActivity extends AppCompatActivity {
         recyclerView.addOnItemTouchListener(new RecyclerViewOnClickListener(this, new RecyclerViewOnClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-
+                //넘겨줘야할 데이터 : id, title, category
                 //start youtube player activity by passing selected video id via intent
                 startActivity(new Intent(YoutubeActivity.this, YoutubePlayerActivity.class)
-                        .putExtra("video_id", youtubeVideoModelArrayList.get(position).getVideoId()));
+                        .putExtra("video_id", youtubeVideoModelArrayList.get(position).getVideoId())
+                        .putExtra("video_title", youtubeVideoModelArrayList.get(position).getTitle()));
 
             }
         }));
     }
+
     private void getYoutube(){
         // http 통신 시작
         RetrofitSender.getServer().movies().enqueue(new Callback<YoutubeModel>() {

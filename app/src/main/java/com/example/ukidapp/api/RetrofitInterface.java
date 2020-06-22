@@ -6,6 +6,7 @@ import com.example.ukidapp.api.Model.YoutubeModel;
 import com.example.ukidapp.src.Auth;
 import com.example.ukidapp.api.Model.Movies;
 import com.example.ukidapp.src.SetUpDataManager;
+import com.example.ukidapp.src.WatchMoviesModel;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -31,5 +32,8 @@ public interface RetrofitInterface {
     @Headers({"Content-Type: application/json;charset=UTF-8"})
     Call<YoutubeModel> movies();
 
+    @POST("watchMovies")
+    @Headers({"Content-Type: application/json;charset=UTF-8"})
+    Call<SetUser> watchMovies(@Body WatchMoviesModel WMM);
 
 }
