@@ -5,146 +5,199 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/setup_layout"
-    android:background="@color/cardview_light_background"
-    >
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:textSize="30dp"
-        android:gravity="center"
-        android:text="공간지능영역"
-        android:textColor="#000"
-        android:layout_marginBottom="10dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="@string/Place_1"
-        android:textColor="#000"
-        />
-    <RadioGroup
-        android:id="@+id/Place"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="20dp">
+    android:background="@color/cardview_light_background">
 
-        <RadioButton
-            android:layout_weight="1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:textColor="#000"
-            android:text="1"/>
-        <RadioButton
-            android:layout_weight="1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:textColor="#000"
-            android:text="2"/>
-        <RadioButton
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="20dp"
-            android:textColor="#000"
-            android:text="3"/>
-        <RadioButton
-            android:layout_weight="1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:textColor="#000"
-            android:text="4"/>
-        <RadioButton
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="20dp"
-            android:textColor="#000"
-            android:text="5"/>
-    </RadioGroup>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="@string/Place_2"
-        android:textColor="#000"/>
-    <RadioGroup
-        android:id="@+id/Place2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="20dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="공간지능영역"
+            android:textColor="#000"
+            android:textSize="30dp"
+            app:layout_constraintTop_toTopOf="parent"/>
 
-        <RadioButton
-            android:layout_weight="1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+        <TextView
+            android:id="@+id/textview1"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="@string/Place_1"
             android:textColor="#000"
-            android:text="1"/>
-        <RadioButton
-            android:layout_weight="1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:textColor="#000"
-            android:text="2"/>
-        <RadioButton
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="20dp"
-            android:textColor="#000"
-            android:text="3"/>
-        <RadioButton
-            android:layout_weight="1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:textColor="#000"
-            android:text="4"/>
-        <RadioButton
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="20dp"
-            android:textColor="#000"
-            android:text="5"/>
-    </RadioGroup>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="@string/Place_3"
-        android:textColor="#000"
-        />
-    <RadioGroup
-        android:id="@+id/Place3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="20dp">
+            app:layout_constraintTop_toTopOf="@+id/guideline11"
+            android:layout_marginLeft="8dp"/>
 
-        <RadioButton
-            android:layout_weight="1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+        <RadioGroup
+            android:id="@+id/Place"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/textview1">
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:text="1"
+                android:textColor="#000" />
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:text="2"
+                android:textColor="#000" />
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:text="3"
+                android:textColor="#000" />
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:text="4"
+                android:textColor="#000" />
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:text="5"
+                android:textColor="#000" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textview2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="@string/Place_2"
             android:textColor="#000"
-            android:text="1"/>
-        <RadioButton
-            android:layout_weight="1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            app:layout_constraintTop_toTopOf="@+id/guideline12"
+            android:layout_marginLeft="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/Place2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/textview2">
+
+            <RadioButton
+                android:layout_width="00dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:text="1"
+                android:textColor="#000" />
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:text="2"
+                android:textColor="#000" />
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:text="3"
+                android:textColor="#000" />
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:text="4"
+                android:textColor="#000" />
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:text="5"
+                android:textColor="#000" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textview3"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="@string/Place_3"
             android:textColor="#000"
-            android:text="2"/>
-        <RadioButton
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="20dp"
-            android:textColor="#000"
-            android:text="3"/>
-        <RadioButton
-            android:layout_weight="1"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:textColor="#000"
-            android:text="4"/>
-        <RadioButton
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="20dp"
-            android:textColor="#000"
-            android:text="5"/>
-    </RadioGroup>
+            app:layout_constraintTop_toTopOf="@+id/guideline13"
+            android:layout_marginLeft="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/Place3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/textview3">
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:text="1"
+                android:textColor="#000" />
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:text="2"
+                android:textColor="#000" />
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:text="3"
+                android:textColor="#000" />
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:text="4"
+                android:textColor="#000" />
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:text="5"
+                android:textColor="#000" />
+        </RadioGroup>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="100dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="219dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="338dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
