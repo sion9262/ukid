@@ -16,20 +16,14 @@ import com.example.ukidapp.R;
 
 public class StudyMathFragment extends Fragment {
 
-    private StudyMathViewModel studyMathViewModel;
+    private StudyMathViewModel studyScienceViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        studyMathViewModel =
+        studyScienceViewModel =
                 ViewModelProviders.of(this).get(StudyMathViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_study_math, container, false);
-        final TextView textView = root.findViewById(R.id.text_study_math);
-        studyMathViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        View root = inflater.inflate(R.layout.calculator_play, container, false);
+
         return root;
     }
 }

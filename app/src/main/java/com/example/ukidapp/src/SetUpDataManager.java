@@ -15,6 +15,8 @@ public class SetUpDataManager {
     private String id;
     private String gender;
 
+
+
     public String getGender() {
         return gender;
     }

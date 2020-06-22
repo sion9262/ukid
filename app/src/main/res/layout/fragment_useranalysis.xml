@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.UserAnalysis.UserAnalysisFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#fff">
+
+
+
+        <TextView
+            android:id="@+id/userScoreText"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:text="박시온 어린이는 8가지 다중지능 중 \n전부다 높고 선호하는것으로 나타났습니다."
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="#FFF"
+            android:background="#39B9F2"
+            android:layout_marginBottom="30dp"/>
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:id="@+id/userTopbrainchart"
+            android:layout_marginBottom="30dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="다중지능의 대표적인 직업은?"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="#000"
+            />
+        <Button
+            android:id="@+id/detailscore"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/buttonradius"
+            android:text="확인하러가기"/>
+    </LinearLayout>
+
+
+</ScrollView>
