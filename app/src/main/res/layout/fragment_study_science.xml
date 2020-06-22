@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.StudyScience.StudyScienceFragment">
+    tools:context=".ui.StudyMath.StudyMathFragment">
 
     <TextView
         android:id="@+id/text_study_science"

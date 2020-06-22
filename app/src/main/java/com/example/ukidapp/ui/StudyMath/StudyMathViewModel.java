@@ -1,15 +1,15 @@
-package com.example.ukidapp.ui.StudyScience;
+package com.example.ukidapp.ui.StudyMath;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class StudyScienceViewModel extends ViewModel {
+public class StudyMathViewModel extends ViewModel {
     private MutableLiveData<String> mText;
 
-    public StudyScienceViewModel() {
+    public StudyMathViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("과학 탐구하기");
+        mText.setValue("수학 탐구하기");
     }
 
     public LiveData<String> getText() {

@@ -40,7 +40,4 @@ public interface RetrofitInterface {
     @Headers({"Content-Type: application/json;charset=UTF-8"})
     Call<ResultCode> userplaymovie(@Body PlayMovies movies);
 
-    @GET("userplaymovies/{user}")
-    @Headers({"Content-Type: application/json;charset=UTF-8"})
-    Call<UserPlayModel> userplaymovies(@Path("user") String user);
 }
