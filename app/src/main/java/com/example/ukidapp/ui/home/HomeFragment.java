@@ -1,46 +1,27 @@
 package com.example.ukidapp.ui.home;
 
-import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.ukidapp.MainActivity;
 import com.example.ukidapp.R;
-import com.example.ukidapp.YoutubeActivity;
 import com.example.ukidapp.YoutubePlayerActivity;
 import com.example.ukidapp.adapter.YoutubeVideoAdapter;
 import com.example.ukidapp.api.Model.MoviesObject;
-import com.example.ukidapp.api.Model.ResultCode;
 import com.example.ukidapp.api.Model.YoutubeModel;
 import com.example.ukidapp.api.RetrofitSender;
 import com.example.ukidapp.model.YoutubeVideoModel;
-import com.example.ukidapp.src.PlayMovies;
 import com.example.ukidapp.utils.RecyclerViewOnClickListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -84,23 +65,28 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
      * populate the recyclerview and implement the click event here
      */
     private void populateRecyclerView(ArrayList<YoutubeVideoModel> YoutubeModel) {
+
         final ArrayList<YoutubeVideoModel> youtubeVideoModelArrayList = YoutubeModel;
+        System.out.println("아이디 확인 " +youtubeVideoModelArrayList.get(0).getVideoId());
+        mContext = mContext = getActivity();
         YoutubeVideoAdapter adapter = new YoutubeVideoAdapter(mContext, youtubeVideoModelArrayList);
+
+        adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
-
         //set click event
-        recyclerView.addOnItemTouchListener(new RecyclerViewOnClickListener(mContext, new RecyclerViewOnClickListener.OnItemClickListener() {
+        adapter.setItemClick(new YoutubeVideoAdapter.ItemClick() {
             @Override
-            public void onItemClick(View view, int position) {
-
+            public void onClick(View view, int position) {
                 //start youtube player activity by passing selected video id via intent
                 startActivity(new Intent(mContext, YoutubePlayerActivity.class)
                         .putExtra("video_id", youtubeVideoModelArrayList.get(position).getVideoId())
                         .putExtra("video_title", youtubeVideoModelArrayList.get(position).getTitle())
                         .putExtra("video_category", youtubeVideoModelArrayList.get(position).getCategory()));
 
+
             }
-        }));
+        });
+
     }
 
     private void getYoutube(){
@@ -127,7 +113,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                         System.out.println(MovieTitle);
 
                         String[] IDs = MovieIDs.toArray(new String[MovieIDs.size()]);
-                        //System.out.println(MovieIDs);
+                        System.out.println("초기데이터"+MovieIDs);
                         String[] Titles = MovieTitle.toArray(new String[MovieTitle.size()]);
                         System.out.println(Titles);
                         String[] Category = MovieCategory.toArray(new String[MovieCategory.size()]);
@@ -210,13 +196,49 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         fab7.setOnClickListener(this);
         fab8.setOnClickListener(this);
     }
-
+    /*
+            fab1 : 언어지능
+            fab2 : 논리수학
+            fab3 : 공간지능
+            fab4 : 신체운동지능
+            fab5 : 음악지능
+            fab6 : 대인간지능
+            fab7 : 자기성찰지능
+            fab8 : 자연친화지능
+         */
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.fab:
                 toggleFab();
                 break;
+            case R.id.fab1:
+                changeMovies("언어지능");
+                break;
+            case R.id.fab2:
+                changeMovies("논리수학");
+                break;
+            case R.id.fab3:
+                changeMovies("공간지능");
+                break;
+            case R.id.fab4:
+                changeMovies("신체운동지능");
+                break;
+            case R.id.fab5:
+                changeMovies("음악지능");
+                break;
+            case R.id.fab6:
+                changeMovies("대인간지능");
+                break;
+            case R.id.fab7:
+                changeMovies("자기성찰지능");
+                break;
+            case R.id.fab8:
+                changeMovies("자연친화지능");
+                break;
+
+
+
         }
         if (isFabOpen){
             fab.setImageResource(R.drawable.clear);
@@ -228,7 +250,55 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    public void changeMovies(String category){
+        // http 통신 시작
+        RetrofitSender.getServer().moviesCategory(category).enqueue(new Callback<YoutubeModel>() {
 
+            @Override
+            public void onResponse(Call<YoutubeModel> call, Response<YoutubeModel> response) {
+                if (response.isSuccessful()) {
+                    YoutubeModel result = response.body();
+                    System.out.println(result.getMoviesObject());
+                    MoviesObject[] datas = result.getMoviesObject();
+                    try {
+                        ArrayList<String> MovieIDs = new ArrayList<String>();
+                        ArrayList<String> MovieTitle = new ArrayList<String>();
+                        ArrayList<String> MovieCategory = new ArrayList<String>();
+                        String[] videoIDArray = MovieIDs.toArray(new String[MovieIDs.size()]);
+
+                        for (MoviesObject data : datas) {
+                            MovieIDs.add(data.getMovieId());
+                            MovieTitle.add(data.getTitle());
+                            MovieCategory.add(data.getCategory());
+                        }
+
+                        String[] IDs = MovieIDs.toArray(new String[MovieIDs.size()]);
+                        System.out.println(MovieIDs);
+                        String[] Titles = MovieTitle.toArray(new String[MovieTitle.size()]);
+                        System.out.println(Titles);
+                        String[] Category = MovieCategory.toArray(new String[MovieCategory.size()]);
+                        //System.out.println(MovieTitle);
+                        setUpRecyclerView();
+                        ArrayList<YoutubeVideoModel> YoutubeModel = generateDummyVideoList(IDs, Titles, Category);
+                        populateRecyclerView(YoutubeModel);
+
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                } else {
+                    System.out.println("실패");
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<YoutubeModel> call, Throwable t) {
+                System.out.println("서버 꺼짐");
+            }
+        });
+    }
 
     private void toggleFab() {
         if (isFabOpen) {
@@ -262,11 +332,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
             isFabOpen = false;
 
-
-            /*Paint paint = new Paint();
-            paint.setColor(Color.BLACK);
-            paint.setAlpha(0);
-            ((CoordinatorLayout)root.findViewById(R.id.layout)).setBackgroundColor(paint.getColor());*/
 
         } else {
 

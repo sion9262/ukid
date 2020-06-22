@@ -25,12 +25,19 @@ public class YoutubeVideoAdapter extends RecyclerView.Adapter<YoutubeViewHolder>
     private static final String TAG = YoutubeVideoAdapter.class.getSimpleName();
     private Context context;
     private ArrayList<YoutubeVideoModel> youtubeVideoModelArrayList;
-
-
-    public YoutubeVideoAdapter(Context context, ArrayList<YoutubeVideoModel> youtubeVideoModelArrayList) {
-        this.context = context;
-        this.youtubeVideoModelArrayList = youtubeVideoModelArrayList;
+    private ItemClick itemClick;
+    public interface  ItemClick{
+        public void onClick(View view, int position);
     }
+    public void setItemClick(ItemClick itemClick){
+        this.itemClick = itemClick;
+    }
+
+    public YoutubeVideoAdapter(Context context, ArrayList<YoutubeVideoModel> youtubeVideoModels){
+        this.context = context;
+        this.youtubeVideoModelArrayList = youtubeVideoModels;
+    }
+
 
     @Override
     public YoutubeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -47,6 +54,15 @@ public class YoutubeVideoAdapter extends RecyclerView.Adapter<YoutubeViewHolder>
         holder.videoTitle.setText(youtubeVideoModel.getTitle());
         holder.videoDuration.setText(youtubeVideoModel.getDuration());
 
+        holder.itemView.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                if(itemClick != null){
+                    itemClick.onClick(v, position);
+                }
+            }
+        });
 
         /*  initialize the thumbnail image view , we need to pass Developer Key */
         holder.videoThumbnailImageView.initialize(Constants.DEVELOPER_KEY, new YouTubeThumbnailView.OnInitializedListener() {
