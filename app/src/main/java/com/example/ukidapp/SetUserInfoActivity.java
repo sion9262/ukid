@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -55,6 +56,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
     RelationshipFragment relationshipFragment;
     PersonalFragment personalFragment;
     NatureFragment natureFragment;
+    TextView textViewPage;
 
     SetUpDataManager User;
     @Override
@@ -64,6 +66,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
 
         next = (Button)findViewById(R.id.nextButton);
         prev = (Button)findViewById(R.id.prevButton);
+        textViewPage = (TextView)findViewById(R.id.textViewPage);
         next.setOnClickListener(this);
         prev.setOnClickListener(this);
         userInfoFragment = new UserInfoFragment();
@@ -122,6 +125,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
             case 1 :
                 prev.setVisibility(View.INVISIBLE);
                 next.setVisibility(View.INVISIBLE);
+                textViewPage.setVisibility(View.INVISIBLE);
                 tran.replace(R.id.SetUser, this.userInfoFragment);
                 tran.commit();
                 break;
@@ -129,8 +133,10 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                 if (userInfoFragment.checkData()){
                     prev.setVisibility(View.VISIBLE);
                     next.setVisibility(View.VISIBLE);
+                    textViewPage.setVisibility(View.VISIBLE);
                     tran.replace(R.id.SetUser, this.languageFragment);
                     tran.commit();
+                    textViewPage.setText(pageIndex-1 +" / 8");
                 }else {
                     pageIndex--;
                     errToast();
@@ -140,6 +146,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                 if (languageFragment.checkData()){
                     tran.replace(R.id.SetUser, this.mathFragment);
                     tran.commit();
+                    textViewPage.setText(pageIndex-1 +" / 8");
                 }else {
                     pageIndex--;
                     errToast();
@@ -149,6 +156,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                 if (mathFragment.checkData()){
                     tran.replace(R.id.SetUser, this.placeFragment);
                     tran.commit();
+                    textViewPage.setText(pageIndex-1 +" / 8");
                 }else {
                     pageIndex--;
                     errToast();
@@ -158,6 +166,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                 if (placeFragment.checkData()){
                     tran.replace(R.id.SetUser, this.physicalFragment);
                     tran.commit();
+                    textViewPage.setText(pageIndex-1 +" / 8");
                 }else {
                     pageIndex--;
                     errToast();
@@ -167,6 +176,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                 if (physicalFragment.checkData()){
                     tran.replace(R.id.SetUser, this.musicFragment);
                     tran.commit();
+                    textViewPage.setText(pageIndex-1 +" / 8");
                 }else {
                     pageIndex--;
                     errToast();
@@ -177,6 +187,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                     prev.setVisibility(View.VISIBLE);
                     tran.replace(R.id.SetUser, this.relationshipFragment);
                     tran.commit();
+                    textViewPage.setText(pageIndex-1 +" / 8");
                 }else {
                     pageIndex--;
                     errToast();
@@ -187,6 +198,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                 if (relationshipFragment.checkData()) {
                     tran.replace(R.id.SetUser, this.personalFragment);
                     tran.commit();
+                    textViewPage.setText(pageIndex-1 +" / 8");
                 }else {
                     pageIndex--;
                     errToast();
@@ -198,6 +210,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                     next.setText("완료");
                     tran.replace(R.id.SetUser, this.natureFragment);
                     tran.commit();
+                    textViewPage.setText(pageIndex-1 +" / 8");
                 }else{
                     pageIndex--;
                     errToast();
