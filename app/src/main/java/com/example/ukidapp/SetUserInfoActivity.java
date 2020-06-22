@@ -82,7 +82,9 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
 
     }
 
-
+    public void firstNextClick(){
+        onClick(next);
+    }
     @Override
     public void onClick(View v) {
 
@@ -97,6 +99,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                     }
                 }
                 if (mPage > pageIndex) {
+                    System.out.println(v.getId());
                     pageIndex++;
                     setFrag(pageIndex);
                 }
@@ -211,25 +214,31 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
 
     private boolean checkAllData(){
         // 모든 fragment의 데이터 가져오는 부분.
-        JSONObject initUserData = userInfoFragment.getData();
+        if (natureFragment.checkData()){
+            JSONObject initUserData = userInfoFragment.getData();
 
-        try {
-            User.setName(initUserData.getString("name"));
-            User.setAge(Integer.parseInt(initUserData.getString("age")));
-        } catch (JSONException e) {
-            e.printStackTrace();
+            try {
+                User.setName(initUserData.getString("name"));
+                User.setAge(Integer.parseInt(initUserData.getString("age")));
+                User.setGender(initUserData.getString("gender"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            User.setLanguage(languageFragment.getData());
+            User.setMath(mathFragment.getData());
+            User.setMusic(musicFragment.getData());
+            User.setNature(natureFragment.getData());
+            User.setPersonal(personalFragment.getData());
+            User.setPhysical(physicalFragment.getData());
+            User.setPlace(placeFragment.getData());
+            User.setRelationship(relationshipFragment.getData());
+
+            return true;
+        }else{
+            return false;
         }
 
-        User.setLanguage(languageFragment.getData());
-        User.setMath(mathFragment.getData());
-        User.setMusic(musicFragment.getData());
-        User.setNature(natureFragment.getData());
-        User.setPersonal(personalFragment.getData());
-        User.setPhysical(physicalFragment.getData());
-        User.setPlace(placeFragment.getData());
-        User.setRelationship(relationshipFragment.getData());
-
-        return true;
     }
 
 
@@ -248,6 +257,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                         SharedPreferences.Editor editor = pref.edit();
                         editor.putString("checkSetUp", "true");
                         editor.putString("nickname", User.getName());
+                        editor.putString("gender", User.getGender());
                         int age = User.getAge();
                         editor.putString("age", String.valueOf(age));
                         editor.putString("language", String.valueOf(User.getLanguage()));

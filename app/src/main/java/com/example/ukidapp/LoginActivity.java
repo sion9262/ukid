@@ -113,7 +113,7 @@ public class LoginActivity extends AppCompatActivity {
                             editor.putString("relationship", result.getRelationship());
                             editor.putString("personal", result.getPersonal());
                             editor.putString("nature", result.getNature());
-
+                            editor.putString("gender", result.getGender());
                             if (result.isSetUserInfo()) { editor.putString("checkSetUp", "true");}
                             else {editor.putString("checkSetUp", "false");}
                             editor.commit();

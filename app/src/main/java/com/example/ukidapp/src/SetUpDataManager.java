@@ -13,6 +13,17 @@ public class SetUpDataManager {
     private int nature;
     private String token;
     private String id;
+    private String gender;
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+
 
     public void setId(String id) {
         this.id = id;

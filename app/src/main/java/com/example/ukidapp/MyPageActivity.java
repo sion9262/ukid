@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,6 +34,7 @@ public class MyPageActivity extends AppCompatActivity {
 
     TextView userName;
     TextView userAge;
+    ImageView img;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,8 +60,16 @@ public class MyPageActivity extends AppCompatActivity {
         SharedPreferences pref = getSharedPreferences("Auth", Activity.MODE_PRIVATE);
         userName = (TextView) findViewById(R.id.Name);
         userAge = (TextView) findViewById(R.id.Age);
+        img = (ImageView)findViewById(R.id.MyImage);
         userName.setText("이름 : " + pref.getString("nickname", ""));
         userAge.setText("나이 : "+ pref.getString("age", "") + "세");
+        String gender = pref.getString("gender", "여아");
+
+        if(gender.equals("남아")){
+            img.setImageResource(R.drawable.boy_profile2);
+        }else if(gender.equals("여아")) {
+            img.setImageResource(R.drawable.girl_profile);
+        }
     }
 
 
