@@ -1,0 +1,26 @@
+package com.example.ukidapp.ui.UserDetail;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+import com.example.ukidapp.R;
+
+public class DetailUserFirst extends Fragment {
+    View view;
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+
+        view = inflater.inflate(R.layout.fragment_detail_first, container, false);
+
+        return view;
+    }
+}

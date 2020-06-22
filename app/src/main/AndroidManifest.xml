@@ -40,6 +40,8 @@
         </activity>
         <activity android:name=".YoutubePlayerActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name=".DetailUserScore"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>

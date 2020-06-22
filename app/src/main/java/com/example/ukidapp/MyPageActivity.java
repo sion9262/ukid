@@ -3,15 +3,12 @@ package com.example.ukidapp;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.EventLogTags;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 
 import com.github.mikephil.charting.data.Entry;
@@ -21,9 +18,6 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
-import java.util.BitSet;
-
-import static android.app.Activity.*;
 
 
 public class MyPageActivity extends AppCompatActivity {
@@ -43,8 +37,12 @@ public class MyPageActivity extends AppCompatActivity {
         pichate();
 
     }
+
+
+
     private void init(){
         SharedPreferences pref = getSharedPreferences("Auth", Activity.MODE_PRIVATE);
+        String user = pref.getString("id", "");
         userName = (TextView) findViewById(R.id.Name);
         userAge = (TextView) findViewById(R.id.Age);
         img = (ImageView)findViewById(R.id.MyImage);
@@ -57,6 +55,7 @@ public class MyPageActivity extends AppCompatActivity {
         }else if(gender.equals("여아")) {
             img.setImageResource(R.drawable.girl_profile);
         }
+
     }
 
 
@@ -101,4 +100,5 @@ public class MyPageActivity extends AppCompatActivity {
         dataSet.setColors(ColorTemplate.COLORFUL_COLORS);
         pieChart.animateXY(2000, 2000);
     }
+
 }

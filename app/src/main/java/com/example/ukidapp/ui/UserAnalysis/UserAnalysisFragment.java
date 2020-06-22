@@ -2,17 +2,20 @@ package com.example.ukidapp.ui.UserAnalysis;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.ukidapp.DetailUserScore;
 import com.example.ukidapp.R;
 import com.example.ukidapp.src.UserScore;
 
@@ -35,6 +38,7 @@ public class UserAnalysisFragment extends Fragment {
     Context mContext;
     BarChart barChart;
     TextView userScoreBoard;
+    Button detailscore;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         studyMathViewModel =
@@ -43,6 +47,14 @@ public class UserAnalysisFragment extends Fragment {
         mContext = getActivity();
         barChart = (BarChart) root.findViewById(R.id.userTopbrainchart);
         userScoreBoard = (TextView)root.findViewById(R.id.userScoreText);
+        detailscore = (Button)root.findViewById(R.id.detailscore);
+
+        detailscore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(mContext, DetailUserScore.class));
+            }
+        });
         init();
         return root;
     }
@@ -90,7 +102,7 @@ public class UserAnalysisFragment extends Fragment {
 
 
         barChart.setData(data);
-        String userText = name + "어린이는 8가지 다중지능 중\n" + score[7].getCategory() + ", " +
+        String userText = name + " 어린이는 8가지 다중지능 중\n" + score[7].getCategory() + ", " +
                 score[6].getCategory() + ", " + score[5].getCategory() + "\n을 가장 선호하는 것으로 나타났습니다.";
         userScoreBoard.setText(userText);
     }
