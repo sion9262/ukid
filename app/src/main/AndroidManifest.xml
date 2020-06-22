@@ -29,7 +29,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".LoginActivity"/>
+        <activity android:name=".CalculatorPlayActivity"/>
         <activity android:name=".RegisterActivity"/>
         <activity android:name=".SetUserInfoActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
