@@ -302,6 +302,40 @@
          이후 각 설문별 데이터를 가져와 Server로 저장하게 되며
          Sharedpreferences에 유저 정보 및 설문내용이 저장된다.         
          
+        ##### MainActivity 메인
+        ![mainactivity](./readme/mainactivity1.png)
+        
+        ![mainactivity](./readme/mainactivity1.png)
+        
+        ![mainactivity](./readme/mainactivity1.png)
+        
+         MainActivity의 코드이다.
+         Main은 4개의 Fragment로 구성되어 있다.
+         각 기능들을 연결해주는 역할을 하고 있다.
+        
+        ##### HomeFragment 카테고리별 동영상확인 
+        ![home1](./readme/hom1.png)
+        
+        ![home2](./readme/hom2.png)
+        
+        ![home3](./readme/hom3.png)
+                
+        ![home4](./readme/hom4.png)
+        
+        ![home5](./readme/hom5.png)
+        
+        ![home6](./readme/hom6.png)
+        
+         HomeFragment의 코드이다.
+         HomeFragment는 기본적으로 RecyclerView의 구조를 가지고 있다.
+         
+         첫 시작시 모든 카테고리의 동영상을 불러온다.
+         이후 Fab버튼을 통해 여러 지능의 카테고리를 클릭하게 되면
+         Server에 해당 지능의 동영상을 받아오고
+         RecyclerView의 Data를 관장해주는 Adapter 수정 및 notifyDataSetChanged하게된다.
+         
+         각 동영상을 클릭하면 movie의 정보를 담아 YoutubePlayActivity로 전송하게 된다.
+         
         ##### YoutubePlayActivity 유튜브 실행 
         ![YoutubePlayActivity1](./readme/YoutubePlayActivity1.png)
         
@@ -318,7 +352,34 @@
          동영상 시청 후 activity가 onDestroy하게 되면 
          정지 시간 - 시작 시간 = 동영상 시청시간이 구해지게 된다.
          이러한 정보는 SavePlayMovieData을 통해 유저의 시청 동영상 정보가 서버에 저장되게된다.
-          
+         
+        ##### MypageActivity 마이페이지 
+        ![mypage1](./readme/mypage1.JPG)
+        
+        ![mypage2](./readme/mypage2.JPG)
+        
+        ![mypage3](./readme/mypage3.JPG)
+                
+        ![mypage4](./readme/mypage4.JPG)
+        
+        ![mypage5](./readme/mypage5.JPG)
+        
+        ![mypage6](./readme/mypage6.JPG)
+        
+        ![mypage7](./readme/mypage7.JPG)
+
+         MypageActivity의 코드이다.
+         
+         Mypage에서는 크게 3가지 기능으로 나뉘게 된다.
+         
+         1. 유저 정보 확인
+            Sharedpreferences에서 유저 정보를 확인하여 뿌려줌.   
+         2. 유저 다중지능 점수 확인
+            Sharedpreferences에서 다중지능 점수를 확인하여 Pie Chart로 표현
+         3. 유저 시청한 동영상 확인
+            Server에서 User의 동영상 시청 정보를 확인하여 다중지능별 시청 횟수
+            및 최근에 시청한 동영상 목록이 보여지게된다.
+             
    * ### 서버
    + #### Python Server (중앙서버)
      fastAPI를 이용한 서버구성
