@@ -17,9 +17,13 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.ukidapp.R;
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
+import com.google.android.gms.ads.doubleclick.PublisherInterstitialAd;
 
 
 // 다중지능별 구체적인 내용 설명
@@ -29,7 +33,8 @@ public class DetailUserScore extends AppCompatActivity implements View.OnClickLi
     Button detailThree;
     TextView mainTitle, explanation, Representative_person, Representative_occupation, Feature, Improving;
     ImageView imageView;
-    private  InterstitialAd mInterstitialAd;
+    private InterstitialAd mInterstitialAd;
+    private AdView mAdview;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,12 +66,14 @@ public class DetailUserScore extends AppCompatActivity implements View.OnClickLi
         detailThree.setOnClickListener(this);
         Firstinit();
 
-        MobileAds.initialize(this,
-                "ca-app-pub-3940256099942544~3347511713");
+        MobileAds.initialize(this, "ca-app-pub-8924705805317182/9158573756");
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
+        mAdview = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdview.loadAd(adRequest);
     }
 
     @Override

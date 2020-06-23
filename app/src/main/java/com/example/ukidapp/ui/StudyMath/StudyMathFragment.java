@@ -16,6 +16,10 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.ukidapp.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 
 import java.util.Random;
 
@@ -37,6 +41,8 @@ public class StudyMathFragment extends Fragment implements View.OnClickListener{
     int answerCount;
     int tryCount;
     int failCount;
+    private InterstitialAd mInterstitialAd;
+    private AdView mAdview;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         studyScienceViewModel =
@@ -44,6 +50,11 @@ public class StudyMathFragment extends Fragment implements View.OnClickListener{
         root = inflater.inflate(R.layout.calculator_play, container, false);
         init();
         SettingCalculator();
+        MobileAds.initialize(getContext(), "ca-app-pub-8924705805317182/9158573756");
+
+        mAdview = root.findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdview.loadAd(adRequest);
         return root;
     }
 
