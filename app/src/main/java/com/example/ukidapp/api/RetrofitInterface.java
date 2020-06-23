@@ -1,6 +1,7 @@
 package com.example.ukidapp.api;
 
 import com.example.ukidapp.api.Model.AuthModel;
+import com.example.ukidapp.api.Model.PlayTime;
 import com.example.ukidapp.api.Model.ResultCode;
 import com.example.ukidapp.api.Model.YoutubeModel;
 import com.example.ukidapp.src.Auth;
@@ -13,6 +14,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface RetrofitInterface {
 
@@ -32,12 +34,17 @@ public interface RetrofitInterface {
     @Headers({"Content-Type: application/json;charset=UTF-8"})
     Call<YoutubeModel> movies();
 
-    @GET("movies/{category}")
+    @GET("movies")
     @Headers({"Content-Type: application/json;charset=UTF-8"})
-    Call<YoutubeModel> moviesCategory(@Path("category") String category);
+    Call<YoutubeModel> moviesCategory(@Query("category") String category);
 
     @POST("userplaymovie")
     @Headers({"Content-Type: application/json;charset=UTF-8"})
-    Call<ResultCode> userplaymovie(@Body PlayMovies movies);
+    Call<PlayTime> userplaymovie(@Body PlayMovies movies);
+
+    @GET("userplaymovies/{user}")
+    @Headers({"Content-Type: application/json;charset=UTF-8"})
+    Call<PlayTime> playtime(@Path("user") String user);
+
 
 }

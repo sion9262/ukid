@@ -56,8 +56,8 @@ public class UserAnalysisFragment extends Fragment {
         userScoreBoard = (TextView)root.findViewById(R.id.userScoreText);
         detailscore = (Button)root.findViewById(R.id.detailscore);
 
-        MobileAds.initialize(mContext,
-                "ca-app-pub-3940256099942544~3347511713");
+        MobileAds.initialize(getActivity(),
+                "ca-app-pub-3940256099942544/1033173712");
         mInterstitialAd = new InterstitialAd(mContext);
         mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
         mInterstitialAd.loadAd(new AdRequest.Builder().build());

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.ukidapp.api.Model.AuthModel;
+import com.example.ukidapp.api.Model.PlayTime;
 import com.example.ukidapp.api.Model.ResultCode;
 import com.example.ukidapp.api.RetrofitSender;
 import com.example.ukidapp.src.PlayMovies;
@@ -69,13 +70,6 @@ public class YoutubePlayerActivity extends YouTubeBaseActivity {
         youTubePlayerView = findViewById(R.id.youtube_player_view);
         initializeYoutubePlayer();
     }
-    /*
-        activity start -> current time
-        activity stop -> current time
-        stop - start = active time
-        then
-            post active time, id, title, category
-     */
 
     @Override
     protected void onStart() {
@@ -133,11 +127,11 @@ public class YoutubePlayerActivity extends YouTubeBaseActivity {
 
     private void SavePlayMovieData(PlayMovies movies){
 
-        RetrofitSender.getServer().userplaymovie(movies).enqueue(new Callback<ResultCode>() {
+        RetrofitSender.getServer().userplaymovie(movies).enqueue(new Callback<PlayTime>() {
             @Override
-            public void onResponse(Call<ResultCode> call, Response<ResultCode> response) {
+            public void onResponse(Call<PlayTime> call, Response<PlayTime> response) {
                 if (response.isSuccessful()){
-                    ResultCode result = response.body();
+                    PlayTime result = response.body();
                     System.out.println(result.getResultCode());
                     if (result.getResultCode() == 200) {
 
@@ -146,7 +140,7 @@ public class YoutubePlayerActivity extends YouTubeBaseActivity {
 
             }
             @Override
-            public void onFailure(Call<ResultCode> call, Throwable t) {
+            public void onFailure(Call<PlayTime> call, Throwable t) {
                 System.out.println("서버 꺼짐");
             }
         });
