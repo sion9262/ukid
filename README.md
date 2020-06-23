@@ -233,8 +233,21 @@
             </base-config>
          </network-security-config>
         
-        #####
+        ##### LoginActivity 로그인 기능
+        ![flogin](./readme/login.JPG)
+        
+        ![flogin2](./readme/login2.JPG)
+        
+        ![flogin3](./readme/login3.JPG)
+        
+         LoginActivity의 코드이다.
+         사용자가 입력한 이메일, 패스워드를 검증 한 후
+         Retrofit을 통해 Server에 로그인 요청을 한다.
+         응답은 GSON형식의 AuthModel로 저장되며
+         로그인 성공시 Sharedpreferences에 유저 정보가 저장된다.
          
+         
+                 
    * ### 서버
    + #### Python Server (중앙서버)
      fastAPI를 이용한 서버구성
