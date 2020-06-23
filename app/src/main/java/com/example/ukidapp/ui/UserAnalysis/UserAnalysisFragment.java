@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,9 @@ import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -41,6 +45,7 @@ public class UserAnalysisFragment extends Fragment {
     Button detailscore;
 
     String category1, category2, category3;
+    private InterstitialAd mInterstitialAd;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         studyMathViewModel =
@@ -51,11 +56,21 @@ public class UserAnalysisFragment extends Fragment {
         userScoreBoard = (TextView)root.findViewById(R.id.userScoreText);
         detailscore = (Button)root.findViewById(R.id.detailscore);
 
+        MobileAds.initialize(mContext,
+                "ca-app-pub-3940256099942544~3347511713");
+        mInterstitialAd = new InterstitialAd(mContext);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
         init();
         detailscore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                } else {
+                    Log.d("TAG", "The interstitial wasn't loaded yet.");
+                }
                 startActivity(new Intent(mContext, DetailUserScore.class)
                         .putExtra("category1", category1)
                 .putExtra("category2", category2)
