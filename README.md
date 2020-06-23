@@ -18,12 +18,15 @@
         * 추진 일정
         * 역할 분담
     * 기대효과 및 활용분야
-
+    * 비지니스모델
 3. 개발서
     * 안드로이드 앱
     * 서버
     * 딥러닝
-
+4. 기타
+    * 일정관리
+    * 추후목표
+    * 인용 및 참고자료
 ## 1. 소개
 스마트모바일프로그램 앱둥이 팀의 'UKID' 어플입니다.  
 팀 소개를 먼저 하겠습니다.
@@ -194,7 +197,11 @@
            
         + 활용 분야
             - 유아 다중지능 분석 및 유아 다중지능 학습
-            
+   * ### 비지니스모델
+        + 앱의 Google Admob을 활용한 광고 수입.
+        + 유아제품 쇼핑몰 거래 수수료. (추후 예정)
+        + 교육콘텐츠 제작하는 유튜버들과 제휴 (추후 예정)
+        + 향상된 설문지 (20개의 설문) 설문비.
 ## 3. 개발서
    * ### 안드로이드 앱
         + #### 디렉토리 구조
@@ -248,6 +255,8 @@
          </network-security-config>
         
         ##### LoginActivity 로그인 기능
+        ![active_login](./readme/active_login.jpg)
+        
         ![flogin](./readme/login.JPG)
         
         ![flogin2](./readme/login2.JPG)
@@ -261,6 +270,8 @@
          로그인 성공시 Sharedpreferences에 유저 정보가 저장된다.
          
         ##### RegisterActivity 회원가입 기능
+        ![active_reg](./readme/active_reg.jpg)
+        
         ![flogin](./readme/register1.JPG)
         
         ![flogin2](./readme/register2.JPG)
@@ -274,6 +285,10 @@
          회원가입 성공시 LoginActivity로 이동된다.
          
         ##### SetUserInfoActivity 초기 유저 정보 및 설문
+        ![active_setup1](./readme/active_setup1.jpg)
+        
+        ![active_setup2](./readme/active_setup2.jpg)
+        
         ![flogin](./readme/setup1.png)
         
         ![flogin2](./readme/setup2.png)
@@ -304,6 +319,8 @@
          Sharedpreferences에 유저 정보 및 설문내용이 저장된다.         
          
         ##### MainActivity 메인
+        ![active_main](./readme/active_main.jpg)
+        
         ![mainactivity](./readme/mainactivity1.png)
         
         ![mainactivity](./readme/mainactivity1.png)
@@ -315,6 +332,8 @@
          각 기능들을 연결해주는 역할을 하고 있다.
         
         ##### HomeFragment 카테고리별 동영상확인 
+        ![active_main2](./readme/active_main2.jpg)
+        
         ![home1](./readme/hom1.png)
         
         ![home2](./readme/hom2.png)
@@ -353,6 +372,8 @@
          이러한 정보는 SavePlayMovieData을 통해 유저의 시청 동영상 정보가 서버에 저장되게된다.
          
         ##### MypageActivity 마이페이지 
+        ![active_mypage](./readme/active_mypage.jpg)
+        
         ![mypage1](./readme/mypage1.JPG)
         
         ![mypage2](./readme/mypage2.JPG)
@@ -416,9 +437,7 @@
          
          밑에 함수는 ItemClick이 되면 labelSubText와 비교하여
          영어 + 한글 + 설명 을 리턴하게 된다.
-         
-         
-     
+        
         ##### StudyMathFragment 수학놀이 
         ![math1](./readme/math1.JPG)
         
@@ -582,7 +601,35 @@
        https://www.tensorflow.org/lite/models/object_detection/overview
    
 ## 4. 기타
+ 
+   * ### 일정관리
+     #### 안드로이드 개발
+     ![develp](./readme/develop.png)
+     
+     #### 서버 및 딥러닝 개발
+     ![server](./readme/server.png)
     
-    (https://www.ibabynews.com/news/articleView.html?idxno=63406)[베이비뉴스]
-    (다중지능이론의 교육학적 의의)[이영재 교수]
-    (https://blog.naver.com/PostView.nhn?blogId=sfdirect&logNo=221603563752&parentCategoryNo=&categoryNo=8&viewDate=&isShowPopularPosts=true&from=search)[유아동스마트폰이용사태]
+     #### 디자인
+     ![design](./readme/design.png)
+     
+     > 모든 Milestone을 완료한 결과  
+                                                                                                                                                                                                        
+   * ### 추후 개발 목표
+        + Pose Estimation 포즈 인식
+            원래 Pose Classification으로 이미지 분류의 따른 학습 모델이 였지만,    
+            Pose Estimation으로 손 위치, 다리 위치를 인식하여  
+            행동 분석을 예측하는 모델 만들기
+        + 유아 쇼핑몰 연동  
+            비지니스 모델이였던 쇼핑몰 연동을 통한 구매 수수료를  
+            앱 안에 넣고 활성하하는 기능 개발
+        
+        + 부모 커뮤니티  
+            부모님끼리의 경험 및 지식공유 할 수 있는 커뮤니티 개발
+   * 인용 및 참고             
+    
+    [베이비뉴스 - 투표 못하는 아기도 ‘참여권’이 있습니다.](https://www.ibabynews.com/news/articleView.html?idxno=63406)
+    [이영재 교수 논문](다중지능이론의 교육학적 의의)
+    [유아동스마트폰이용사태](https://blog.naver.com/PostView.nhn?blogId=sfdirect&logNo=221603563752&parentCategoryNo=&categoryNo=8&viewDate=&isShowPopularPosts=true&from=search)
+    [국내 키즈산업 규모](https://jmagazine.joins.com/economist/view/322077)
+    [세계 에듀테크시장 규모](https://biz.chosun.com/site/data/html_dir/2019/05/09/2019050901216.html)
+    [딥 러닝을 이용한 자연어 처리 입문](https://wikidocs.net/22933)
