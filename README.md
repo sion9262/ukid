@@ -272,7 +272,7 @@
         ##### setUser
         ![setuser](./readme/setuser.png)
         ##### userplaymovies
-        ![userplaymovies](./readme/userplaymoives.png)
+        ![userplaymovies](./readme/userplaymovies.png)
         
         #### Moives/Moives.py
         Movies class 는 아래의 기능을 수행합니다.   
