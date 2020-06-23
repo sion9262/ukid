@@ -106,12 +106,22 @@
         + #### 추진 일정
             
         + #### 개발 역할
-            |이름|분야|역할|
-            |박시온|풀스택|1. |
-            |천건호|개발|1. API Interface구성, |
-            |김나형|개발||
-            |이세환|디자인||
-            |정가영|디자인||
+            1. 박시온 (풀스택)
+                - Server 개발 
+                    Python (중앙서버) + NodeJS(데이터서버) 구성 및 API 처리
+                - DB 개발
+                    DataBase(Mysql) Modeling 및 개발
+                - YoutubeCrawling 개발
+                    유튜브에서 동영상의 메타데이터, 자막데이터를 자동 수집 로직 개발
+                - NLP 키워드 추출
+                    동영상 정보를 이용하여 TOP 키워드 추출 
+                - Multilabel Classification
+                    Keras를 이용한 NLP Multilabel Classification
+                -  
+            2. 천건호 (앱개발)
+            3. 김나형 (앱개발)
+            4. 이세환 (디자인 및 레이아웃 구성)
+            5. 정가영 (디자인)
          
    * ### 기대효과 및 활용분야
    * ### 결과물 후속 활용 방안
