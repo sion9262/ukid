@@ -1,23 +1,29 @@
 <resources>
-<<<<<<< HEAD
+
     <string name="app_name">UKID</string>
-=======
-    <string name="app_name">ukidapp</string>
->>>>>>> master
+
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_title">Nick Name</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
+    <string name="admob_app_id">ca-app-pub-6849020648187845~9332497401</string>
+    <string name="banner_ad_unit_id">ca-app-pub-6849020648187845/5778311493</string>
+    <string name="banner_ad_unit_id_for_test">ca-app-pub-3940256099942544~3347511713</string>
+
+    <string name="menu_home">학습하기</string>
     <string name="menu_study_language">언어 학습하기</string>
-    <string name="menu_study_math">수리 학습하기</string>
-    <string name="menu_study_science">과학 탐구하기</string>
+    <string name="menu_useranalysis">다중지능 분석하기</string>
+    <string name="menu_study_math">수학 탐구하기</string>
     <string name="menu_check_interest">관심사 확인하기</string>
     <string name="menu_observe_kid">아이 관찰하기</string>
     <string name="menu_study_image">이미지 학습하기</string>
+    <!-- Youtube!! -->
+    <string name="thumbnail_image_view_desc">Youtube Video thumbnail image view</string>
+    <string name="close_player_activity">Close Player activity</string>
 
     <string name="home_second">Home Second</string>
 
@@ -25,4 +31,110 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="loading">LoadingPage</string>
+
+
+    <!-- 다중지능 별 학습내용 -->
+    <string name="Language_1">1. 이름이나 나이를 물으면 아이가 말할 수 있다.</string>
+    <string name="Language_2">2. 긍정 또는 부정의 질문에 예/아니요 라고 대답한다.</string>
+    <string name="Language_3">3. 좋음, 싫음, 슬픔 등의 감정을 언어로 표현한다.</string>
+
+    <string name="Math_1">1. 숫자를 이용한 놀이를 좋아한다.</string>
+    <string name="Math_2">2. 유사한 사물을 서로 연결할 수 있다.</string>
+    <string name="Math_3">3. 일이 일어난 원인이나 이유를 알고 싶어 하는 편이다.</string>
+
+    <string name="Place_1">1. 블록 쌓기와 같은 만들기를 즐겨한다.</string>
+    <string name="Place_2">2. 장난감을 분리하고 끼워 맞추기를 좋아한다.</string>
+    <string name="Place_3">3. 집안의 물건을 정리하거나 배치하는 것을 좋아한다.</string>
+
+    <string name="Physical_1">1. 몸을 많이 움직이는 놀이를 좋아한다.</string>
+    <string name="Physical_2">2. 행동이 둔하지 않고 민첩하며 활동적이다.</string>
+    <string name="Physical_3">3. 야외에 나가서 노는것을 좋아한다.</string>
+
+    <string name="Music_1">1. 음악이 나오면 몸을 흔들고 좋아한다.</string>
+    <string name="Music_2">2. 동요를 쉽게 배우고 멜로디에 맞게 노래를 부른다.</string>
+    <string name="Music_3">3. 장난감이나 기구로 연주하는 것을 좋아한다.</string>
+
+    <string name="Relationship_1">1. 소꿉놀이에 관심을 가지며 참여한다.</string>
+    <string name="Relationship_2">2. 또래와 만나면 먼저 다가간다.</string>
+    <string name="Relationship_3">3. 낯선 사람이나 공간에도 쉽게 적응한다.</string>
+
+    <string name="Personal_1">1. 혼자서 해야 할 일을 스스로 하려고한다. (옷입기, 양치하기 등)</string>
+    <string name="Personal_2">2. 자신의 감정을 표현 잘 한다.</string>
+    <string name="Personal_3">3. 음식맛이 이상하면 알아채서 표현한다.</string>
+
+    <string name="Nature_1">1. 개, 고양이 등 애완동물에 관심이나 호감을 보인다.</string>
+    <string name="Nature_2">2. 길가다 꽃과 나무를 보면 관찰하며 이야기한다.</string>
+    <string name="Nature_3">3. 육지동물과 바다동물을 구분할 수 있다.</string>
+
+    <string name="Ln_mainTitle">언어지능(Ln) 결과해석</string>
+    <string name="LM_mainTitle">논리수학지능(LM) 결과해석</string>
+    <string name="Sp_mainTitle">시공간지능(Sp) 결과해석</string>
+    <string name="Mu_mainTitle">음악지능(Mu) 결과해석</string>
+    <string name="BK_mainTitle">신체운동지능(BK) 결과해석</string>
+    <string name="Int_mainTitle">대인간지능(Int) 결과해석</string>
+    <string name="Ira_mainTitle">자기성찰지능(Ira) 결과해석</string>
+    <string name="Na_mainTitle">자연친화지능(Na) 결과해석</string>
+
+    <string name="Ln_analysis">단어, 어휘의 의미와 소리에 대해 민감하며, 언어의 구조 및 언어가 사용될 수 있는 다양한 방법을 잘 알고 사용할 수 있는 지능</string>
+    <string name="LM_analysis">수와 같은 추상적인 상징체계를 조작하고 그들의 관계를 인식하며 논리적이고 체계적으로 아이디어를 잘 평가하는 지능</string>
+    <string name="Sp_analysis">색, 모양, 대칭, 이미지 등 시각자극을 정확하게 지각하고, 그러한 시각자극들의 각도나 방향이 바뀌어도 정확하게 지각할 수 있으며 순서적 관계나 복잡한 위계적 관계를 시각화를 통해 이해하는 지능</string>
+    <string name="Mu_analysis">음의 높낮이, 박자, 속도, 선율에 대해 민감하고, 음악을 만들고 분석하는 능력이 있으며 음악의 정서적인 측면을 잘 이해하는 지능 </string>
+    <string name="BK_analysis">자신을 표현하고 목적을 달성 하기 위해 몸을 기술적으로 잘 사용하며, 사물을 잘 다루는 데 민감한 지능 </string>
+    <string name="Int_analysis">타인의 기분이나 기질, 동기, 의도 등을 잘 알아차리고 이에 대해 적절하고 민감하게 반응하는 지능</string>
+    <string name="Ira_analysis">자신의 내부상태에 대해 민감하며, 자신의 강약점, 욕구를 파악하고, 자신에 대한 정보를 적절하게 사용하여 적응적으로 행동하는 데 민감한 지능</string>
+    <string name="Na_analysis">자연물, 동식물에 관심을 가지고 잘 돌보거나 자연현상을 잘 이해하고, 자연을 보존하는데 관심이 있는 지능</string>
+
+    <string name="Ln_Representative_person">유재석, 세익스피어, 김소월, 김수환 추기경, 반기문 등</string>
+    <string name="LM_Representative_person">뉴턴, 아인슈타인, 장영실, 스티브 잡스, 토마스 에디슨 등</string>
+    <string name="Sp_Representative_person">앤디워홀, 백남준, 피카소, 콜럼버스, 스티븐 스필버그 등</string>
+    <string name="Mu_Representative_person">모차르트, 베토벤, 비틀즈, 파바로티, 루이암스트롱 등</string>
+    <string name="BK_Representative_person">류현진, 박지성, 김연아, 박태환, 마이클 조던, 엄홍길 등</string>
+    <string name="Int_Representative_person">반기문, 링컨, 김구, 넬슨 만델라, 간디 등</string>
+    <string name="Ira_Representative_person">칸트, 정약용, 공자, 퇴계 이황, 테레사 수녀 등</string>
+    <string name="Na_Representative_person">다윈, 파브르, 허준, 뉴턴 등</string>
+
+    <string name="Ln_Representative_occupation">아나운서, 기자, 소설가, 시인, 방송작가, 정치인, 개그맨, 변호사 등</string>
+    <string name="LM_Representative_occupation">과학자, 수학자, 프로그램 개발자, 의사, 세무사, 은행원, 통계학자 등</string>
+    <string name="Sp_Representative_occupation">화가, 조각가, 건축설계사, 디자이너, 사진작가, 영화감독, 외과의사, 비행기 조종사 등</string>
+    <string name="Mu_Representative_occupation">가수, 작곡가, 지휘자, 악기연주자, 음악비평가 등</string>
+    <string name="BK_Representative_occupation">운동선수, 무용가, 배우, 조각가, 마술사, 안무가, 경호원 등</string>
+    <string name="Int_Representative_occupation">정치인, 사업가, 영업직 카운슬러 등</string>
+    <string name="Ira_Representative_occupation">사회복지사, 카운슬러, 철학자, 소설가, 시인, 성직자 등</string>
+    <string name="Na_Representative_occupation">식물학자, 조경사, 한의사, 수의사, 환경 보호가, 생명공학자, 천문학자 등</string>
+
+
+
+
+
+
+
+
+
+    <string name="Ln_Feature">강의나 연설을 잘해요! 토론을 즐겨해요! 글을 잘 써요! 상대방을 설득하는 능력이 뛰어나요!</string>
+    <string name="LM_Feature">숫자를 다루는 능력이 뛰어나요! 퍼즐 맞추기를 잘해요! 계획을 세우는 능력이 뛰어나요! 논리적인 접근에 관심이 많아요!</string>
+    <string name="Sp_Feature">그림을 잘 그려요! 블록 맞추기를 잘해요! 지도를 보고 해석하는 능력이 뛰어나요! 특정 장소나 공간을 이미지로 기억해요!</string>
+    <string name="Mu_Feature">음악을 듣고 기억하는 능력이 뛰어나요! 음의 높낮이, 리듬과 박자를 구별하는 능력이 뛰어나요!</string>
+    <string name="BK_Feature">활동성이 굉장히 높아요! 각종 운동에 소질이 있어요! 집안 보다는 바깥에 있는 것을 좋아해요! 연극이나 인형놀이를 좋아해요!</string>
+    <string name="Int_Feature">처음보는 사람과도 금새 친해져요! 타인의 감정을 잘 파악해요! 혼자 보다 함께 노는 것을 더 좋아해요! 눈치가 빠르고, 상황에 적절히 대처 해요!</string>
+    <string name="Ira_Feature">궁금한게 많아 질문이 많은 편이에요! 자아존중감이 높은 편이에요! 자기가 잘못한 부분을 잘 알고 있어요! 자립심이 강한 편이에요!</string>
+    <string name="Na_Feature">애완동물을 좋아하고 돌봐주는 능력이 뛰어납니다! 식물채집을 좋아하고, 구분할 수 있는 능력이 뛰어납니다! 동물, 꽃, 나무 등 살아있는 상명체에 관심이 많아요!</string>
+
+
+
+
+
+    <string name="Ln_Improving">아이와 함께 말꼬리 잇기 게임, 십자말 풀이, 수수께끼 등을 해보세요! 가족 모두 하루에 하나씩 새로운 단어를 알아와 저녁 시간에 공유해보세요! 동화책을 큰 소리로 읽거나 내용을 설명할 수 있도록 해주세요!</string>
+    <string name="LM_Improving">두개의 사물을 놓고 공통점과 차이점을 찾아보세요! 아이들과 함께 보드게임을 해보세요! 물건을 살때 아이가 계산한 수 있게 해보세요!</string>
+    <string name="Sp_Improving">지도를 보고 우리집을 찾아보세요! 아이와 함께 종이접기를 해보세요! 블록 맞추기나 퍼즐 맞추기를 해보세요! 미술관이나 전시회에서 좋은 작품들을 관람해보세요!</string>
+    <string name="Mu_Improving">아이가 즐겨부르는 동요에 개사를 해보세요! 하고 싶은 말을 노래로 부를 수 있게 해보세요! 동화책의 내용을 노래로 만들어 보세요! 다양한 장르의 음악에 맞춰 춤을 춰보세요! 주변의 다양한 사물을 이용하여 악기를 만들어보세요!</string>
+    <string name="BK_Improving">춤이나 체조 등으로 다양한 동작을 표현해보세요! 아이의 감정을 몸으로 표현해보는 놀이를 해보세요! 몸동작으로 동물 흉내내기 놀이를 해보세요! 블록 쌓기, 공작 만들기, 종이접기 등을 해보세요!</string>
+    <string name="Int_Improving">또래들과 다양한 형태로 어울릴 수 있는 종교 모임, 캠프 등에 참여해보세요! TV나 만화를 보면서 등장인물의 감정 상태를 생각해보세요! 상대방에게 친근하게 다가갈 수 있는 방법은 무엇이 있을지 생각해보세요!</string>
+    <string name="Ira_Improving">아이가 잘하는 것과 잘하지 못하는 것을 적어보게 해주세요! 감정일기를 쓰도록 해주세요! 위인전을 많이 읽을 수 있도록 독려해주세요!</string>
+    <string name="Na_Improving">아이와 함께 캠핑을 떠나 보세요! 아이와 함께 화분을 관리할 수 있도록 해주세요! 동물이 주인공인 우화나 동화를 읽어주세요! 가까운 동물원, 식물원, 수목원에 가보세요!</string>
+
+    <string name="test">test</string>
+
+
+    <string name="tfe_od_app_name" translation_description="Object Detection demo app [CHAR_LIMIT=40]">TFL Detect</string>
+    <string name="tfe_od_camera_error" translation_description="Error regarding camera support[CHAR_LIMIT=40]">This device doesn\'t support Camera2 API.</string>
 </resources>

@@ -3,14 +3,23 @@ package com.example.ukidapp;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.ukidapp.api.Model.AuthModel;
 import com.example.ukidapp.api.RetrofitSender;
-import com.google.gson.JsonObject;
+import com.example.ukidapp.src.Auth;
+import com.google.android.material.snackbar.Snackbar;
+import com.google.android.material.textfield.TextInputLayout;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -18,69 +27,133 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private TextInputLayout errEmail;
+    private TextInputLayout errPassword;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-    }
-
-    public void loginBtn(View view){
-        EditText email_ET = (EditText)findViewById(R.id.email);
-        EditText password_ET = (EditText)findViewById(R.id.password);
-
-        String email = email_ET.getText().toString();
-        String password = password_ET.getText().toString();
-
-        login(email, password);
-        SharedPreferences prefs = getSharedPreferences("Auth", MODE_PRIVATE);
-        SharedPreferences.Editor editor = prefs.edit();
-        editor.putString("email", email);
-        editor.putString("jwt", password);
-
-        editor.commit();
-
-        Intent LoginPage = new Intent(this, MainActivity.class);
-        startActivity(LoginPage);
-        finish();
-
-
-
-    }
-
-    private void login(String email, String password){
-
-        JsonObject user = new JsonObject();
-        user.addProperty("email", email);
-        user.addProperty("password", password);
-
-        /*
-            email 형식이 맞는지 검증, password 입력됬는지 검증
-
-            성공 -> 넘어가고
-            실패 -> return false
-
-         */
-
-
-        RetrofitSender.getServer().login(user).enqueue(new Callback<JsonObject>() {
-            @Override
-            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-                Log.e("result", response.toString());
-
-                if (response.body() != null) {
-                    Log.d("result : ", response.body().toString());
-                }else {
-                    Log.d("reulst : ", "비어있다.");
-                }
-
-            }
+        TextView registerForm = (TextView)findViewById(R.id.registerText);
+        registerForm.setText(Html.fromHtml("<font color=\"#eeac99\" ><u>회원가입</u></font>"));
+        registerForm.setOnClickListener(new View.OnClickListener(){
 
             @Override
-            public void onFailure(Call<JsonObject> call, Throwable t) {
-                Log.e("model", t.getMessage());
+            public void onClick(View v) {
+                Intent registerPage = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(registerPage);
             }
         });
     }
+    /*
+        로그인 버튼 클릭하면 Auth 클래스 생성하여 로그인
+     */
+    public void login_button(View view){
+
+        TextInputLayout emailLayout = findViewById(R.id.email);
+        TextInputLayout passwordLayout = findViewById(R.id.password);
+        String email = emailLayout.getEditText().getText().toString();
+        String password = passwordLayout.getEditText().getText().toString();
+
+        Auth user = new Auth(email, password);
+        try{
+            login(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    private void login(Auth user){
+        /*
+            로그인 로직
+            이메일 검증
+            패스워드 검증
+
+         */
+        errEmail = (TextInputLayout) findViewById(R.id.email);
+        errPassword = (TextInputLayout) findViewById(R.id.password);
+
+        if ( !user.CheckEmail()){
+            // editText 에 오류났다고 표시하는 부분
+            errEmail.setErrorEnabled(true);
+            errEmail.setError("올바른 이메일을 입력해주세요.");
+        }else{
+            errEmail.setErrorEnabled(false);
+        }
+
+        if ( !user.CheckPassword()) {
+            errPassword.setErrorEnabled(true);
+            errPassword.setError("비밀번호가 너무 짧습니다.");
+        }else {errPassword.setErrorEnabled(false);}
+
+        // http 통신 시작
+        RetrofitSender.getServer().login(user).enqueue(new Callback<AuthModel>() {
+            @Override
+            public void onResponse(Call<AuthModel> call, Response<AuthModel> response) {
+                if (response.isSuccessful()){
+                    AuthModel result = response.body();
+                    System.out.println(result.getResultCode());
+                    if (result.getResultCode() == 200) {
+                        // 로그인 성공시 prefs에 데이터를 넣어줌
+                        try {
+
+                            SharedPreferences prefs = getSharedPreferences("Auth", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = prefs.edit();
+                            editor.putString("email", result.getEmail());
+                            editor.putString("jwt", result.getJwt());
+                            editor.putString("nickname", result.getUsername());
+                            editor.putString("id", result.getId());
+                            editor.putString("age", result.getAge());
+                            editor.putString("language", result.getLanguage());
+                            editor.putString("math", result.getMath());
+                            editor.putString("place", result.getPlace());
+                            editor.putString("physical", result.getPhysical());
+                            editor.putString("music", result.getMusic());
+                            editor.putString("relationship", result.getRelationship());
+                            editor.putString("personal", result.getPersonal());
+                            editor.putString("nature", result.getNature());
+                            editor.putString("gender", result.getGender());
+                            if (result.isSetUserInfo()) { editor.putString("checkSetUp", "true");}
+                            else {editor.putString("checkSetUp", "false");}
+                            editor.commit();
+
+                            if( result.isSetUserInfo()) {
+                                Intent MainPage = new Intent(LoginActivity.this, MainActivity.class);
+                                startActivity(MainPage);
+                                finish();
+
+                            } else {
+                                Intent SetUserPage = new Intent(LoginActivity.this, SetUserInfoActivity.class);
+                                startActivity(SetUserPage);
+                                finish();
+                            }
+
+
+
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+
+                    }else {
+                        View contextView = findViewById(R.id.password);
+
+                        Snackbar.make(contextView, "올바른 정보를 입력해주세요.", Snackbar.LENGTH_SHORT)
+                                .show();
+                    }
+                }else{
+                    System.out.println("실패");
+                }
+
+            }
+            @Override
+            public void onFailure(Call<AuthModel> call, Throwable t) {
+                System.out.println("서버 꺼짐");
+            }
+        });
+
+    }
+
+
 
 }

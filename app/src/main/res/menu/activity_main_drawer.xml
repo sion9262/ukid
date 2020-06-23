@@ -9,28 +9,20 @@
             android:icon="@drawable/ic_menu_camera"
             android:title="@string/menu_home" />
         <item
-            android:id="@+id/nav_study_language"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_study_language" />
+            android:id="@+id/nav_study_object"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="물체 학습하기" />
         <item
             android:id="@+id/nav_study_math"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_study_math" />
+            android:title="@string/menu_useranalysis" />
         <item
             android:id="@+id/nav_study_science"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_study_science" />
+            android:title="@string/menu_study_math" />
         <item
-            android:id="@+id/nav_check_interest"
+            android:id="@+id/logout"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_check_interest" />
-        <item
-            android:id="@+id/nav_observe_kid"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_observe_kid" />
-        <item
-            android:id="@+id/nav_study_image"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_study_image" />
+            android:title="로그아웃" />
     </group>
 </menu>

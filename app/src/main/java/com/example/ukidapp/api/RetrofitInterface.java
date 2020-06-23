@@ -1,29 +1,50 @@
 package com.example.ukidapp.api;
 
 import com.example.ukidapp.api.Model.AuthModel;
-import com.google.gson.JsonObject;
-
-import org.json.JSONObject;
-
-import java.util.ArrayList;
+import com.example.ukidapp.api.Model.PlayTime;
+import com.example.ukidapp.api.Model.ResultCode;
+import com.example.ukidapp.api.Model.YoutubeModel;
+import com.example.ukidapp.src.Auth;
+import com.example.ukidapp.src.SetUpDataManager;
+import com.example.ukidapp.src.PlayMovies;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface RetrofitInterface {
 
     @POST("login")
     @Headers({"Content-Type: application/json;charset=UTF-8"})
-    Call<JsonObject> login(@Body JsonObject data);
+    Call<AuthModel> login(@Body Auth user);
 
     @POST("register")
     @Headers({"Content-Type: application/json;charset=UTF-8"})
-    Call<JSONObject> register(@Body JsonObject data);
+    Call<AuthModel> register(@Body Auth user);
+
+    @POST("setupuser")
+    @Headers({"Content-Type: application/json;charset=UTF-8"})
+    Call<ResultCode> setupuser(@Body SetUpDataManager user);
+
+    @GET("movies")
+    @Headers({"Content-Type: application/json;charset=UTF-8"})
+    Call<YoutubeModel> movies();
+
+    @GET("movies")
+    @Headers({"Content-Type: application/json;charset=UTF-8"})
+    Call<YoutubeModel> moviesCategory(@Query("category") String category);
+
+    @POST("userplaymovie")
+    @Headers({"Content-Type: application/json;charset=UTF-8"})
+    Call<PlayTime> userplaymovie(@Body PlayMovies movies);
+
+    @GET("userplaymovies/{user}")
+    @Headers({"Content-Type: application/json;charset=UTF-8"})
+    Call<PlayTime> playtime(@Path("user") String user);
 
 
 }
