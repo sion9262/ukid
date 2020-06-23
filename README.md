@@ -401,6 +401,8 @@
             및 최근에 시청한 동영상 목록이 보여지게된다.
             
         ##### DectionActivity 사물 인식 
+        ![active_detect](./readme/active_detect.jpg)
+        
         ![detection1](./readme/detection1.png)
 
          DectionActivity 코드 중 수정만 한 부분이다.
@@ -439,6 +441,8 @@
          영어 + 한글 + 설명 을 리턴하게 된다.
         
         ##### StudyMathFragment 수학놀이 
+        ![active_math](./readme/active_math.jpg)
+        
         ![math1](./readme/math1.JPG)
         
         ![math2](./readme/math2.JPG)
@@ -458,7 +462,9 @@
          추후 tryCount, answerCount, failCount를 이용하여
          아이가 논리수학지능의 점수를 갱신해주는 업데이트를 할 예정이다.
          
-        ##### UserAnalysisFragment 유저 분석 
+        ##### UserAnalysisFragment 유저 분석
+        ![active_a](./readme/active_a.jpg) 
+        
         ![analysis1](./readme/analysis1.JPG)
         
         ![analysis1](./readme/analysis2.JPG)
@@ -473,6 +479,9 @@
          DetailUserScore로 전환된다.
          
         ##### DetailUserScore 다중지능 분석 
+        ![active_detail1](./readme/active_detail.jpg)
+        ![active_detail2](./readme/active_detail2.jpg)
+          
         ![detail1](./readme/detail1.JPG)
         
         ![detail2](./readme/detail2.JPG)
