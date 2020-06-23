@@ -34,7 +34,7 @@
 
 이번 프로젝트에서는 'UKID' 라는 아이 교육 및 학습 어플리케이션을 개발하였습니다.
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/9r5Qc6dFX84" frameborder="0" gesture="media" allowfullscreen=""></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9r5Qc6dFX84" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## 2. 기획서
    * ### 목적 및 필요성 
