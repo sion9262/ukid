@@ -34,10 +34,17 @@ public class DetailUserScore extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailuserscore);
 
+        String category1 = getIntent().getStringExtra("category1");
+        String category2 = getIntent().getStringExtra("category2");
+        String category3 = getIntent().getStringExtra("category3");
 
         detailFirst = (Button) findViewById(R.id.detailFirst);
         detailSecond = (Button) findViewById(R.id.detailSecond);
         detailThree = (Button) findViewById(R.id.detailThree);
+
+        detailFirst.setText(category1);
+        detailSecond.setText(category2);
+        detailThree.setText(category3);
 
         mainTitle = findViewById(R.id.mainTitle);
         explanation = findViewById(R.id.explanation);
@@ -51,7 +58,7 @@ public class DetailUserScore extends AppCompatActivity implements View.OnClickLi
         detailFirst.setOnClickListener(this);
         detailSecond.setOnClickListener(this);
         detailThree.setOnClickListener(this);
-
+        Firstinit();
 
     }
 
@@ -171,44 +178,44 @@ public class DetailUserScore extends AppCompatActivity implements View.OnClickLi
         }
 
     }
-        public void Secondinit() {
-            if (detailSecond.getText().equals("언어지능")) {
-                Ln();
-            } else if (detailSecond.getText().equals("논리수학지능")) {
-                LM();
-            } else if (detailSecond.getText().equals("대인관계지능")) {
-                Int();
-            } else if (detailSecond.getText().equals("자기성찰지능")) {
-                Ira();
-            } else if (detailSecond.getText().equals("공간지능")) {
-                Sp();
-            } else if (detailSecond.getText().equals("음악지능")) {
-                Mu();
-            }else if(detailSecond.getText().equals("신체운동지능")) {
-                BK();
-            }else if(detailSecond.getText().equals("자연친화지능")) {
-                Na();
-            }
-         }
+    public void Secondinit() {
+        if (detailSecond.getText().equals("언어지능")) {
+            Ln();
+        } else if (detailSecond.getText().equals("논리수학지능")) {
+            LM();
+        } else if (detailSecond.getText().equals("대인관계지능")) {
+            Int();
+        } else if (detailSecond.getText().equals("자기성찰지능")) {
+            Ira();
+        } else if (detailSecond.getText().equals("공간지능")) {
+            Sp();
+        } else if (detailSecond.getText().equals("음악지능")) {
+            Mu();
+        }else if(detailSecond.getText().equals("신체운동지능")) {
+            BK();
+        }else if(detailSecond.getText().equals("자연친화지능")) {
+            Na();
+        }
+     }
 
 
-        public void Threeinit(){
-            if (detailThree.getText().equals("언어지능")) {
-                Ln();
-            } else if (detailThree.getText().equals("논리수학지능")) {
-                LM();
-            } else if (detailThree.getText().equals("대인관계지능")) {
-                Int();
-            } else if (detailThree.getText().equals("자기성찰지능")) {
-                Ira();
-            } else if (detailThree.getText().equals("공간지능")) {
-                Sp();
-            } else if (detailThree.getText().equals("음악지능")) {
-                Mu();
-            }else if(detailThree.getText().equals("신체운동지능")) {
-                BK();
-            }else if(detailThree.getText().equals("자연친화지능")) {
-                Na();
-            }
+    public void Threeinit(){
+        if (detailThree.getText().equals("언어지능")) {
+            Ln();
+        } else if (detailThree.getText().equals("논리수학지능")) {
+            LM();
+        } else if (detailThree.getText().equals("대인관계지능")) {
+            Int();
+        } else if (detailThree.getText().equals("자기성찰지능")) {
+            Ira();
+        } else if (detailThree.getText().equals("공간지능")) {
+            Sp();
+        } else if (detailThree.getText().equals("음악지능")) {
+            Mu();
+        }else if(detailThree.getText().equals("신체운동지능")) {
+            BK();
+        }else if(detailThree.getText().equals("자연친화지능")) {
+            Na();
         }
     }
+}
