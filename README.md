@@ -320,8 +320,6 @@
         ![home2](./readme/hom2.png)
         
         ![home3](./readme/hom3.png)
-                
-        ![home4](./readme/hom4.png)
         
         ![home5](./readme/hom5.png)
         
@@ -508,10 +506,10 @@
         #### Auth/Auth.py
         Auth class 는 아래의 기능을 수행합니다.   
         로그인, 회원가입, 유저정보설정, 유저정보 받아오기와 같은 기능을 수행합니다.
-        #####Login 
+        ##### Login 
         ![login](./readme/login.png)
         
-        #####Register
+        ##### Register
         ![reg](./readme/reg.png)
         
         ##### setUser
@@ -549,10 +547,42 @@
    + #### 딥러닝 Server (딥러닝서버)
      개인 컴퓨터에 Local로 제한함.   
                            
-             
    * ### 딥러닝
+       - NLP
+        ![nlp1](./readme/nlp1.png)
+        ![nlp2](./readme/nlp2.png)
+        ![nlp3](./readme/nlp3.png)
+        ![nlp4](./readme/nlp4.png)
+ 
+             NLP키워드 분리에는 Konlpy가 라이브러리를 사용한다.
+             https://konlpy-ko.readthedocs.io/ko/v0.4.3/
+             
+             Library
+             konlpy == 0.5.2
+             
+             순서
+             1. Server에서 키워드 분리가 안된 데이터를 가져온다.
+             2. 가져온 데이터에서 제목, 내용, 자막, 태그 등 텍스트 데이터를 가져온다.
+             3. getKeyword를 통해 한글, 영어로 키워드를 분리 후 불용어 제거를 해주며 다시 합친 값을 받는다.
+             4. 위의 결과를 Counting한 후 Top Keyword를 추출 한 뒤 서버에 저장한다.
+            실행결과
+            ![nlp5](./readme/nlp5.png)
+            
+       - MultiLabel Classification
+        
+             Library
+             Tensorflow == 1.14.0
+             numpy == 1.18.4
+             pandas == 0.25.3
+             
+             https://parksion.tistory.com/78 [박시온 블로그]
+             
+       - Object Detection
+       아래의 라이브러리를 이용하여 개발하였다.
+       https://www.tensorflow.org/lite/models/object_detection/overview
    
 ## 4. 기타
+    
     (https://www.ibabynews.com/news/articleView.html?idxno=63406)[베이비뉴스]
     (다중지능이론의 교육학적 의의)[이영재 교수]
     (https://blog.naver.com/PostView.nhn?blogId=sfdirect&logNo=221603563752&parentCategoryNo=&categoryNo=8&viewDate=&isShowPopularPosts=true&from=search)[유아동스마트폰이용사태]
