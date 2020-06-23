@@ -69,6 +69,13 @@ public class YoutubePlayerActivity extends YouTubeBaseActivity {
         youTubePlayerView = findViewById(R.id.youtube_player_view);
         initializeYoutubePlayer();
     }
+    /*
+        activity start -> current time
+        activity stop -> current time
+        stop - start = active time
+        then
+            post active time, id, title, category
+     */
 
     @Override
     protected void onStart() {

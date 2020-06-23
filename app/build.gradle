@@ -80,4 +80,6 @@ dependencies {
     //cardview
     implementation 'androidx.cardview:cardview:1.0.0'
 
+    //광고 테스트
+    implementation 'com.google.android.gms:play-services-ads:19.1.0'
 }
