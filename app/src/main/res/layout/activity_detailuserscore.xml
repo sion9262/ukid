@@ -18,7 +18,7 @@
 
             <TextView
                 android:id="@+id/textView5"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#2196F3"
@@ -29,7 +29,7 @@
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#2196F3"
@@ -40,7 +40,7 @@
 
             <TextView
                 android:id="@+id/textView4"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#2196F3"
@@ -52,7 +52,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="match_parent"
             android:orientation="horizontal"
             tools:ignore="MissingConstraints">
 
@@ -96,7 +96,7 @@
                 android:id="@+id/mainTitle"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:text="언어지능(Ln) 결과해석"
+                android:text=""
                 android:textSize="30sp"
                 android:textColor="#000"
                 android:gravity="center"/>
@@ -110,14 +110,13 @@
                 android:paddingRight="10dp"
                 android:textSize="20sp"
                 android:paddingBottom="30dp"
-                android:text="@string/Ln_analysis"/>
+                android:text=""/>
 
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
-                android:paddingBottom="30dp"
-                app:srcCompat="@drawable/lawyer" />
+                android:paddingBottom="30dp"/>
 
             <TextView
                 android:id="@+id/textView8"
@@ -133,7 +132,7 @@
                 android:id="@+id/Representative_person"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/Ln_Representative_person"
+                android:text=""
                 android:paddingBottom="30dp"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
@@ -153,7 +152,7 @@
                 android:id="@+id/Representative_occupation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/Ln_Representative_occupation"
+                android:text=""
                 android:paddingBottom="30dp"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
@@ -173,7 +172,7 @@
                 android:id="@+id/Feature"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/Ln_Feature"
+                android:text=""
                 android:paddingBottom="30dp"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
@@ -193,7 +192,7 @@
                 android:id="@+id/Improving"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/Ln_Improving"
+                android:text=""
                 android:paddingBottom="30dp"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
