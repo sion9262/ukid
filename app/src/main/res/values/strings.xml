@@ -66,6 +66,15 @@
     <string name="Nature_2">2. 길가다 꽃과 나무를 보면 관찰하며 이야기한다.</string>
     <string name="Nature_3">3. 육지동물과 바다동물을 구분할 수 있다.</string>
 
+    <string name="Ln_mainTitle">언어지능(Ln) 결과해석</string>
+    <string name="LM_mainTitle">논리수학지능(LM) 결과해석</string>
+    <string name="Sp_mainTitle">시공간지능(Sp) 결과해석</string>
+    <string name="Mu_mainTitle">음악지능(Mu) 결과해석</string>
+    <string name="BK_mainTitle">신체운동지능(BK) 결과해석</string>
+    <string name="Int_mainTitle">대인간지능(Int) 결과해석</string>
+    <string name="Ira_mainTitle">자기성찰지능(Ira) 결과해석</string>
+    <string name="Na_mainTitle">자연친화지능(Na) 결과해석</string>
+
     <string name="Ln_analysis">단어, 어휘의 의미와 소리에 대해 민감하며, 언어의 구조 및 언어가 사용될 수 있는 다양한 방법을 잘 알고 사용할 수 있는 지능</string>
     <string name="LM_analysis">수와 같은 추상적인 상징체계를 조작하고 그들의 관계를 인식하며 논리적이고 체계적으로 아이디어를 잘 평가하는 지능</string>
     <string name="Sp_analysis">색, 모양, 대칭, 이미지 등 시각자극을 정확하게 지각하고, 그러한 시각자극들의 각도나 방향이 바뀌어도 정확하게 지각할 수 있으며 순서적 관계나 복잡한 위계적 관계를 시각화를 통해 이해하는 지능</string>
@@ -123,7 +132,7 @@
     <string name="Ira_Improving">아이가 잘하는 것과 잘하지 못하는 것을 적어보게 해주세요! 감정일기를 쓰도록 해주세요! 위인전을 많이 읽을 수 있도록 독려해주세요!</string>
     <string name="Na_Improving">아이와 함께 캠핑을 떠나 보세요! 아이와 함께 화분을 관리할 수 있도록 해주세요! 동물이 주인공인 우화나 동화를 읽어주세요! 가까운 동물원, 식물원, 수목원에 가보세요!</string>
 
-
+    <string name="test">test</string>
 
 
     <string name="tfe_od_app_name" translation_description="Object Detection demo app [CHAR_LIMIT=40]">TFL Detect</string>

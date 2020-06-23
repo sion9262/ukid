@@ -64,7 +64,7 @@
                 android:textSize="20dp"
                 android:background="#39B9F2"
                 android:textColor="#fff"
-                android:text="언어지능"/>
+                android:text="음악지능"/>
 
             <Button
                 android:id="@+id/detailSecond"
@@ -74,7 +74,7 @@
                 android:textSize="20dp"
                 android:background="#39B9F2"
                 android:textColor="#fff"
-                android:text="논리수학"/>
+                android:text="논리수학지능"/>
 
             <Button
                 android:id="@+id/detailThree"
@@ -84,7 +84,7 @@
                 android:textSize="20dp"
                 android:background="#39B9F2"
                 android:textColor="#fff"
-                android:text="공간지능"/>
+                android:text="자연친화지능"/>
         </LinearLayout>
 
         <LinearLayout
@@ -93,16 +93,17 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/mainTitle"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="언어지능(Ln) 결과해석"
                 android:textSize="30sp"
                 android:textColor="#000"
-                android:gravity="center"
-                android:layout_gravity="center"/>
+                android:gravity="center"/>
+
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/explanation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
@@ -129,7 +130,7 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/Representative_person"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Ln_Representative_person"
@@ -149,7 +150,7 @@
                 android:gravity="center"/>
 
             <TextView
-                android:id="@+id/textView11"
+                android:id="@+id/Representative_occupation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Ln_Representative_occupation"
@@ -169,7 +170,7 @@
                 android:gravity="center" />
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/Feature"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Ln_Feature"
@@ -189,7 +190,7 @@
                 android:gravity="center"/>
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/Improving"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/Ln_Improving"
