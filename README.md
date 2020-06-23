@@ -106,24 +106,54 @@
         + #### 추진 일정
             
         + #### 개발 역할
-            1. 박시온 (풀스택)
-                - Server 개발 
-                    Python (중앙서버) + NodeJS(데이터서버) 구성 및 API 처리
-                - DB 개발
-                    DataBase(Mysql) Modeling 및 개발
-                - YoutubeCrawling 개발
-                    유튜브에서 동영상의 메타데이터, 자막데이터를 자동 수집 로직 개발
-                - NLP 키워드 추출
-                    동영상 정보를 이용하여 TOP 키워드 추출 
-                - Multilabel Classification
-                    Keras를 이용한 NLP Multilabel Classification
-                -  
-            2. 천건호 (앱개발)
-            3. 김나형 (앱개발)
-            4. 이세환 (디자인 및 레이아웃 구성)
-            5. 정가영 (디자인)
+            * 박시온 (풀스택)
+                
+                1. 안드로이드
+                    - SharedPreferences : SharedPreferences를 통한 데이터 관리
+                    - AuthCheckPage : 자동 로그인 및 유저 셋업으로 전환되는 로직 개발
+                    - SetUserInfoActivity : 첫 로그인 시 유저 정보 및 설문조사 (Fragment) 개발
+                    - DetectionActivity : 사물 인식 카메라 페이지 (사물 설명 dialog) Custom 개발
+                    - CalculatorPlayActivity : 수학 학습 페이지 로직 개발
+                2. Server
+                    - Python (중앙서버) : 요청에 따른 Data, Deep learning Server API처리
+                    - NodeJS(데이터서버) : 데이터 시각화, 데이터 요청에 따른 데이터 전송 
+                    - Deep learning Server : 데이터 수집, 키워드 추출, 모델 예측 처리 
+                    - DB 개발 : DataBase(Mysql) Modeling 및 개발
+                    - YoutubeCrawling : 유튜브에서 동영상의 메타데이터, 자막데이터를 자동 수집 로직 개발
+                3. Deep learning
+                    - NLP 키워드 추출 : 동영상 정보를 이용하여 TOP 키워드 추출 
+                    - Multilabel Classification : Keras를 이용한 NLP Multilabel Classification
+                    - Object Detection : tensorflow Lite를 이용한 Object detection 및 사물 설명 Custom
+                
+            * 천건호 (앱개발)
+                - APP API Interface : Retrofit2를 이용한 Server와 API 통신 Interface 개발
+                - YoutubePlayer : API를 통해 동영상 정보를 받아온 후 Main화면에 YoutubePlayer 연동
+                - 동영상 카테고리 : 동영상을 카테고리에 맞게 화면에 표출하는 로직 작성
+                - 로그인 및 회원가입 : 유저 회원가입 및 로그인 activity 개발
+                - MypageActivity : 마이페이지 하단 유저 동영상 시청에 관련된 정보처리
+                - 유저의 성별에 맞게 성별 ICON Change
+                
+            * 김나형 (앱개발)
+                - MainActivity : 메인 Fragment 구현
+                - Google Admob  : 어플리케이션에 admob 연동
+                - MypageActivity : 마이페이지 유저 정보 표현 및 다중지능 차트화
+                - 
+            * 이세환 (디자인 및 레이아웃 구성)
+                - 로딩페이지 layout, animation 구현  
+                - 배경 layout(app bar, background) 구현
+                - fab button(layout, label, blur처리) 구현
+                - navigation header layout 구현
+                - 유저 셋업 시 설문 layout 구현
+                - 지능별 Detail 결과해석 layout, activity 구현
+                - 계산기 놀이 layout 구현
+                - 각종 이미지 수집
+            * 정가영 (디자인)
+                - 앱 로고제작 : 앱 로고 'U' 및 'UKID' 디자인
+                - 로그인, 회원가입, Main화면 : 3가지의 화면 디자인
+                - Fab 디자인 : 메인화면 Fab Button 디자인
          
    * ### 기대효과 및 활용분야
+        
    * ### 결과물 후속 활용 방안
 ## 3. 개발서
    * ### 안드로이드 앱
