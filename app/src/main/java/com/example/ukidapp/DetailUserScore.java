@@ -163,7 +163,7 @@ public class DetailUserScore extends AppCompatActivity implements View.OnClickLi
             Ln();
         } else if (detailFirst.getText().equals("논리수학지능")) {
             LM();
-        } else if (detailFirst.getText().equals("대인관계지능")) {
+        } else if (detailFirst.getText().equals("대인간관계지능")) {
             Int();
         } else if (detailFirst.getText().equals("자기성찰지능")) {
             Ira();
@@ -183,7 +183,7 @@ public class DetailUserScore extends AppCompatActivity implements View.OnClickLi
             Ln();
         } else if (detailSecond.getText().equals("논리수학지능")) {
             LM();
-        } else if (detailSecond.getText().equals("대인관계지능")) {
+        } else if (detailSecond.getText().equals("대인간관계지능")) {
             Int();
         } else if (detailSecond.getText().equals("자기성찰지능")) {
             Ira();
@@ -204,7 +204,7 @@ public class DetailUserScore extends AppCompatActivity implements View.OnClickLi
             Ln();
         } else if (detailThree.getText().equals("논리수학지능")) {
             LM();
-        } else if (detailThree.getText().equals("대인관계지능")) {
+        } else if (detailThree.getText().equals("대인간관계지능")) {
             Int();
         } else if (detailThree.getText().equals("자기성찰지능")) {
             Ira();
