@@ -524,10 +524,10 @@
         Movies class 는 아래의 기능을 수행합니다.   
         전체 동영상 가져오기, 카테고리별 동영상 가져오기,   
         유저가 시청한 동영상 저장, 랜덤 영상 프로세싱 기능을 수행합니다.
-        #####getMovies 
+        ##### getMovies 
         ![getmoives](./readme/getmovie.png)
         
-        #####getcategory
+        ##### getcategory
         ![getcategory](./readme/getcategory.png)
         
         ##### userplaymovies
@@ -535,8 +535,19 @@
         
         ##### movieUtil
         ![movieutil](./readme/movieutil.png)
+     
+   + #### Node Server (데이터서버)
+         StrAPI 이용한 서버구성  
+         https://strapi.io/
+     
+        - ##### 데이터베이스 구성도
+        ![db1](./readme/db1.JPG)
+        ![db2](./readme/db2.JPG)
         
-        
+        ![db3](./readme/strapi.png)
+     
+   + #### 딥러닝 Server (딥러닝서버)
+     개인 컴퓨터에 Local로 제한함.   
                            
              
    * ### 딥러닝
