@@ -217,7 +217,7 @@
          -> application
          android:networkSecurityConfig="@xml/network_security_config" 추가
          
-        ![http3](./readme/http3/png)
+        ![http3](./readme/http3.png)
         
          res/xml/network_security_config.xml 
          // res에 xml 폴더 추가 후 network_security_config.xml 추가
@@ -267,10 +267,13 @@
         로그인, 회원가입, 유저정보설정, 유저정보 받아오기와 같은 기능을 수행합니다.
         #####Login 
         ![login](./readme/login.png)
+        
         #####Register
         ![reg](./readme/reg.png)
+        
         ##### setUser
         ![setuser](./readme/setuser.png)
+        
         ##### userplaymovies
         ![userplaymovies](./readme/userplaymovies.png)
         
@@ -280,12 +283,16 @@
         유저가 시청한 동영상 저장, 랜덤 영상 프로세싱 기능을 수행합니다.
         #####getMovies 
         ![getmoives](./readme/getmovie.png)
+        
         #####getcategory
         ![getcategory](./readme/getcategory.png)
+        
         ##### userplaymovies
         ![postmovie](./readme/postmovie.png)
+        
         ##### movieUtil
         ![movieutil](./readme/movieutil.png)
+        
         
                            
              
