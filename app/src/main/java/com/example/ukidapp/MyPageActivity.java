@@ -166,15 +166,20 @@ public class MyPageActivity extends AppCompatActivity {
                             MovieTitle.add(data.getMovieTitle());
                             PlayDate.add(data.getPlayDate());
                         }
-                        System.out.println(PlayTime + " 아라아라아라아라아라");
 
                         HashMap<String, Integer> duplicate_count = new HashMap<String, Integer>();
                         for (int i = 0 ; i < MovieCategory.size() ; i++){ // ArrayList 만큼 반복
-                            if (duplicate_count.containsKey(MovieCategory.get(i))) { // HashMap 내부에 이미 key 값이 존재하는지 확인
-                                duplicate_count.put(MovieCategory.get(i), duplicate_count.get(MovieCategory.get(i))  + 1);  // key가 이미 있다면 value에 +1
-                            } else { // key값이 존재하지 않으면
-                                duplicate_count.put(MovieCategory.get(i) , 1); // key 값을 생성후 value를 1로 초기화
+                            String category = MovieCategory.get(i);
+                            String[] dataCategory = category.split(", ");
+
+                            for (int j=0; j<dataCategory.length; j++){
+                                if (duplicate_count.containsKey(dataCategory[j])) { // HashMap 내부에 이미 key 값이 존재하는지 확인
+                                    duplicate_count.put(dataCategory[j], duplicate_count.get(dataCategory[j])  + 1);  // key가 이미 있다면 value에 +1
+                                } else { // key값이 존재하지 않으면
+                                    duplicate_count.put(dataCategory[j] , 1); // key 값을 생성후 value를 1로 초기화
+                                }
                             }
+
                         }
                         System.out.println(duplicate_count + "가나다라마바사");
                         System.out.println(duplicate_count.get("언어지능"));
