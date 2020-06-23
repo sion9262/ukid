@@ -137,7 +137,7 @@
                     - AuthCheckPage : 자동 로그인 및 유저 셋업으로 전환되는 로직 개발
                     - SetUserInfoActivity : 첫 로그인 시 유저 정보 및 설문조사 (Fragment) 개발
                     - DetectionActivity : 사물 인식 카메라 페이지 (사물 설명 dialog) Custom 개발
-                    - CalculatorPlayActivity : 수학 학습 페이지 로직 개발
+                    - StudyMathFragment : 수학 학습 페이지 로직 개발
                     - UserAnalysisFragment : 아이의 TOP3 다중지능 페이지 로직 개발
                 2. Server
                     - Python (중앙서버) : 요청에 따른 Data, Deep learning Server API처리
@@ -190,7 +190,8 @@
         + 비지니스 측면
             - 기존 설문 및 교육 단계별 30만원을 호가하는 등 높은 비용을 무료 ~ 소정 비용으로 이용할 수 있다.
               이를 통해 비용을 절약할 수 있다.
-        
+            - Google admob, 광고를 확인하면 무료로 다중지능을 분석할 수 있다.   
+           
         + 활용 분야
             - 유아 다중지능 분석 및 유아 다중지능 학습
             
@@ -379,7 +380,104 @@
          3. 유저 시청한 동영상 확인
             Server에서 User의 동영상 시청 정보를 확인하여 다중지능별 시청 횟수
             및 최근에 시청한 동영상 목록이 보여지게된다.
-             
+            
+        ##### DectionActivity 사물 인식 
+        ![detection1](./readme/detection1.png)
+
+         DectionActivity 코드 중 수정만 한 부분이다.
+         Object detection기능은 tensorflow libray를 사용하였고
+         기본 코드 중 일부분 수정하였다.
+         1. 예측 정확도 60%이상만 예측한 것으로 하였다.
+            - 낮은 정확도는 필터링
+         2. ArrayList로 결과를 저장한 후 CameraActivity UI 변경
+            - showDetectionReulst는 CameraActivity의 함수 중 일부이며
+              저장된 결과를 List로 보여주는 함수이다.
+              원래 다른 Activity에서 다른 UI를 수정할 수 없지만,
+              Thread를 이용하여 접근할 수 있다.
+        
+        ##### CameraActivity 사물 인식 
+        ![camera1](./readme/camera1.png)
+        
+        ![camera1](./readme/camera2.png)
+        
+        ![camera1](./readme/camera3.png)
+
+         CameraActivity 코드 중 수정만 한 부분이다.
+         
+         첫번째로 보이는 화면은 기존 Frame을 설정하는 UI에서
+         ListView로 바꾸어주어, Adapter을 SETUP하며,
+         ItemCickListener을 설정하여 주었다.
+         
+         두번째로 보이는 화면은 이미 저장된 label에 관한 정보를 불러와
+         labelKR, labelSubText에 값을 넣어준다.
+         
+         세번쨰로 보이는 화면은 Item을 추가하고 검증하는 단계이다.
+         위의 DetectionActivity에서 result값을 넣어주면
+         영어 -> 영어 + 한글로 넘겨주고 listitem에 추가하게 된다.
+         이후 중복된 사물은 추가 안되게 막아준다.
+         
+         밑에 함수는 ItemClick이 되면 labelSubText와 비교하여
+         영어 + 한글 + 설명 을 리턴하게 된다.
+         
+         
+     
+        ##### StudyMathFragment 수학놀이 
+        ![math1](./readme/math1.JPG)
+        
+        ![math2](./readme/math2.JPG)
+        
+        ![math3](./readme/math3.JPG)
+        
+        ![math4](./readme/math4.JPG)
+        
+        ![math5](./readme/math5.JPG)
+        
+        ![math6](./readme/math6.JPG)
+                
+         StudyMathFragment의 코드이다.
+         
+         랜덤으로 덧셈 뺄셈을 결정하며, 숫자 또한 랜덤으로 결정된다.
+         
+         추후 tryCount, answerCount, failCount를 이용하여
+         아이가 논리수학지능의 점수를 갱신해주는 업데이트를 할 예정이다.
+         
+        ##### UserAnalysisFragment 유저 분석 
+        ![analysis1](./readme/analysis1.JPG)
+        
+        ![analysis1](./readme/analysis2.JPG)
+        
+        ![analysis1](./readme/analysis3.JPG)
+                
+         UserAnalysisFragment의 코드이다.
+         Sharedpreferences에서 다중지능 점수를 가져와
+         Top3의 다중지능을 추출하여 Bar Chart형식으로 표현된다.
+         
+         이후 확인하러가기 버튼을 누르게되면 Top3 다중지능과 함께 
+         DetailUserScore로 전환된다.
+         
+        ##### DetailUserScore 다중지능 분석 
+        ![detail1](./readme/detail1.JPG)
+        
+        ![detail2](./readme/detail2.JPG)
+        
+        ![detail3](./readme/detail3.JPG)
+        
+        ![detail4](./readme/detail4.JPG)
+        
+        ![detail5](./readme/detail5.JPG)
+        
+        ![detail6](./readme/detail6.JPG)
+                
+         DetailUserScore의 코드이다.
+         UserAnalysisFragment받은 Top3 를 가지고
+         화면을 구성하게 되며, 전면 광고 및 배너 광고가 포함되어있다.
+         
+         주요 기능은 각 지능별 설명과 추천직업, 대표인물, 향상시키는 법
+         이 들어가있다.
+         
+        
+         
+         
    * ### 서버
    + #### Python Server (중앙서버)
      fastAPI를 이용한 서버구성

@@ -34,9 +34,9 @@ public interface RetrofitInterface {
     @Headers({"Content-Type: application/json;charset=UTF-8"})
     Call<YoutubeModel> movies();
 
-    @GET("movies")
+    @GET("movies/{category}")
     @Headers({"Content-Type: application/json;charset=UTF-8"})
-    Call<YoutubeModel> moviesCategory(@Query("category") String category);
+    Call<YoutubeModel> moviesCategory(@Path("category") String category);
 
     @POST("userplaymovie")
     @Headers({"Content-Type: application/json;charset=UTF-8"})
