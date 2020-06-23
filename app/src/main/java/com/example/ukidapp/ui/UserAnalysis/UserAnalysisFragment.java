@@ -39,6 +39,8 @@ public class UserAnalysisFragment extends Fragment {
     BarChart barChart;
     TextView userScoreBoard;
     Button detailscore;
+
+    String category1, category2, category3;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         studyMathViewModel =
@@ -49,13 +51,18 @@ public class UserAnalysisFragment extends Fragment {
         userScoreBoard = (TextView)root.findViewById(R.id.userScoreText);
         detailscore = (Button)root.findViewById(R.id.detailscore);
 
+
+        init();
         detailscore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(mContext, DetailUserScore.class));
+                startActivity(new Intent(mContext, DetailUserScore.class)
+                        .putExtra("category1", category1)
+                .putExtra("category2", category2)
+                .putExtra("category3", category3));
+
             }
         });
-        init();
         return root;
     }
 
@@ -82,6 +89,8 @@ public class UserAnalysisFragment extends Fragment {
         score[5] = new UserScore("음악지능", Integer.parseInt(music));
         score[6] = new UserScore("신체운동지능", Integer.parseInt(physical));
         score[7] = new UserScore("자연친화지능", Integer.parseInt(nature));
+
+        // Class Sort
         Arrays.sort(score);
 
         ArrayList<BarEntry> entries = new ArrayList<>();
@@ -94,6 +103,10 @@ public class UserAnalysisFragment extends Fragment {
         labels.add(score[6].getCategory());
         labels.add(score[5].getCategory());
 
+        // Top Category 설정
+        category1 = score[7].getCategory();
+        category2 = score[6].getCategory();
+        category3 = score[5].getCategory();
         BarDataSet dataSet = new BarDataSet(entries, "다중지능");
         dataSet.setValueTextSize(20);
         BarData data = new BarData(labels, dataSet);
