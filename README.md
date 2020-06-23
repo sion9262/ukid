@@ -136,6 +136,7 @@
                     - NLP 키워드 추출 : 동영상 정보를 이용하여 TOP 키워드 추출 
                     - Multilabel Classification : Keras를 이용한 NLP Multilabel Classification
                     - Object Detection : tensorflow Lite를 이용한 Object detection 및 사물 설명 Custom
+                4. REAMDME.md 작성
                 
             * 천건호 (앱개발)
                 - APP API Interface : Retrofit2를 이용한 Server와 API 통신 Interface 개발
@@ -183,8 +184,8 @@
 ## 3. 개발서
    * ### 안드로이드 앱
         + #### 디렉토리 구조
+        ##### app/src/main/java/com/example/ukidapp 이후 Activity만
         ![tree.png](./readme/tree.png)
-        <img src="readme/tree.png">
         
         + #### 사양
          complieSdkVersion : 29
@@ -196,9 +197,98 @@
          Download ZIP
          
         + #### 개발 
-        ##### 
+        ##### 권환
+        ###### 권한에는 인터넷, 인터넷 상태체크, 카메라 가 있습니다.
+        ![permission](./readme/permission.png)
+        
+        ##### 네트워크 보안문제 설정
+        ##### error : No Network Security Config specified, using platform default  
+        ##### 방법 1
+        ![http1](./readme/http1.png)
+        
+         AndroidManifest.xml
+         -> application 
+         android:usesCleartextTraffic="true" 추가
+        
+        ##### 방법 2
+        ![http2](./readme/http2.png)
+         
+         AndroidManifest.xml 
+         -> application
+         android:networkSecurityConfig="@xml/network_security_config" 추가
+         
+        ![http3](./readme/http3/png)
+        
+         res/xml/network_security_config.xml 
+         // res에 xml 폴더 추가 후 network_security_config.xml 추가
+         
+         <?xml version="1.0" encoding="utf-8"?>
+         <network-security-config>
+            <!--Set application-wide security config using base-config tag.-->
+            <!--<base-config cleartextTrafficPermitted="true"/>-->
+            <base-config cleartextTrafficPermitted="true">
+                <trust-anchors>
+                    <certificates src="system" />
+                </trust-anchors>
+            </base-config>
+         </network-security-config>
+        
+        #####
          
    * ### 서버
+   + #### Python Server (중앙서버)
+     fastAPI를 이용한 서버구성
+     https://github.com/sion9262/ukidfastapi
+            
+        #### 설치방법
+         git clone https://github.com/sion9262/ukidfastapi.git
+        #### 필요라이브러리 
+         PYTHON VERSION >= 3.6
+
+         pip install fastapi
+        
+         pip install email-validator
+        
+         pip install uvicorn
+        
+         실행 방법 : uvicorn main:app --reload
+         
+        #### 디렉토리 구조
+        ![pythonbackend](./readme/pythonbackend.png)
+        
+        #### main.py
+        ![api](./readme/api.png)
+        
+         API를 처리하는 부분입니다.
+         각 기능 Auth, Movies에 관한 Model을 생성하며 로직을 수행합니다.
+        
+        #### Auth/Auth.py
+        Auth class 는 아래의 기능을 수행합니다.   
+        로그인, 회원가입, 유저정보설정, 유저정보 받아오기와 같은 기능을 수행합니다.
+        #####Login 
+        ![login](./readme/login.png)
+        #####Register
+        ![reg](./readme/reg.png)
+        ##### setUser
+        ![setuser](./readme/setuser.png)
+        ##### userplaymovies
+        ![userplaymovies](./readme/userplaymoives.png)
+        
+        #### Moives/Moives.py
+        Movies class 는 아래의 기능을 수행합니다.   
+        전체 동영상 가져오기, 카테고리별 동영상 가져오기,   
+        유저가 시청한 동영상 저장, 랜덤 영상 프로세싱 기능을 수행합니다.
+        #####getMovies 
+        ![getmoives](./readme/getmovie.png)
+        #####getcategory
+        ![getcategory](./readme/getcategory.png)
+        ##### userplaymovies
+        ![postmovie](./readme/postmovie.png)
+        ##### movieUtil
+        ![movieutil](./readme/movieutil.png)
+        
+                           
+             
    * ### 딥러닝
    
 ## 4. 기타
