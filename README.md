@@ -259,8 +259,66 @@
          응답은 GSON형식의 AuthModel로 저장되며
          로그인 성공시 Sharedpreferences에 유저 정보가 저장된다.
          
+        ##### RegisterActivity 회원가입 기능
+        ![flogin](./readme/register1.JPG)
+        
+        ![flogin2](./readme/register2.JPG)
+        
+        ![flogin3](./readme/register3.JPG)
+        
+         RegisterActivity의 코드이다.
+         사용자가 입력한 이메일, 패스워드, 전화번호를 검증 한 후
+         Retrofit을 통해 Server에 회원가입 요청을 한다.
+         응답은 GSON형식의 AuthModel로 저장되며
+         회원가입 성공시 LoginActivity로 이동된다.
          
-                 
+        ##### SetUserInfoActivity 초기 유저 정보 및 설문
+        ![flogin](./readme/setup1.png)
+        
+        ![flogin2](./readme/setup2.png)
+        
+        ![flogin3](./readme/setup3.JPG)
+        
+        ![flogin3](./readme/setup4.JPG)
+        
+        ![flogin3](./readme/setup5.JPG)
+        
+        ![flogin3](./readme/setup6.JPG)
+        
+         SetUserInfoActivity의 코드이다.
+         Activity는 9개의 Fragment와 함께 작동되며,
+         pageIndex 마다 하는 일이 다르다.
+         
+         1 -> 유저 성별, 이름, 나이 
+         2 -> 언어지능 설문
+         3 -> 논리수학지능 설문
+         4 -> 공간지능 설문
+         5 -> 신체운동지능 설문
+         6 -> 음악지능 설문
+         7 -> 대인간관계지능 설문
+         8 -> 자기성찰지능 설문
+         9 -> 자연친화지능 설문 
+         
+         이후 각 설문별 데이터를 가져와 Server로 저장하게 되며
+         Sharedpreferences에 유저 정보 및 설문내용이 저장된다.         
+         
+        ##### YoutubePlayActivity 유튜브 실행 
+        ![flogin](./readme/YoutubePlayActivity1.png)
+        
+        ![flogin2](./readme/YoutubePlayActivity2.png)
+        
+        ![flogin3](./readme/YoutubePlayActivity3.JPG)
+        
+        ![flogin3](./readme/YoutubePlayActivity4.JPG)
+        
+         YoutubePlayActivity의 코드이다.
+         시작시 onStart 를 통하여 동영상 시작 시간을 저장한다.
+         이후 HomeFragment에서 받은 동영상 정보를 getStringExtra통해 받아온 후
+         initializeYoutubePlayer() 함수를 통해 유튜브를 재생하게 된다.
+         동영상 시청 후 activity가 onDestroy하게 되면 
+         정지 시간 - 시작 시간 = 동영상 시청시간이 구해지게 된다.
+         이러한 정보는 SavePlayMovieData을 통해 유저의 시청 동영상 정보가 서버에 저장되게된다.
+          
    * ### 서버
    + #### Python Server (중앙서버)
      fastAPI를 이용한 서버구성
