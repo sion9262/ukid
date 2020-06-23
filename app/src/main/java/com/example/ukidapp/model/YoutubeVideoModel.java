@@ -6,7 +6,11 @@ package com.example.ukidapp.model;
  */
 
 public class YoutubeVideoModel {
-    private String videoId, title,duration;
+    private String videoId, title,duration, category;
+
+    public String getCategory() {return category;}
+
+    public void setCategory(String category){ this.category = category;}
 
     public String getVideoId() {
         return videoId;
@@ -23,6 +27,7 @@ public class YoutubeVideoModel {
     public void setTitle(String title) {
         this.title = title;
     }
+
 
 
     public String getDuration() {

@@ -9,9 +9,15 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -25,12 +31,19 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+
 public class MainActivity extends AppCompatActivity{
 
     private AppBarConfiguration mAppBarConfiguration;
     SharedPreferences prefs;
     NavigationView navigationView;
     Button settingBtn;
+    ImageView img;
+    private AdView mAdView;
+    private InterstitialAd mInterstitialAd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +51,13 @@ public class MainActivity extends AppCompatActivity{
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
+        //광고
+        MobileAds.initialize(this, new OnInitializationCompleteListener() {
+            @Override
+            public void onInitializationComplete(InitializationStatus initializationStatus) {}
+        });
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
 
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -62,6 +81,9 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+
+
+
         settingBtn.setOnClickListener(new Button.OnClickListener() {
 
             @Override
@@ -73,8 +95,7 @@ public class MainActivity extends AppCompatActivity{
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_study_object, R.id.nav_study_math, R.id.nav_study_science, R.id.nav_check_interest,
-                R.id.nav_observe_kid, R.id.nav_study_image, R.id.logout)
+                R.id.nav_home, R.id.nav_study_object, R.id.nav_study_math, R.id.nav_study_science, R.id.logout)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -89,9 +110,16 @@ public class MainActivity extends AppCompatActivity{
         prefs = getSharedPreferences("Auth", MODE_PRIVATE);
         try{
             String nickname = prefs.getString("nickname", "");
-            View navHeaer = navigationView.inflateHeaderView(R.layout.nav_header_main);
-            TextView tv = (TextView)navHeaer.findViewById(R.id.nickName);
-            settingBtn = (Button)navHeaer.findViewById(R.id.settingBtn);
+            String gender = prefs.getString("gender", "여아");
+            View navHeader = navigationView.inflateHeaderView(R.layout.nav_header_main);
+            img = (ImageView)navHeader.findViewById(R.id.nav_image);
+            if(gender.equals("남아")){
+                img.setImageResource(R.drawable.boy_profile2);
+            }else if(gender.equals("여아")) {
+                img.setImageResource(R.drawable.girl_profile);
+            }
+            TextView tv = (TextView)navHeader.findViewById(R.id.nickName);
+            settingBtn = (Button)navHeader.findViewById(R.id.settingBtn);
             tv.setText(nickname + "님 환영합니다.");
         } catch (Exception e) {
             e.printStackTrace();
@@ -121,7 +149,5 @@ public class MainActivity extends AppCompatActivity{
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-
-
 
 }

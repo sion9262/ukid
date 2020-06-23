@@ -77,6 +77,7 @@
             app:layout_constraintTop_toTopOf="@+id/guideline2">
 
             <RadioButton
+                android:id="@+id/female"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_marginStart="125dp"
@@ -87,6 +88,7 @@
                 />
 
             <RadioButton
+                android:id="@+id/male"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_weight="1"

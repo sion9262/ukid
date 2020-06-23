@@ -15,23 +15,11 @@
         <item
             android:id="@+id/nav_study_math"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_study_math" />
+            android:title="@string/menu_useranalysis" />
         <item
             android:id="@+id/nav_study_science"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_study_science" />
-        <item
-            android:id="@+id/nav_check_interest"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_check_interest" />
-        <item
-            android:id="@+id/nav_observe_kid"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_observe_kid" />
-        <item
-            android:id="@+id/nav_study_image"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_study_image" />
+            android:title="@string/menu_study_math" />
         <item
             android:id="@+id/logout"
             android:icon="@drawable/ic_menu_slideshow"

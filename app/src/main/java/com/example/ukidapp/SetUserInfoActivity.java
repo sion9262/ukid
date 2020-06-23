@@ -7,13 +7,14 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.ukidapp.api.Model.SetUser;
+import com.example.ukidapp.api.Model.ResultCode;
 import com.example.ukidapp.api.RetrofitSender;
 import com.example.ukidapp.src.SetUpDataManager;
 import com.example.ukidapp.ui.UserSetUp.MathFragment;
@@ -55,6 +56,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
     RelationshipFragment relationshipFragment;
     PersonalFragment personalFragment;
     NatureFragment natureFragment;
+    TextView textViewPage;
 
     SetUpDataManager User;
     @Override
@@ -64,6 +66,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
 
         next = (Button)findViewById(R.id.nextButton);
         prev = (Button)findViewById(R.id.prevButton);
+        textViewPage = (TextView)findViewById(R.id.textViewPage);
         next.setOnClickListener(this);
         prev.setOnClickListener(this);
         userInfoFragment = new UserInfoFragment();
@@ -82,7 +85,9 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
 
     }
 
-
+    public void firstNextClick(){
+        onClick(next);
+    }
     @Override
     public void onClick(View v) {
 
@@ -97,6 +102,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                     }
                 }
                 if (mPage > pageIndex) {
+                    System.out.println(v.getId());
                     pageIndex++;
                     setFrag(pageIndex);
                 }
@@ -119,6 +125,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
             case 1 :
                 prev.setVisibility(View.INVISIBLE);
                 next.setVisibility(View.INVISIBLE);
+                textViewPage.setVisibility(View.INVISIBLE);
                 tran.replace(R.id.SetUser, this.userInfoFragment);
                 tran.commit();
                 break;
@@ -126,8 +133,10 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                 if (userInfoFragment.checkData()){
                     prev.setVisibility(View.VISIBLE);
                     next.setVisibility(View.VISIBLE);
+                    textViewPage.setVisibility(View.VISIBLE);
                     tran.replace(R.id.SetUser, this.languageFragment);
                     tran.commit();
+                    textViewPage.setText(pageIndex-1 +" / 8");
                 }else {
                     pageIndex--;
                     errToast();
@@ -137,6 +146,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                 if (languageFragment.checkData()){
                     tran.replace(R.id.SetUser, this.mathFragment);
                     tran.commit();
+                    textViewPage.setText(pageIndex-1 +" / 8");
                 }else {
                     pageIndex--;
                     errToast();
@@ -146,6 +156,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                 if (mathFragment.checkData()){
                     tran.replace(R.id.SetUser, this.placeFragment);
                     tran.commit();
+                    textViewPage.setText(pageIndex-1 +" / 8");
                 }else {
                     pageIndex--;
                     errToast();
@@ -155,6 +166,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                 if (placeFragment.checkData()){
                     tran.replace(R.id.SetUser, this.physicalFragment);
                     tran.commit();
+                    textViewPage.setText(pageIndex-1 +" / 8");
                 }else {
                     pageIndex--;
                     errToast();
@@ -164,6 +176,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                 if (physicalFragment.checkData()){
                     tran.replace(R.id.SetUser, this.musicFragment);
                     tran.commit();
+                    textViewPage.setText(pageIndex-1 +" / 8");
                 }else {
                     pageIndex--;
                     errToast();
@@ -174,6 +187,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                     prev.setVisibility(View.VISIBLE);
                     tran.replace(R.id.SetUser, this.relationshipFragment);
                     tran.commit();
+                    textViewPage.setText(pageIndex-1 +" / 8");
                 }else {
                     pageIndex--;
                     errToast();
@@ -184,6 +198,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                 if (relationshipFragment.checkData()) {
                     tran.replace(R.id.SetUser, this.personalFragment);
                     tran.commit();
+                    textViewPage.setText(pageIndex-1 +" / 8");
                 }else {
                     pageIndex--;
                     errToast();
@@ -195,6 +210,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
                     next.setText("완료");
                     tran.replace(R.id.SetUser, this.natureFragment);
                     tran.commit();
+                    textViewPage.setText(pageIndex-1 +" / 8");
                 }else{
                     pageIndex--;
                     errToast();
@@ -211,25 +227,31 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
 
     private boolean checkAllData(){
         // 모든 fragment의 데이터 가져오는 부분.
-        JSONObject initUserData = userInfoFragment.getData();
+        if (natureFragment.checkData()){
+            JSONObject initUserData = userInfoFragment.getData();
 
-        try {
-            User.setName(initUserData.getString("name"));
-            User.setAge(Integer.parseInt(initUserData.getString("age")));
-        } catch (JSONException e) {
-            e.printStackTrace();
+            try {
+                User.setName(initUserData.getString("name"));
+                User.setAge(Integer.parseInt(initUserData.getString("age")));
+                User.setGender(initUserData.getString("gender"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            User.setLanguage(languageFragment.getData());
+            User.setMath(mathFragment.getData());
+            User.setMusic(musicFragment.getData());
+            User.setNature(natureFragment.getData());
+            User.setPersonal(personalFragment.getData());
+            User.setPhysical(physicalFragment.getData());
+            User.setPlace(placeFragment.getData());
+            User.setRelationship(relationshipFragment.getData());
+
+            return true;
+        }else{
+            return false;
         }
 
-        User.setLanguage(languageFragment.getData());
-        User.setMath(mathFragment.getData());
-        User.setMusic(musicFragment.getData());
-        User.setNature(natureFragment.getData());
-        User.setPersonal(personalFragment.getData());
-        User.setPhysical(physicalFragment.getData());
-        User.setPlace(placeFragment.getData());
-        User.setRelationship(relationshipFragment.getData());
-
-        return true;
     }
 
 
@@ -238,16 +260,17 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
 
         User.setId(pref.getString("id", ""));
         // http 통신 시작
-        RetrofitSender.getServer().setupuser(User).enqueue(new Callback<SetUser>() {
+        RetrofitSender.getServer().setupuser(User).enqueue(new Callback<ResultCode>() {
             @Override
-            public void onResponse(Call<SetUser> call, Response<SetUser> response) {
+            public void onResponse(Call<ResultCode> call, Response<ResultCode> response) {
                 if (response.isSuccessful()){
-                    SetUser result = response.body();
+                    ResultCode result = response.body();
                     System.out.println(result.getResultCode());
                     if (result.getResultCode() == 200) {
                         SharedPreferences.Editor editor = pref.edit();
                         editor.putString("checkSetUp", "true");
                         editor.putString("nickname", User.getName());
+                        editor.putString("gender", User.getGender());
                         int age = User.getAge();
                         editor.putString("age", String.valueOf(age));
                         editor.putString("language", String.valueOf(User.getLanguage()));
@@ -269,7 +292,7 @@ public class SetUserInfoActivity extends AppCompatActivity implements View.OnCli
 
             }
             @Override
-            public void onFailure(Call<SetUser> call, Throwable t) {
+            public void onFailure(Call<ResultCode> call, Throwable t) {
                 System.out.println("서버 꺼짐");
             }
         });

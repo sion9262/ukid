@@ -16,45 +16,16 @@
 
 
     <fragment
-        android:id="@+id/nav_study_language"
-        android:name="com.example.ukidapp.ui.StudyObject.StudyObjectFragment"
-        android:label="@string/menu_study_language"
-        tools:layout="@layout/fragment_study_language" />
-
-    <fragment
         android:id="@+id/nav_study_math"
-        android:name="com.example.ukidapp.ui.StudyMath.StudyMathFragment"
-        android:label="@string/menu_study_math"
-        tools:layout="@layout/fragment_study_math" />
+        android:name="com.example.ukidapp.ui.UserAnalysis.UserAnalysisFragment"
+        android:label="@string/menu_useranalysis"
+        tools:layout="@layout/fragment_useranalysis" />
 
     <fragment
         android:id="@+id/nav_study_science"
-        android:name="com.example.ukidapp.ui.StudyScience.StudyScienceFragment"
-        android:label="@string/menu_study_science"
-        tools:layout="@layout/fragment_study_science"/>
-
-    <fragment
-        android:id="@+id/nav_check_interest"
-        android:name="com.example.ukidapp.ui.CheckInterest.CheckInterestFragment"
-        android:label="@string/menu_check_interest"
-        tools:layout="@layout/fragment_check_interest"/>
-
-    <fragment
-        android:id="@+id/nav_observe_kid"
-        android:name="com.example.ukidapp.ui.ObserveKid.ObserveKidFragment"
-        android:label="@string/menu_observe_kid"
-        tools:layout="@layout/fragment_observe_kid"/>
-
-    <fragment
-        android:id="@+id/nav_study_image"
-        android:name="com.example.ukidapp.ui.StudyImage.StudyImageFragment"
-        android:label="@string/menu_study_image"
-        tools:layout="@layout/fragment_study_image"/>
-    <fragment
-        android:id="@+id/logout"
-        android:name="com.example.ukidapp.ui.StudyImage.StudyImageFragment"
-        android:label="@string/menu_study_image"
-        tools:layout="@layout/fragment_study_image"/>
+        android:name="com.example.ukidapp.ui.StudyMath.StudyMathFragment"
+        android:label="@string/menu_study_math"
+        tools:layout="@layout/calculator_play"/>
 
 
 

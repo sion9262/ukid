@@ -209,8 +209,7 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
                 final RectF location = result.getLocation();
                 if (location != null && result.getConfidence() >= minimumConfidence) {
                   canvas.drawRect(location, paint);
-                  System.out.println("제목" +result.getTitle());
-                  System.out.println("정확도" +result.getConfidence());
+
 
                   cropToFrameTransform.mapRect(location);
                   resultList.add(result.getTitle());
@@ -237,7 +236,7 @@ public class DetectorActivity extends CameraActivity implements OnImageAvailable
 
                      */
                     try{
-                      //System.out.println(resultList.);
+
                       // 다른 액티비티 UI 수정을 위함.
                       showDetectionResult(resultList);
                     } catch (Exception e) {
