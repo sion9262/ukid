@@ -102,13 +102,33 @@ public class LoginActivity extends AppCompatActivity {
                             SharedPreferences.Editor editor = prefs.edit();
                             editor.putString("email", result.getEmail());
                             editor.putString("jwt", result.getJwt());
-                            editor.putString("username", result.getUsername());
-
+                            editor.putString("nickname", result.getUsername());
+                            editor.putString("id", result.getId());
+                            editor.putString("age", result.getAge());
+                            editor.putString("language", result.getLanguage());
+                            editor.putString("math", result.getMath());
+                            editor.putString("place", result.getPlace());
+                            editor.putString("physical", result.getPhysical());
+                            editor.putString("music", result.getMusic());
+                            editor.putString("relationship", result.getRelationship());
+                            editor.putString("personal", result.getPersonal());
+                            editor.putString("nature", result.getNature());
+                            editor.putString("gender", result.getGender());
+                            if (result.isSetUserInfo()) { editor.putString("checkSetUp", "true");}
+                            else {editor.putString("checkSetUp", "false");}
                             editor.commit();
 
-                            Intent MainPage = new Intent(LoginActivity.this, MainActivity.class);
-                            startActivity(MainPage);
-                            finish();
+                            if( result.isSetUserInfo()) {
+                                Intent MainPage = new Intent(LoginActivity.this, MainActivity.class);
+                                startActivity(MainPage);
+                                finish();
+
+                            } else {
+                                Intent SetUserPage = new Intent(LoginActivity.this, SetUserInfoActivity.class);
+                                startActivity(SetUserPage);
+                                finish();
+                            }
+
 
 
                         } catch (Exception e) {
@@ -124,8 +144,6 @@ public class LoginActivity extends AppCompatActivity {
                 }else{
                     System.out.println("실패");
                 }
-
-
 
             }
             @Override

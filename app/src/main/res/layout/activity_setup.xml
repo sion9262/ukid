@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ic_logo_background"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:weightSum="0">
+
+        <Button
+            android:id="@+id/prevButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="&lt; 이전"
+            android:textColor="@color/maincolor"
+            android:textSize="17dp"
+            app:backgroundTint="@color/ic_logo_background"
+            />
+        <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:id="@+id/nextButton"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="200dp"
+            android:text="다음 &gt;"
+            android:textSize="17dp"
+            android:layout_gravity="center"
+            android:textColor="@color/maincolor"
+            app:backgroundTint="@color/cardview_light_background"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/SetUser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.2" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.8">
+
+        <TextView
+            android:id="@+id/textViewPage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1/8"
+            android:layout_centerHorizontal="true"
+            android:textColor="#000"
+            android:textSize="30dp"/>
+
+        <!--style="@style/Widget.AppCompat.Button.Borderless"-->
+    </RelativeLayout>
+
+</LinearLayout>
