@@ -303,13 +303,13 @@
          Sharedpreferences에 유저 정보 및 설문내용이 저장된다.         
          
         ##### YoutubePlayActivity 유튜브 실행 
-        ![flogin](./readme/YoutubePlayActivity1.png)
+        ![YoutubePlayActivity1](./readme/YoutubePlayActivity1.png)
         
-        ![flogin2](./readme/YoutubePlayActivity2.png)
+        ![YoutubePlayActivity2](./readme/YoutubePlayActivity2.png)
         
-        ![flogin3](./readme/YoutubePlayActivity3.JPG)
-        
-        ![flogin3](./readme/YoutubePlayActivity4.JPG)
+        ![YoutubePlayActivity3](./readme/YoutubePlayActivity3.png)
+                
+        ![YoutubePlayActivity4](./readme/YoutubePlayActivity4.png)
         
          YoutubePlayActivity의 코드이다.
          시작시 onStart 를 통하여 동영상 시작 시간을 저장한다.
