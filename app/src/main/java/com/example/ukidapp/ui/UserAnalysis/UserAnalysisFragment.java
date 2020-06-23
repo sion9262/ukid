@@ -56,21 +56,13 @@ public class UserAnalysisFragment extends Fragment {
         userScoreBoard = (TextView)root.findViewById(R.id.userScoreText);
         detailscore = (Button)root.findViewById(R.id.detailscore);
 
-        MobileAds.initialize(getActivity(),
-                "ca-app-pub-3940256099942544/1033173712");
-        mInterstitialAd = new InterstitialAd(mContext);
-        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+
 
         init();
         detailscore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mInterstitialAd.isLoaded()) {
-                    mInterstitialAd.show();
-                } else {
-                    Log.d("TAG", "The interstitial wasn't loaded yet.");
-                }
+
                 startActivity(new Intent(mContext, DetailUserScore.class)
                         .putExtra("category1", category1)
                 .putExtra("category2", category2)

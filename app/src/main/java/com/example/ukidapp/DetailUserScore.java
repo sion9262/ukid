@@ -17,9 +17,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.ukidapp.R;
-import com.example.ukidapp.ui.UserDetail.DetailUserFirst;
-import com.example.ukidapp.ui.UserDetail.DetailUserSecond;
-import com.example.ukidapp.ui.UserDetail.DetailUserThree;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.ads.MobileAds;
+
 
 // 다중지능별 구체적인 내용 설명
 public class DetailUserScore extends AppCompatActivity implements View.OnClickListener{
@@ -28,7 +29,7 @@ public class DetailUserScore extends AppCompatActivity implements View.OnClickLi
     Button detailThree;
     TextView mainTitle, explanation, Representative_person, Representative_occupation, Feature, Improving;
     ImageView imageView;
-
+    private  InterstitialAd mInterstitialAd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +60,12 @@ public class DetailUserScore extends AppCompatActivity implements View.OnClickLi
         detailSecond.setOnClickListener(this);
         detailThree.setOnClickListener(this);
         Firstinit();
+
+        MobileAds.initialize(this,
+                "ca-app-pub-3940256099942544~3347511713");
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
 
     }
 
