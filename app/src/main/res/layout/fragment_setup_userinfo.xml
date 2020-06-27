@@ -70,45 +70,59 @@
 
         <RadioGroup
             android:id="@+id/setupSecondR1"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:weightSum="1"
             app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline2">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.33"
+                />
 
             <RadioButton
                 android:id="@+id/female"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="125dp"
-                android:layout_weight="0.5"
-                android:text="여아"
+                android:layout_weight="0.25"
                 android:buttonTint="#000"
-                android:textColor="#000"
-                />
+                android:text="여아"
+                android:textColor="#000" />
 
             <RadioButton
                 android:id="@+id/male"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_weight="1"
-                android:text="남아"
+                android:layout_weight="0.25"
                 android:buttonTint="#000"
+                android:text="남아"
                 android:textColor="#000" />
 
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.17"
+                />
+
         </RadioGroup>
+
 
         <EditText
             android:id="@+id/name"
             android:layout_width="248dp"
             android:layout_height="55dp"
-            android:layout_marginStart="80dp"
             android:backgroundTint="#79baec"
             android:hint="이름을 입력하세요."
             android:text=""
             android:textColor="#000"
             android:textColorHint="#000"
             app:layout_constraintBottom_toTopOf="@+id/age"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline3"
             app:layout_constraintVertical_bias="0.823" />
@@ -117,7 +131,6 @@
             android:id="@+id/age"
             android:layout_width="248dp"
             android:layout_height="55dp"
-            android:layout_marginStart="80dp"
             android:backgroundTint="#79baec"
             android:hint="나이를 입력하세요."
             android:text=""
@@ -125,7 +138,7 @@
             android:textColorHint="#000"
             app:layout_constraintBottom_toTopOf="@+id/guideline4"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/guideline3"
             app:layout_constraintVertical_bias="0.741" />

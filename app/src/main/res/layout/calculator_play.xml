@@ -1,31 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#79BAEC">
+    android:background="#79BAEC"
+    android:orientation="vertical"
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline29"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="89dp" />
+    >
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline30"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="330dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline31"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="572dp" />
 
     <TextView
         android:id="@+id/textView7"
@@ -35,275 +18,263 @@
         android:fontFamily="@font/maplestorybold"
         android:text="재미있는 계산기 놀이"
         android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline29"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.591"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/num2"
-        android:layout_width="50dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/rectangle"
-        android:fontFamily="@font/maplestorybold"
-        android:gravity="center"
-        android:text="9"
-        android:textColor="#000"
-        android:textSize="30dp"
-        app:layout_constraintStart_toEndOf="@+id/sign"
-        app:layout_constraintTop_toTopOf="@+id/guideline29" />
-
-
-    <TextView
-        android:id="@+id/num1"
-        android:layout_width="50dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/rectangle"
-        android:fontFamily="@font/maplestorybold"
-        android:gravity="center"
-        android:text="1"
-        android:textColor="#000"
-        android:textSize="30dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline29" />
-
-    <TextView
-        android:id="@+id/result1"
-        android:layout_width="50dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginBottom="60dp"
-        android:background="@drawable/rectangle"
-        android:fontFamily="@font/maplestorybold"
-        android:gravity="center"
-        android:inputType="number"
-        android:textColor="#000"
-        android:textSize="35dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline30"
-        app:layout_constraintStart_toEndOf="@+id/sign2" />
-
-    <TextView
-        android:id="@+id/result2"
-        android:layout_width="50dp"
-        android:layout_height="55dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="60dp"
-        android:background="@drawable/rectangle"
-        android:fontFamily="@font/maplestorybold"
-        android:gravity="center"
-        android:inputType="number"
-        android:textColor="#000"
-        android:textSize="35dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline30"
-        app:layout_constraintStart_toEndOf="@+id/result1" />
-
-    <TextView
-        android:id="@+id/sign"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
-        android:text="+"
-        android:textSize="50dp"
-        app:layout_constraintStart_toEndOf="@+id/num1"
-        app:layout_constraintTop_toTopOf="@+id/guideline29" />
-
-    <TextView
-        android:id="@+id/sign2"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="124dp"
-        android:text="="
-        android:textSize="50dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline29" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="20dp"
-        android:fontFamily="@font/maplestorybold"
-        android:text="6"
-        android:textColor="#000"
-        android:textSize="30sp"
-        app:backgroundTint="@color/ic_logo_background"
-        app:layout_constraintStart_toEndOf="@+id/button5"
-        app:layout_constraintTop_toBottomOf="@+id/button3" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="20dp"
-        android:fontFamily="@font/maplestorybold"
-        android:text="9"
-        android:textColor="#000"
-        android:textSize="30sp"
-        app:backgroundTint="@color/ic_logo_background"
-        app:layout_constraintStart_toEndOf="@+id/button8"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="20dp"
-        android:fontFamily="@font/maplestorybold"
-        android:text="3"
-        android:textColor="#000"
-        android:textSize="30sp"
-        app:backgroundTint="@color/ic_logo_background"
-        app:layout_constraintStart_toEndOf="@+id/button2"
-        app:layout_constraintTop_toTopOf="@+id/guideline30" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="95dp"
-        android:fontFamily="@font/maplestorybold"
-        android:text="1"
-        android:textColor="#000"
-        android:textSize="30sp"
-        app:backgroundTint="@color/ic_logo_background"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline30" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="20dp"
-        android:fontFamily="@font/maplestorybold"
-        android:text="2"
-        android:textColor="#000"
-        android:textSize="30sp"
-        app:backgroundTint="@color/ic_logo_background"
-        app:layout_constraintStart_toEndOf="@+id/button1"
-        app:layout_constraintTop_toTopOf="@+id/guideline30" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="20dp"
-        android:fontFamily="@font/maplestorybold"
-        android:text="5"
-        android:textColor="#000"
-        android:textSize="30sp"
-        app:backgroundTint="@color/ic_logo_background"
-        app:layout_constraintStart_toEndOf="@+id/button4"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
-
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="20dp"
-        android:fontFamily="@font/maplestorybold"
-        android:text="8"
-        android:textColor="#000"
-        android:textSize="30sp"
-        app:backgroundTint="@color/ic_logo_background"
-        app:layout_constraintStart_toEndOf="@+id/button7"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="95dp"
-        android:fontFamily="@font/maplestorybold"
-        android:text="4"
-        android:textColor="#000"
-        android:textSize="30sp"
-        app:backgroundTint="@color/ic_logo_background"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button1" />
-
-    <Button
-        android:id="@+id/button0"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:fontFamily="@font/maplestorybold"
-        android:text="0"
-        android:textColor="#000"
-        android:textSize="30sp"
-        app:backgroundTint="@color/ic_logo_background"
-        app:layout_constraintBottom_toTopOf="@+id/guideline31"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button8"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/report"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="13dp"
-        android:fontFamily="@font/maplestorybold"
-        android:text="제출"
-        android:textColor="#000"
-        android:textSize="30sp"
-        app:backgroundTint="@color/ic_logo_background"
-        app:layout_constraintStart_toEndOf="@+id/button0"
-        app:layout_constraintTop_toBottomOf="@+id/button9" />
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="95dp"
-        android:fontFamily="@font/maplestorybold"
-        android:text="7"
-        android:textColor="#000"
-        android:textSize="30sp"
-        app:backgroundTint="@color/ic_logo_background"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
-
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:gravity="center_vertical|center_horizontal"
+        />
     <TextView
         android:id="@+id/score"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp"
         android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/guideline29"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:gravity="center_vertical|center_horizontal"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="10dp"
+        >
+        <TextView
+            android:id="@+id/num1"
+            android:layout_width="50dp"
+            android:layout_height="55dp"
+            android:background="@drawable/rectangle"
+            android:fontFamily="@font/maplestorybold"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="#000"
+            android:textSize="30dp"
+            />
+        <TextView
+            android:id="@+id/sign"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:text="+"
+            android:textSize="50dp" />
+        <TextView
+            android:id="@+id/num2"
+            android:layout_width="50dp"
+            android:layout_height="55dp"
+            android:background="@drawable/rectangle"
+            android:fontFamily="@font/maplestorybold"
+            android:gravity="center"
+            android:text="9"
+            android:textColor="#000"
+            android:textSize="30dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="20dp">
+        <TextView
+            android:id="@+id/sign2"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:text="="
+            android:textSize="50dp"/>
 
-    <Button
-        android:id="@+id/Mathprev"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="95dp"
-        android:fontFamily="@font/maplestorybold"
-        android:text="&lt;"
-        android:textColor="#000"
-        android:textSize="30sp"
-        app:backgroundTint="@color/ic_logo_background"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button7"  />
-    <com.google.android.gms.ads.AdView
-        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        <TextView
+            android:id="@+id/result1"
+            android:layout_width="50dp"
+            android:layout_height="55dp"
+            android:background="@drawable/rectangle"
+            android:fontFamily="@font/maplestorybold"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="#000"
+            android:textSize="35dp"/>
+        <TextView
+            android:id="@+id/result2"
+            android:layout_width="50dp"
+            android:layout_height="55dp"
+            android:background="@drawable/rectangle"
+            android:fontFamily="@font/maplestorybold"
+            android:gravity="center"
+            android:inputType="number"
+            android:textColor="#000"
+            android:textSize="35dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="30dp">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:fontFamily="@font/maplestorybold"
+            android:text="1"
+            android:textColor="#000"
+            android:textSize="30sp"
+            app:backgroundTint="@color/ic_logo_background" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:fontFamily="@font/maplestorybold"
+            android:text="2"
+            android:textColor="#000"
+            android:textSize="30sp"
+            app:backgroundTint="@color/ic_logo_background" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:fontFamily="@font/maplestorybold"
+            android:text="3"
+            android:textColor="#000"
+            android:textSize="30sp"
+            app:backgroundTint="@color/ic_logo_background" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:fontFamily="@font/maplestorybold"
+            android:text="4"
+            android:textColor="#000"
+            android:textSize="30sp"
+            app:backgroundTint="@color/ic_logo_background" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:fontFamily="@font/maplestorybold"
+            android:text="5"
+            android:textColor="#000"
+            android:textSize="30sp"
+            app:backgroundTint="@color/ic_logo_background" />
+
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:fontFamily="@font/maplestorybold"
+            android:text="6"
+            android:textColor="#000"
+            android:textSize="30sp"
+            app:backgroundTint="@color/ic_logo_background" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:fontFamily="@font/maplestorybold"
+            android:text="7"
+            android:textColor="#000"
+            android:textSize="30sp"
+            app:backgroundTint="@color/ic_logo_background" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:fontFamily="@font/maplestorybold"
+            android:text="8"
+            android:textColor="#000"
+            android:textSize="30sp"
+            app:backgroundTint="@color/ic_logo_background" />
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:fontFamily="@font/maplestorybold"
+            android:text="9"
+            android:textColor="#000"
+            android:textSize="30sp"
+            app:backgroundTint="@color/ic_logo_background" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/Mathprev"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:fontFamily="@font/maplestorybold"
+            android:text="&lt;"
+            android:textColor="#000"
+            android:textSize="30sp"
+            app:backgroundTint="@color/ic_logo_background" />
+
+        <Button
+            android:id="@+id/button0"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:fontFamily="@font/maplestorybold"
+            android:text="0"
+            android:textColor="#000"
+            android:textSize="30sp"
+            app:backgroundTint="@color/ic_logo_background" />
+
+        <Button
+            android:id="@+id/report"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:fontFamily="@font/maplestorybold"
+            android:text="제출"
+            android:textColor="#000"
+            android:textSize="30sp"
+            app:backgroundTint="@color/ic_logo_background" />
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Mathprev"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
-    </com.google.android.gms.ads.AdView>
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Mathprev"></com.google.android.gms.ads.AdView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -23,17 +23,49 @@
             android:textSize="17dp"
             app:backgroundTint="@color/ic_logo_background"
             />
+
+        <View
+
+            android:layout_width="0dp"
+
+            android:layout_height="0dp"
+
+            android:layout_weight="1"
+
+            />
+
         <Button
             style="@style/Widget.AppCompat.Button.Borderless"
             android:id="@+id/nextButton"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="200dp"
             android:text="다음 &gt;"
             android:textSize="17dp"
             android:layout_gravity="center"
             android:textColor="@color/maincolor"
             app:backgroundTint="@color/cardview_light_background"/>
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="0">
+
+            <Button
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:id="@+id/nextButton"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="다음 &gt;"
+            android:textSize="17dp"
+            android:layout_gravity="center"
+            android:textColor="@color/maincolor"
+            app:backgroundTint="@color/cardview_light_background"/>
+
+        </LinearLayout>-->
+
+
+
+
+
     </LinearLayout>
 
     <FrameLayout
