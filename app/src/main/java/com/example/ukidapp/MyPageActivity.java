@@ -212,6 +212,9 @@ public class MyPageActivity extends AppCompatActivity {
                             bardata.add(new BarEntry(relationship, 2));
                         }else{
                             float relationship = duplicate_count.get("대인관계지능");
+                            if (duplicate_count.get("대인간지능") != null){
+                                relationship += duplicate_count.get("대인간지능");
+                            }
                             bardata.add(new BarEntry(relationship, 2));
                         }
 
@@ -228,6 +231,9 @@ public class MyPageActivity extends AppCompatActivity {
                             bardata.add(new BarEntry(space, 4));
                         }else{
                             float space = duplicate_count.get("공간지능");
+                            if (duplicate_count.get("시공간지능") != null){
+                                space += duplicate_count.get("시공간지능");
+                            }
                             bardata.add(new BarEntry(space, 4));
                         }
 
@@ -243,7 +249,7 @@ public class MyPageActivity extends AppCompatActivity {
                             float exercise = 0;
                             bardata.add(new BarEntry(exercise, 6));
                         }else{
-                            float excercise = duplicate_count.get("언어지능");
+                            float excercise = duplicate_count.get("신체운동지능");
                             bardata.add(new BarEntry(excercise, 6));
                         }
 
