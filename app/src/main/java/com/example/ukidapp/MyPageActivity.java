@@ -193,73 +193,57 @@ public class MyPageActivity extends AppCompatActivity {
 
                         ArrayList bardata = new ArrayList();
 
-                        if(duplicate_count.get("언어지능") == null){
-                            float language = 0;
-                            bardata.add(new BarEntry(language, 0));
-                        }else{
-                            float language = duplicate_count.get("언어지능");
-                            bardata.add(new BarEntry(language, 0));
+                        float language = 0;
+                        float math = 0;
+                        float relationship = 0;
+                        float personal = 0;
+                        float space = 0;
+                        float music = 0;
+                        float excercise = 0;
+                        float nature = 0;
+
+
+                        if(duplicate_count.get("언어지능") != null){
+                            language = duplicate_count.get("언어지능");
                         }
-                        if(duplicate_count.get("논리수학지능") == null){
-                            float math = 0;
-                            bardata.add(new BarEntry(math, 1));
-                        }else{
-                            float math = duplicate_count.get("논리수학지능");
-                            bardata.add(new BarEntry(math, 1));
+                        if(duplicate_count.get("논리수학지능") != null){
+                            math = duplicate_count.get("논리수학지능");
                         }
-                        if(duplicate_count.get("대인관계지능") == null){
-                            float relationship = 0;
-                            bardata.add(new BarEntry(relationship, 2));
-                        }else{
-                            float relationship = duplicate_count.get("대인관계지능");
-                            if (duplicate_count.get("대인간지능") != null){
-                                relationship += duplicate_count.get("대인간지능");
-                            }
-                            bardata.add(new BarEntry(relationship, 2));
+                        if(duplicate_count.get("대인관계지능") != null){
+                            relationship = duplicate_count.get("대인관계지능");
+                        }
+                        if (duplicate_count.get("대인간지능") != null){
+                            relationship += duplicate_count.get("대인간지능");
+                        }
+                        if(duplicate_count.get("자기성찰지능") != null){
+                            personal = duplicate_count.get("자기성찰지능");
                         }
 
-                        if(duplicate_count.get("자기성찰지능") == null){
-                            float personel = 0;
-                            bardata.add(new BarEntry(personel, 3));
-                        }else{
-                            float perosnel = duplicate_count.get("자기성찰지능");
-                            bardata.add(new BarEntry(perosnel, 3));
+                        if(duplicate_count.get("공간지능") != null) {
+                            space = duplicate_count.get("공간지능");
                         }
-
-                        if(duplicate_count.get("공간지능") == null){
-                            float space = 0;
-                            bardata.add(new BarEntry(space, 4));
-                        }else{
-                            float space = duplicate_count.get("공간지능");
-                            if (duplicate_count.get("시공간지능") != null){
+                        if (duplicate_count.get("시공간지능") != null){
                                 space += duplicate_count.get("시공간지능");
-                            }
-                            bardata.add(new BarEntry(space, 4));
+                        }
+                        if(duplicate_count.get("음악지능") != null){
+                            music = duplicate_count.get("음악지능");
                         }
 
-                        if(duplicate_count.get("음악지능") == null){
-                            float music = 0;
-                            bardata.add(new BarEntry(music, 5));
-                        }else{
-                            float music = duplicate_count.get("음악지능");
-                            bardata.add(new BarEntry(music, 5));
+                        if(duplicate_count.get("신체운동지능") != null){
+                            excercise = duplicate_count.get("신체운동지능");
                         }
 
-                        if(duplicate_count.get("신체운동지능") == null){
-                            float exercise = 0;
-                            bardata.add(new BarEntry(exercise, 6));
-                        }else{
-                            float excercise = duplicate_count.get("신체운동지능");
-                            bardata.add(new BarEntry(excercise, 6));
+                        if(duplicate_count.get("자연친화지능") != null){
+                            nature = duplicate_count.get("자연친화지능");
                         }
-
-                        if(duplicate_count.get("자연친화지능") == null){
-                            float nature = 0;
-                            bardata.add(new BarEntry(nature, 7));
-                        }else{
-                            float nature = duplicate_count.get("자연친화지능");
-                            bardata.add(new BarEntry(nature, 7));
-                        }
+                        bardata.add(new BarEntry(language, 0));
+                        bardata.add(new BarEntry(math, 1));
+                        bardata.add(new BarEntry(relationship, 2));
+                        bardata.add(new BarEntry(personal, 3));
+                        bardata.add(new BarEntry(space, 4));
+                        bardata.add(new BarEntry(music, 5));
+                        bardata.add(new BarEntry(excercise, 6));
+                        bardata.add(new BarEntry(nature, 7));
 
 
                         BarDataSet dataSet = new BarDataSet(bardata, "다중지능");
